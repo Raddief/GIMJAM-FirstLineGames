@@ -1,0 +1,2 @@
+extends BaseAlienRule
+class_name NoRule

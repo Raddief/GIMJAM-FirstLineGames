@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="FacingDirectionRule" load_steps=2 format=3 uid="uid://cc25pg6kut2n1"]
+
+[ext_resource type="Script" uid="uid://d3a13dhxidq6n" path="res://scripts/rules/facing_direction_rule.gd" id="1_m03l8"]
+
+[resource]
+script = ExtResource("1_m03l8")
+metadata/_custom_type_script = "uid://d3a13dhxidq6n"

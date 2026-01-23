@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ExplodeAfterTurnsRule" load_steps=2 format=3 uid="uid://cyau5mvrw4agd"]
+
+[ext_resource type="Script" uid="uid://b3mmht103r5fd" path="res://scripts/rules/explode_after_turns_rule.gd" id="1_w44ng"]
+
+[resource]
+script = ExtResource("1_w44ng")
+metadata/_custom_type_script = "uid://b3mmht103r5fd"

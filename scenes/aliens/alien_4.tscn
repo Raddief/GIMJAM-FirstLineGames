@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs2dwkijtcdbv"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_23kv5"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_e60en"]
+[ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_o5jo5"]
+[ext_resource type="Resource" uid="uid://c3vf4u3fy7nxs" path="res://resources/grow_after_day.tres" id="3_cxdyn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e60en"]
+atlas = ExtResource("2_o5jo5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxdyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e60en")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alien4" instance=ExtResource("1_23kv5")]
+rules = Array[ExtResource("2_e60en")]([ExtResource("3_cxdyn")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_cxdyn")

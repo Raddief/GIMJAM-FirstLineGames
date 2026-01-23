@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GrowAfterDayRule" load_steps=2 format=3 uid="uid://c3vf4u3fy7nxs"]
+
+[ext_resource type="Script" uid="uid://hg5dc7ub7dck" path="res://scripts/rules/grow_after_day_rule.gd" id="1_j42pv"]
+
+[resource]
+script = ExtResource("1_j42pv")
+metadata/_custom_type_script = "uid://hg5dc7ub7dck"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwcmw2dsqno7j"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_ko5sq"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_sydif"]
+[ext_resource type="Resource" uid="uid://cggdgduury6t0" path="res://resources/adjacent_placement.tres" id="3_sbaxq"]
+[ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="4_sbaxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f3ca"]
+atlas = ExtResource("4_sbaxq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srym8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f3ca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alien2" instance=ExtResource("1_ko5sq")]
+production_per_turn = 3
+rules = Array[ExtResource("2_sydif")]([ExtResource("3_sbaxq")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_srym8")
