@@ -3,17 +3,17 @@ class_name Alien
 
 # ===== CONFIG =====
 @export var alien_name := "Alien"
-@export var alien_type : GridManager.AlienType
-@export var cost : int = 5
-@export var production_per_turn := 1
+@export var alien_type: GridManager.AlienType
+@export var cost: int = 5
+@export var production_per_turn: int = 1
 
 # Rules attached to this alien
 @export var rules: Array[BaseAlienRule] = []
 
 # ===== STATE =====
 var cell: Vector2i
-var current_turn := 0
 var alive := true
+var can_produce := true
 
 # Facing (for direction-based rules)
 enum Facing { LEFT, RIGHT }
@@ -30,36 +30,14 @@ var grid: GridManager
 func setup(start_cell: Vector2i, grid_manager: GridManager):
 	grid = grid_manager
 
-	if !can_be_placed(start_cell):
-		queue_free()
-		return
-
 	cell = start_cell
 	original_cell = cell
 	position = grid.cell_to_world(cell)
+
 	grid.occupy_cell(cell, self)
 
 	for rule in rules:
 		rule.on_added(self)
-
-# ===== RULE QUERIES =====
-func can_be_placed(target_cell: Vector2i) -> bool:
-	for rule in rules:
-		if !rule.can_be_placed(self, target_cell, grid):
-			return false
-	return true
-
-func can_move() -> bool:
-	for rule in rules:
-		if !rule.can_move(self):
-			return false
-	return true
-
-func get_space_usage() -> int:
-	var space := 1
-	for rule in rules:
-		space = max(space, rule.occupy_space(self))
-	return space
 
 # ===== INPUT =====
 func _input(event):
@@ -89,9 +67,7 @@ func end_drag():
 
 	var target_cell := grid.world_to_cell(global_position)
 
-	if grid.is_cell_valid(target_cell) \
-	and !grid.is_cell_occupied(target_cell) \
-	and can_be_placed(target_cell):
+	if grid.is_cell_valid(target_cell) and !grid.is_cell_occupied(target_cell):
 		move_to_cell(target_cell)
 	else:
 		move_to_cell(original_cell)
@@ -101,39 +77,59 @@ func move_to_cell(target_cell: Vector2i):
 	grid.free_cell(cell)
 	cell = target_cell
 	grid.occupy_cell(cell, self)
+
 	position = grid.cell_to_world(cell)
 
 	for rule in rules:
 		rule.on_moved(self)
+
+# ===== RULE EVALUATION =====
+func evaluate_rules():
+	can_produce = true
+
+	for rule in rules:
+		if !rule.is_condition_met(self, grid):
+			can_produce = false
 
 # ===== TURN =====
 func on_turn_passed():
 	if !alive:
 		return
 
-	current_turn += 1
+	# Evaluate rule conditions FIRST
+	evaluate_rules()
 
-	# Rule hook BEFORE economy
+	# Rule hook before economy
 	for rule in rules:
-		rule.on_turn_start(self)
+		rule.on_turn_start(self, grid)
 
-	# Economy (rule may block / modify this)
-	if should_produce():
+	# Economy
+	if can_produce:
 		CurrencyManager.add(production_per_turn)
 
-	# Rule hook AFTER economy
+	# Rule hook after economy
 	for rule in rules:
-		rule.on_turn_end(self)
+		rule.on_turn_end(self, grid)
 
-# ===== ECONOMY =====
-func should_produce() -> bool:
+func on_day_ended():
+	if !alive:
+		return
+
 	for rule in rules:
-		if !rule.allow_production(self):
+		rule.on_day_end(self, grid)
+
+# ===== MOVE PERMISSION =====
+func can_move() -> bool:
+	for rule in rules:
+		if !rule.can_move(self):
 			return false
 	return true
 
 # ===== LIFECYCLE =====
 func kill():
+	if !alive:
+		return
+
 	alive = false
 	grid.free_cell(cell)
 
@@ -149,5 +145,10 @@ func _is_mouse_on_self(mouse_pos: Vector2) -> bool:
 
 # ===== DEBUG VISUAL =====
 func _process(_delta):
+	if !can_produce:
+		modulate = Color(1, 0.5, 0.5) # merah = tidak produksi
+	else:
+		modulate = Color.WHITE
+
 	for rule in rules:
 		rule.debug_visual(self)

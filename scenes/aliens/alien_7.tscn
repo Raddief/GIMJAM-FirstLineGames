@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://do3y6xveixpmi"]
+[gd_scene load_steps=8 format=3 uid="uid://do3y6xveixpmi"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_5efdb"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_cn56h"]
 [ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_v8vs4"]
-[ext_resource type="Resource" uid="uid://8imyc0vw0uv7" path="res://resources/residue_dependent.tres" id="3_cn56h"]
+[ext_resource type="Script" uid="uid://b3mmht103r5fd" path="res://scripts/rules/explode_after_turns_rule.gd" id="3_cn56h"]
+
+[sub_resource type="Resource" id="Resource_mx140"]
+script = ExtResource("3_cn56h")
+metadata/_custom_type_script = "uid://b3mmht103r5fd"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cn56h"]
 atlas = ExtResource("2_v8vs4")
@@ -21,7 +25,10 @@ animations = [{
 }]
 
 [node name="Alien7" instance=ExtResource("1_5efdb")]
-rules = Array[ExtResource("2_cn56h")]([ExtResource("3_cn56h")])
+alien_type = 4
+cost = 4
+production_per_turn = 4
+rules = Array[ExtResource("2_cn56h")]([SubResource("Resource_mx140")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_mx140")

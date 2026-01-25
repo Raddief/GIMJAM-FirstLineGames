@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DayData" load_steps=2 format=3 uid="uid://pidshi2hyblv"]
+
+[ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_a4ej0"]
+
+[resource]
+script = ExtResource("1_a4ej0")
+day_name = "Monday"
+money_target = 10
+metadata/_custom_type_script = "uid://tc2rdebi4ptf"

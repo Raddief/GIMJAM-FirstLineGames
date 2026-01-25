@@ -97,7 +97,8 @@ func world_to_cell(world_pos: Vector2) -> Vector2i:
 	return tilemap.local_to_map(local_pos)
 
 func cell_to_world(cell: Vector2i) -> Vector2:
-	return tilemap.map_to_local(cell)
+	var local_pos := tilemap.map_to_local(cell)
+	return tilemap.to_global(local_pos)
 
 # ===== OCCUPATION =====
 func is_cell_occupied(cell: Vector2i) -> bool:

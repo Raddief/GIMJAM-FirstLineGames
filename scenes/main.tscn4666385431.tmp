@@ -1,29 +1,20 @@
-[gd_scene load_steps=27 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=18 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="Script" uid="uid://y44vu3wq10un" path="res://scripts/managers/currency_manager.gd" id="2_gqmmt"]
 [ext_resource type="Script" uid="uid://b20wqv6q1mx3q" path="res://scripts/managers/day_manager.gd" id="2_jkv2x"]
-[ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="3_0ld40"]
 [ext_resource type="Script" uid="uid://tsrrcocbwtvo" path="res://scripts/managers/alien_manager.gd" id="3_tbgi4"]
-[ext_resource type="Resource" uid="uid://pidshi2hyblv" path="res://resources/days/day1.tres" id="4_gqmmt"]
 [ext_resource type="Script" uid="uid://dur0oij32o63j" path="res://scripts/ui/ui.gd" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cqyrev7ka306a" path="res://assets/tileset test.png" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bkey2m3inbb2h" path="res://scenes/aliens/alien_1.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://dwcmw2dsqno7j" path="res://scenes/aliens/alien_2.tscn" id="5_85g3d"]
-[ext_resource type="Resource" uid="uid://dckp2mlk5pk6v" path="res://resources/days/day2.tres" id="5_yc10j"]
 [ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_3.tscn" id="6_85g3d"]
-[ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://resources/days/day3.tres" id="6_jscy8"]
 [ext_resource type="Script" uid="uid://yepeq5b2sthb" path="res://scripts/ui/shop_ui.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_4.tscn" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_5.tscn" id="8_jkv2x"]
-[ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://resources/days/day4.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_6.tscn" id="9_jbj1t"]
-[ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://resources/days/day5.tres" id="9_og1vs"]
-[ext_resource type="Resource" uid="uid://dkbdv47lqevx4" path="res://resources/days/day6.tres" id="10_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://do3y6xveixpmi" path="res://scenes/aliens/alien_7.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_8.tscn" id="11_dp3eg"]
-[ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://resources/days/day7.tres" id="11_vxglm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 texture = ExtResource("4_tbgi4")
@@ -38,19 +29,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_tefeu")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("ui", "day_manager", "alien_manager")]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
-ui = NodePath("CanvasLayer/UI")
-day_manager = NodePath("DayManager")
-alien_manager = NodePath("AlienManager")
-
-[node name="CurrencyManager" type="Node" parent="."]
-script = ExtResource("2_gqmmt")
 
 [node name="DayManager" type="Node" parent="."]
 script = ExtResource("2_jkv2x")
-days = Array[ExtResource("3_0ld40")]([ExtResource("4_gqmmt"), ExtResource("5_yc10j"), ExtResource("6_jscy8"), ExtResource("8_y6deb"), ExtResource("9_og1vs"), ExtResource("10_2wyq8"), ExtResource("11_vxglm")])
-starting_money = 100
 
 [node name="GridManager" type="Node2D" parent="." node_paths=PackedStringArray("tilemap")]
 script = ExtResource("1_0wfyh")
@@ -64,8 +47,7 @@ alien_scenes = Array[PackedScene]([ExtResource("4_tipki"), ExtResource("5_85g3d"
 grid_manager = NodePath("../GridManager")
 
 [node name="PenLayer" type="TileMapLayer" parent="."]
-position = Vector2(486, 215)
-tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAAAAAAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAABAAcAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAACAAYAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAgAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_o6xl0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -163,26 +145,3 @@ layout_mode = 2
 [node name="Button8" type="Button" parent="CanvasLayer/UI/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-
-[node name="DayLabel" type="Label" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.0
-offset_top = 2.0
-offset_right = -135.0
-offset_bottom = 25.0
-grow_horizontal = 2
-text = "DAY: 0"
-
-[node name="TurnLabel" type="Label" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 178.0
-offset_right = 218.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "TURN: 0/0"

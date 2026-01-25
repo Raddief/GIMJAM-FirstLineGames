@@ -16,6 +16,4 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TurnManager="*res://scripts/managers/turn_manager.gd"
-GameState="*res://scripts/game_state.gd"
 CurrencyManager="*res://scripts/managers/currency_manager.gd"

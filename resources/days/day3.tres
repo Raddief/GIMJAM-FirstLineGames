@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DayData" load_steps=2 format=3 uid="uid://bne2lhjrlqi1h"]
+
+[ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_cjsfv"]
+
+[resource]
+script = ExtResource("1_cjsfv")
+day_name = "Wednesday"
+money_target = 28
+metadata/_custom_type_script = "uid://tc2rdebi4ptf"

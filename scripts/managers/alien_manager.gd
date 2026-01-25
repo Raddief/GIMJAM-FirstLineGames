@@ -4,8 +4,6 @@ class_name AlienManager
 @export var alien_scenes : Array[PackedScene]
 @export var grid_manager : GridManager
 
-func _ready() -> void:
-		TurnManager.turn_passed.connect(_on_turn_passed)
 	
 func spawn_alien(scene: PackedScene):
 	var cell : Vector2i = _find_empty_cell()
@@ -25,7 +23,12 @@ func _find_empty_cell():
 				return cell
 	return null
 
-func _on_turn_passed():
+func on_turn_passed():
 	for alien in get_children():
 		if alien.has_method("on_turn_passed"):
 			alien.on_turn_passed()
+
+func on_day_ended():
+	for alien in get_children():
+		if alien.has_method("on_day_ended"):
+			alien.on_day_ended()

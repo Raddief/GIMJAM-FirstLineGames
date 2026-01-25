@@ -1,4 +1,5 @@
 extends Node
+
 signal currency_changed(value: int)
 
 var currency := 0

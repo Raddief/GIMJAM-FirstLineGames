@@ -1,38 +1,55 @@
 extends Resource
 class_name BaseAlienRule
 
-# ===== PLACEMENT =====
-func can_be_placed(alien, target_cell: Vector2i, grid) -> bool:
+# ==================================================
+# CORE RULE EVALUATION
+# ==================================================
+# Return false jika kondisi rule TIDAK terpenuhi
+# Alien tetap hidup & ada, tapi TIDAK PRODUKSI
+func is_condition_met(alien, grid) -> bool:
 	return true
 
-# ===== MOVEMENT =====
+
+# ==================================================
+# MOVEMENT
+# ==================================================
+# Return false jika alien tidak boleh dipindah
 func can_move(alien) -> bool:
 	return true
 
 func on_moved(alien) -> void:
 	pass
 
-# ===== SPACE =====
-func occupy_space(alien) -> int:
-	return 1
 
-# ===== TURN FLOW =====
+# ==================================================
+# LIFECYCLE
+# ==================================================
 func on_added(alien) -> void:
 	pass
 
 func on_removed(alien) -> void:
 	pass
 
-func on_turn_start(alien) -> void:
+
+# ==================================================
+# TURN FLOW
+# ==================================================
+# Dipanggil SETIAP turn sebelum ekonomi
+func on_turn_start(alien, grid) -> void:
 	pass
 
-func on_turn_end(alien) -> void:
+# Dipanggil SETIAP turn setelah ekonomi
+func on_turn_end(alien, grid) -> void:
 	pass
 
-# ===== ECONOMY =====
-func allow_production(alien) -> bool:
-	return true
+# Dipanggil SETIAP akhir day
+func on_day_end(alien, grid) -> void:
+	pass
 
-# ===== DEBUG / VISUAL =====
+
+# ==================================================
+# DEBUG / VISUAL
+# ==================================================
+# Untuk tint, icon, atau gizmo editor
 func debug_visual(alien) -> void:
 	pass

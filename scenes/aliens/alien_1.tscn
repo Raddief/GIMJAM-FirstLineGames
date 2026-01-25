@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cda63q8gt0t3v" path="res://scripts/rules/no_rule.gd" id="3_i2qp7"]
 [ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="4_i2qp7"]
 
-[sub_resource type="Resource" id="Resource_xc8ut"]
+[sub_resource type="Resource" id="Resource_i2qp7"]
 script = ExtResource("3_i2qp7")
 metadata/_custom_type_script = "uid://cda63q8gt0t3v"
 
@@ -26,7 +26,8 @@ animations = [{
 
 [node name="Alien1" instance=ExtResource("1_qfrld")]
 alien_type = 2
-rules = Array[ExtResource("2_heyfl")]([SubResource("Resource_xc8ut")])
+cost = 3
+rules = Array[ExtResource("2_heyfl")]([SubResource("Resource_i2qp7")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_mnjxg")
