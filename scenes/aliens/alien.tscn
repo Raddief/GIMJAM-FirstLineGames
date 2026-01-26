@@ -5,15 +5,11 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5c48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5c48"]
-size = Vector2(32, 32)
+size = Vector2(31, 32)
 
 [node name="Alien" type="Node2D"]
 script = ExtResource("1_u8rjw")
-alien_name = null
-alien_type = null
-cost = null
-production_per_turn = null
-rules = null
+size = Vector2i(1, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n5c48")

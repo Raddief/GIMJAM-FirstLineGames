@@ -2,7 +2,7 @@ extends Node2D
 class_name GridManager
 
 # ===== CONFIG =====
-@export var grid_size: Vector2i = Vector2i(5, 5)
+@export var grid_size: Vector2i = Vector2i(10, 5)
 @export var tilemap: TileMapLayer
 @export var tileset_source_id: int = 0 # biasanya 0 kalau cuma 1 source
 
@@ -101,17 +101,52 @@ func cell_to_world(cell: Vector2i) -> Vector2:
 	return tilemap.to_global(local_pos)
 
 # ===== OCCUPATION =====
-func is_cell_occupied(cell: Vector2i) -> bool:
-	return occupied.has(cell)
+# Checks if a rectangular area is valid and empty.
+# 'ignore_occupant' is crucial: pass the alien itself here so it doesn't 
+# detect a collision with its own old position while dragging.
+func is_cell_occupied(origin: Vector2i, size: Vector2i, ignore_occupant = null) -> bool:
+	# 1. Check Boundaries
+	if origin.x < 0 or origin.y < 0: return true
+	if origin.x + size.x > grid_size.x: return true
+	if origin.y + size.y > grid_size.y: return true
+
+	# 2. Check Overlaps
+	for x in range(size.x):
+		for y in range(size.y):
+			var cell = origin + Vector2i(x, y)
+			
+			if occupied.has(cell):
+				var current_occupant = occupied[cell]
+				
+				# --- SELF-CLEANING FIX START ---
+				# Check if the object is null OR has been deleted (freed) from memory
+				if current_occupant == null or not is_instance_valid(current_occupant):
+					occupied.erase(cell) # Clean the dirty data
+					continue # Treat this cell as empty and keep checking
+				# --- SELF-CLEANING FIX END ---
+
+				# If the space is taken by a VALID object that isn't us
+				if current_occupant != ignore_occupant:
+					return true
+					
+	return false
 
 func get_occupant(cell: Vector2i):
 	return occupied.get(cell, null)
 
-func occupy_cell(cell: Vector2i, alien):
-	occupied[cell] = alien
+# Locks a rectangular area for a specific alien
+func occupy_cell(origin: Vector2i, size: Vector2i, alien):
+	for x in range(size.x):
+		for y in range(size.y):
+			var cell = origin + Vector2i(x, y)
+			occupied[cell] = alien
 
-func free_cell(cell: Vector2i):
-	occupied.erase(cell)
+# Frees a rectangular area (call this when picking up or moving an alien)
+func free_cell(origin: Vector2i, size: Vector2i):
+	for x in range(size.x):
+		for y in range(size.y):
+			var cell = origin + Vector2i(x, y)
+			occupied.erase(cell)
 
 # ===== DEBUG INPUT (OPTIONAL) =====
 func _input(event):

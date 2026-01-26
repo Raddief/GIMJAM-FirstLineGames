@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2dly0llg2d48"]
+[gd_scene load_steps=9 format=3 uid="uid://c2dly0llg2d48"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_p1y5m"]
 [ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_fpki5"]
@@ -25,12 +25,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i86jg"]
+size = Vector2(61.75, 32)
+
 [node name="Alien3" instance=ExtResource("1_p1y5m")]
 alien_name = "Faceoff"
 alien_type = 4
 cost = 170
 production_per_turn = 44
+size = Vector2i(2, 1)
 rules = Array[ExtResource("2_i86jg")]([SubResource("Resource_tntct")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_tntct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="0"]
+position = Vector2(30, 0)
+sprite_frames = SubResource("SpriteFrames_tntct")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(15.125, 0)
+shape = SubResource("RectangleShape2D_i86jg")
