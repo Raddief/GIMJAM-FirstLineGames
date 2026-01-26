@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c1drjqsvnhg0t"]
+
+[node name="Popup" type="ConfirmationDialog"]
+oversampling_override = 1.0
+title = "Confirmation"
+initial_position = 1
+size = Vector2i(256, 100)
+visible = true
+unresizable = true
+min_size = Vector2i(256, 100)
+ok_button_text = "Sure"
+cancel_button_text = "Refuse"
