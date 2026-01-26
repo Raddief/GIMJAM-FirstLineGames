@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddleptbigphkm"]
+[gd_scene load_steps=4 format=3 uid="uid://ddleptbigphkm"]
 
 [ext_resource type="Script" uid="uid://djr6f5rktwdm5" path="res://scripts/alien.gd" id="1_u8rjw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5c48"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5c48"]
+size = Vector2(32, 32)
+
 [node name="Alien" type="Node2D"]
 script = ExtResource("1_u8rjw")
+alien_name = null
+alien_type = null
+cost = null
+production_per_turn = null
+rules = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n5c48")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_n5c48")

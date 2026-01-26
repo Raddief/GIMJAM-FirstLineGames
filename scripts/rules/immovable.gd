@@ -1,7 +1,10 @@
 extends BaseAlienRule
 class_name Immovable
 
-@export var required_item_id: String
+var is_locked := false
 
 func can_move(alien) -> bool:
-	return false
+	return !is_locked
+
+func on_turn_end(alien, grid) -> void:
+	is_locked = true

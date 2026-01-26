@@ -46,6 +46,13 @@ func on_turn_end(alien, grid) -> void:
 func on_day_end(alien, grid) -> void:
 	pass
 
+# ==================================================
+# PRODUCTION MODIFIER
+# ==================================================
+
+# Return nilai tambahan (positif/negatif) untuk produksi alien per turn
+func get_production_modifier(alien, grid) -> int:
+	return 0
 
 # ==================================================
 # DEBUG / VISUAL

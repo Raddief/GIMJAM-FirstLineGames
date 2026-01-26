@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=30 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://do3y6xveixpmi" path="res://scenes/aliens/alien_7.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_8.tscn" id="11_dp3eg"]
 [ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://resources/days/day7.tres" id="11_vxglm"]
+[ext_resource type="Script" uid="uid://b83c0lexhyul3" path="res://scripts/remove_area.gd" id="23_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="23_og1vs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 texture = ExtResource("4_tbgi4")
@@ -37,6 +39,9 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_o6xl0"]
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_tefeu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wyq8"]
+size = Vector2(128, 128)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("ui", "day_manager", "alien_manager")]
 script = ExtResource("1_jyhfs")
@@ -67,6 +72,17 @@ grid_manager = NodePath("../GridManager")
 position = Vector2(486, 215)
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAAAAAAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_o6xl0")
+
+[node name="RemoveArea" type="Area2D" parent="."]
+position = Vector2(66, 574)
+collision_layer = 8
+script = ExtResource("23_2wyq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="RemoveArea"]
+texture = ExtResource("23_og1vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RemoveArea"]
+shape = SubResource("RectangleShape2D_2wyq8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

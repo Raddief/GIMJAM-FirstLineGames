@@ -3,13 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_p1y5m"]
 [ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_fpki5"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_i86jg"]
-[ext_resource type="Script" uid="uid://bgjireooyc5g5" path="res://scripts/rules/residue_dependent_rule.gd" id="3_i86jg"]
+[ext_resource type="Script" uid="uid://dgwgdky0u8kjx" path="res://scripts/rules/top_row_production_rule.gd" id="3_i86jg"]
 
 [sub_resource type="Resource" id="Resource_tntct"]
 script = ExtResource("3_i86jg")
-required_residue = 2
-die_if_missing = true
-metadata/_custom_type_script = "uid://bgjireooyc5g5"
+show_warning = false
+metadata/_custom_type_script = "uid://dgwgdky0u8kjx"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i86jg"]
 atlas = ExtResource("2_fpki5")
@@ -27,9 +26,10 @@ animations = [{
 }]
 
 [node name="Alien3" instance=ExtResource("1_p1y5m")]
+alien_name = "Faceoff"
 alien_type = 4
-cost = 2
-production_per_turn = 6
+cost = 170
+production_per_turn = 44
 rules = Array[ExtResource("2_i86jg")]([SubResource("Resource_tntct")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_ko5sq"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_sydif"]
-[ext_resource type="Script" uid="uid://bpx4y1k0otst1" path="res://scripts/rules/residue_after_day_rule.gd" id="3_sbaxq"]
+[ext_resource type="Script" uid="uid://cwpa6xn1qxb2e" path="res://scripts/rules/corner_production.gd" id="3_sbaxq"]
 [ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="4_sbaxq"]
 
 [sub_resource type="Resource" id="Resource_2f3ca"]
 script = ExtResource("3_sbaxq")
-residue_type = 2
-metadata/_custom_type_script = "uid://bpx4y1k0otst1"
+bonus_production = 12
+metadata/_custom_type_script = "uid://cwpa6xn1qxb2e"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2f3ca"]
 atlas = ExtResource("4_sbaxq")
@@ -26,7 +26,10 @@ animations = [{
 }]
 
 [node name="Alien2" instance=ExtResource("1_ko5sq")]
+alien_name = "Nook"
 alien_type = 2
+cost = 120
+production_per_turn = 28
 rules = Array[ExtResource("2_sydif")]([SubResource("Resource_2f3ca")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

@@ -18,7 +18,7 @@ func _ready():
 
 	
 	day_manager.start_day(0)
-	CurrencyManager.add(10) # starting money
+	CurrencyManager.add(1000) # starting money
 
 func _on_turn_passed(turn: int, max_turns: int):
 	alien_manager.on_turn_passed()

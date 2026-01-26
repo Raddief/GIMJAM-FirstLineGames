@@ -10,6 +10,8 @@ class_name Alien
 # Rules attached to this alien
 @export var rules: Array[BaseAlienRule] = []
 
+@onready var area_2d: Area2D = $Area2D
+
 # ===== STATE =====
 var cell: Vector2i
 var alive := true
@@ -25,6 +27,8 @@ var drag_offset := Vector2.ZERO
 var original_cell: Vector2i
 
 var grid: GridManager
+
+var external_production_bonus := 0
 
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
@@ -46,6 +50,9 @@ func _input(event):
 			if event.pressed and _is_mouse_on_self(event.position):
 				start_drag(event.position)
 			elif !event.pressed and dragging:
+				var collisions := area_2d.get_overlapping_areas()
+				if collisions.size() > 0:
+					kill()
 				end_drag()
 
 	elif event is InputEventMouseMotion and dragging:
@@ -99,14 +106,20 @@ func on_turn_passed():
 	# Evaluate rule conditions FIRST
 	evaluate_rules()
 
+	var bonus_production := 0
+	for rule in rules:
+		bonus_production += rule.get_production_modifier(self, grid)
+
 	# Rule hook before economy
 	for rule in rules:
 		rule.on_turn_start(self, grid)
 
 	# Economy
 	if can_produce:
-		CurrencyManager.add(production_per_turn)
+		CurrencyManager.add(production_per_turn + bonus_production + external_production_bonus)
 
+	external_production_bonus = 0
+	
 	# Rule hook after economy
 	for rule in rules:
 		rule.on_turn_end(self, grid)
