@@ -62,11 +62,12 @@ script = ExtResource("1_0wfyh")
 tilemap = NodePath("../PenLayer")
 tileset_source_id = 1
 
-[node name="AlienManager" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
+[node name="AlienManager" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager", "day_manager")]
 z_index = 1
 script = ExtResource("3_tbgi4")
 alien_scenes = Array[PackedScene]([ExtResource("4_tipki"), ExtResource("5_85g3d"), ExtResource("6_85g3d"), ExtResource("7_a8y0u"), ExtResource("8_jkv2x"), ExtResource("9_jbj1t"), ExtResource("10_muem4"), ExtResource("11_dp3eg")])
 grid_manager = NodePath("../GridManager")
+day_manager = NodePath("../DayManager")
 
 [node name="PenLayer" type="TileMapLayer" parent="."]
 position = Vector2(486, 215)
