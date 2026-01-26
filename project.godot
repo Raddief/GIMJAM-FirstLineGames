@@ -17,3 +17,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 CurrencyManager="*res://scripts/managers/currency_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720

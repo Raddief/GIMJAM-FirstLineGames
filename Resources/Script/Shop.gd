@@ -1,4 +1,5 @@
 extends Control
+class_name Shop
 
 #Scene Variable
 var slots = preload("res://Resources/Scene/Button.tscn")
@@ -10,6 +11,8 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 #Variable Status
 var day = 1
 @export var Database:GDScript
+
+signal buyAlien(index:int, cost:int)
 
 func showDesc():
 	$BottomPanel.visible = true
@@ -71,7 +74,7 @@ func _on_forfeit_pressed() -> void:
 	$Popup.visible = true
 
 func _on_buy_pressed() -> void:
-	pass # Replace with function body.
+	emit_signal("buyAlien", 0, 200) #Placeholder index and cost
 
 func _on_popup_confirmed() -> void:
 	get_tree().change_scene_to_packed(Mainmenu)
