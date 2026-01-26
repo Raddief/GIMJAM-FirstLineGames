@@ -1,16 +1,9 @@
-[gd_resource type="Resource" script_class="DayData" load_steps=5 format=3 uid="uid://cgav4xflcs820"]
+[gd_resource type="Resource" script_class="DayData" load_steps=2 format=3 uid="uid://cgav4xflcs820"]
 
-[ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_10ic5"]
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_e5y0r"]
-[ext_resource type="Script" uid="uid://xt26xy35i8nr" path="res://scripts/days/double_production_day.gd" id="2_r33qk"]
-
-[sub_resource type="Resource" id="Resource_o8j4u"]
-script = ExtResource("2_r33qk")
-metadata/_custom_type_script = "uid://xt26xy35i8nr"
 
 [resource]
 script = ExtResource("1_e5y0r")
 day_name = "Friday"
 money_target = 55
-day_modifiers = Array[ExtResource("1_10ic5")]([SubResource("Resource_o8j4u")])
 metadata/_custom_type_script = "uid://tc2rdebi4ptf"

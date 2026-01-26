@@ -1,13 +1,10 @@
 extends Node2D
 
 @export var ui : UI
-@export var shop: Shop
 @export var day_manager: DayManager
 @export var alien_manager: AlienManager
 
 func _ready():
-	shop.buyAlien.connect(buy_alien)
-
 	CurrencyManager.currency_changed.connect(day_manager.on_money_changed)
 	CurrencyManager.currency_changed.connect(ui.on_money_changed)
 
@@ -22,10 +19,6 @@ func _ready():
 	
 	day_manager.start_day(0)
 	CurrencyManager.add(1000) # starting money
-
-func buy_alien(index:int, cost:int):
-	if CurrencyManager.spend(cost):
-		alien_manager.spawn_alien(alien_manager.alien_scenes[index])
 
 func _on_turn_passed(turn: int, max_turns: int):
 	alien_manager.on_turn_passed()
