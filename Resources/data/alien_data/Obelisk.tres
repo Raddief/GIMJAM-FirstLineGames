@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://c7pgx1ejvlikt"]
+
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_05irw"]
+[ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_5.tscn" id="1_85ggw"]
+
+[resource]
+script = ExtResource("1_05irw")
+name = "Obelisk"
+alien_trait = "Cannot be moved."
+price = 900
+rate = 600
+size = "1x4"
+alien_scene = ExtResource("1_85ggw")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

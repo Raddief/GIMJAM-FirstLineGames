@@ -10,35 +10,47 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 
 #Variable Status
 var day = 6
-@export var Database:GDScript
+@export var Alien : Array[AlienData]
+@export var Item : Dictionary
 
-signal buyAlien(index:int, cost:int)
+var selected_alien : AlienData = null
 
-func showDesc(types:int, object:String):
+signal buyAlien(alien_data: AlienData)
+
+func showDesc(types:int, object):
 	$BottomPanel.visible = true
-	if types == 0 :
-		var Data:Dictionary = Database.new().Alien
-		$BottomPanel/Description/Icon.set_text(object)
-		$BottomPanel/Description/Contain1.set_text(str(Data.get(object)[3]))
-		$BottomPanel/Description/Contain2.set_text(Data.get(object)[0])
-		$BottomPanel/Description/Contain3.set_text(Data.get(object)[1])
+	if types == 0 and object is AlienData:
+		$BottomPanel/Description/Icon.set_text(object.name)
+		$BottomPanel/Description/Contain1.set_text(str(object.price))
+		$BottomPanel/Description/Contain2.set_text(object.origin)
+		$BottomPanel/Description/Contain3.set_text(object.alien_trait)
 
 func addSlot(types:int):
-	var Data:Dictionary
-	var keys
 	if types == 0:
-		Data= Database.new().Alien
-		keys = Data.keys()
-	else :
-		Data = Database.new().Item
-		keys = Data.keys()
-	for i in 4+day:
-		var slot = slots.instantiate()
-		slot.slot = true
-		slot.type = types
-		slot.root = self
-		slot.object = keys[i]
-		$SidePanel/Scroll/Scroll/Stock.add_child(slot)
+		var aliens: Array = Alien
+		for i in 4 + day:
+			if i >= aliens.size():
+				break
+			var slot = slots.instantiate()
+			slot.slot = true
+			slot.type = types
+			slot.root = self
+			slot.object = aliens[i]
+			slot.select_slot.connect(select_slot)
+			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
+	else:
+		var items : Dictionary = Item
+		var keys := items.keys()
+		for i in 4 + day:
+			if i >= keys.size():
+				break
+			var slot = slots.instantiate()
+			slot.slot = true
+			slot.type = types
+			slot.root = self
+			slot.object = keys[i]
+			slot.select_slot.connect(select_slot)
+			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
 
 func _on_open_close_pressed() -> void:
 	if $BottomPanel.visible == false && $SidePanel.get_position().x != 1111:
@@ -89,8 +101,11 @@ func _on_forfeit_pressed() -> void:
 	$Popup.set_text("Are you sure want to surrender?")
 	$Popup.visible = true
 
+func select_slot(types:int, object) -> void:
+	selected_alien = object
+
 func _on_buy_pressed() -> void:
-	emit_signal("buyAlien", 0, 200) #Placeholder index and cost
+	emit_signal("buyAlien", selected_alien)
 
 func _on_popup_confirmed() -> void:
 	get_tree().change_scene_to_packed(Mainmenu)

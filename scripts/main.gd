@@ -23,9 +23,9 @@ func _ready():
 	day_manager.start_day(0)
 	CurrencyManager.add(1000) # starting money
 
-func buy_alien(index:int, cost:int):
-	if CurrencyManager.spend(cost):
-		alien_manager.spawn_alien(alien_manager.alien_scenes[index])
+func buy_alien(alien_data: AlienData) -> void:
+	if CurrencyManager.spend(alien_data.price):
+		alien_manager.spawn_alien(alien_data)
 
 func _on_turn_passed(turn: int, max_turns: int):
 	alien_manager.on_turn_passed()

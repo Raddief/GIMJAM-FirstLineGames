@@ -5,14 +5,13 @@ class_name AlienManager
 @export var grid_manager : GridManager
 @export var day_manager : DayManager
 
-	
-func spawn_alien(scene: PackedScene):
+func spawn_alien(alien_data: AlienData):
 	var cell : Vector2i = _find_empty_cell()
 	if cell == null:
 		print("No empty cell!")
 		return
 
-	var alien = scene.instantiate()
+	var alien = alien_data.alien_scene.instantiate()
 	add_child(alien)
 	alien.setup(cell, grid_manager)
 
