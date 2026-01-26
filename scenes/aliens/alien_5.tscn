@@ -29,6 +29,7 @@ alien_name = "Obelisk"
 alien_type = 3
 cost = 900
 production_per_turn = 250
+size = Vector2i(1, 1)
 rules = Array[ExtResource("2_k0642")]([SubResource("Resource_1mc0m")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

@@ -28,6 +28,7 @@ animations = [{
 alien_type = 1
 cost = 6
 production_per_turn = 2
+size = Vector2i(1, 1)
 rules = Array[ExtResource("2_du74q")]([SubResource("Resource_503ok")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

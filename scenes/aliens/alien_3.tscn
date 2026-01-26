@@ -34,3 +34,10 @@ rules = Array[ExtResource("2_i86jg")]([SubResource("Resource_tntct")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_tntct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="0"]
+position = Vector2(30, 0)
+sprite_frames = SubResource("SpriteFrames_tntct")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(15, 0)
