@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://Resources/Script/Shop.gd" id="1_vtuwb"]
 [ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://Resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
-[ext_resource type="Script" uid="uid://df6akmbk606h5" path="res://Resources/Script/AlienDatabase.gd" id="2_rhti7"]
+[ext_resource type="Script" uid="uid://df6akmbk606h5" path="res://Resources/Script/Database.gd" id="2_rhti7"]
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="3_s556k"]
 [ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://Resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
 [ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://Resources/Asset/UI/secret-book.png" id="4_3kx1x"]
@@ -297,6 +297,8 @@ grow_vertical = 2
 
 [node name="Stock" type="VBoxContainer" parent="SidePanel/Scroll/Scroll"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="BottomPanel" type="Control" parent="."]
 visible = false
@@ -372,9 +374,9 @@ vertical_alignment = 1
 [node name="Contain1" type="RichTextLabel" parent="BottomPanel/Description"]
 layout_mode = 0
 offset_left = 184.0
-offset_top = 30.0
+offset_top = 39.0
 offset_right = 298.0
-offset_bottom = 110.0
+offset_bottom = 119.0
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
 text = "1000"
@@ -384,7 +386,7 @@ vertical_alignment = 1
 [node name="Contain2" type="RichTextLabel" parent="BottomPanel/Description"]
 layout_mode = 0
 offset_left = 296.0
-offset_top = 40.0
+offset_top = 45.0
 offset_right = 735.0
 offset_bottom = 120.0
 size_flags_horizontal = 3
@@ -415,14 +417,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(84, 84)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.031000001
+anchor_left = 0.013
 anchor_top = 0.039
-anchor_right = 0.117000006
-anchor_bottom = 0.89800006
-offset_left = 0.3199997
-offset_top = 0.007999897
-offset_right = 0.23999023
-offset_bottom = 0.055992126
+anchor_right = 0.13700001
+anchor_bottom = 0.906
+offset_left = 0.3600006
+offset_top = 1.0079999
+offset_right = 0.63998413
+offset_bottom = 0.03199768
 grow_vertical = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
@@ -430,7 +432,7 @@ theme_override_fonts/font = ExtResource("1_m2jm4")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/disabled = SubResource("StyleBoxFlat_3kx1x")
 disabled = true
-text = "Matyr"
+text = "Matriach"
 icon = ExtResource("7_8ebbm")
 icon_alignment = 1
 vertical_icon_alignment = 2
