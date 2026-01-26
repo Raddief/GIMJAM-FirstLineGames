@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://oqg1p1p8hme7"]
+[gd_scene load_steps=9 format=3 uid="uid://oqg1p1p8hme7"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_npce0"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_k0642"]
@@ -24,13 +24,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0642"]
+size = Vector2(31, 121)
+
 [node name="Alien5" instance=ExtResource("1_npce0")]
 alien_name = "Obelisk"
 alien_type = 3
 cost = 900
 production_per_turn = 250
-size = Vector2i(1, 1)
+size = Vector2i(1, 4)
 rules = Array[ExtResource("2_k0642")]([SubResource("Resource_1mc0m")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="0"]
+position = Vector2(0, 30)
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="1"]
+position = Vector2(0, 60)
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="2"]
+position = Vector2(0, 90)
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 44.5)
+shape = SubResource("RectangleShape2D_k0642")

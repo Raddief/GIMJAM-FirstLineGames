@@ -22,6 +22,8 @@ var can_produce := true
 enum Facing { LEFT, RIGHT }
 var facing := Facing.RIGHT
 
+var memory: Dictionary = {}
+
 # Drag state
 var dragging := false
 var drag_offset := Vector2.ZERO
@@ -44,7 +46,6 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 	for rule in rules:
 		rule.on_added(self)
 
-# ===== INPUT =====
 # ===== INPUT =====
 func _input(event):
 	if event is InputEventMouseButton:
