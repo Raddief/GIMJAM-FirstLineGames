@@ -28,8 +28,8 @@ animations = [{
 [node name="Alien4" instance=ExtResource("1_23kv5")]
 alien_name = "Bard Toad"
 alien_type = 1
-cost = 130
-production_per_turn = 10
+cost = 180
+production_per_turn = 60
 rules = Array[ExtResource("2_e60en")]([SubResource("Resource_cxdyn")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

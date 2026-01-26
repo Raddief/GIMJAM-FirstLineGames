@@ -8,6 +8,11 @@ class_name Alien
 @export var production_per_turn: int = 1
 @export var size: Vector2i
 
+# CUSTOM SHAPE (Relative to 0,0). 
+# Example L-Shape inside a 2x2 box: [(0,0), (0,1), (1,1)]
+# If empty, we automatically generate a rectangle based on 'size'.
+@export var custom_shape: Array[Vector2i] = []
+
 # Rules attached to this alien
 @export var rules: Array[BaseAlienRule] = []
 
@@ -33,15 +38,29 @@ var grid: GridManager
 
 var external_production_bonus := 0
 
+# ===== HELPER: GET SHAPE =====
+# This is the magic function that bridges the gap.
+func get_shape_offsets() -> Array[Vector2i]:
+	# 1. If we defined a custom shape in the inspector, use it.
+	if not custom_shape.is_empty():
+		return custom_shape
+	
+	# 2. Otherwise, generate a standard rectangle based on 'size'
+	var offsets: Array[Vector2i] = []
+	for x in range(size.x):
+		for y in range(size.y):
+			offsets.append(Vector2i(x, y))
+	return offsets
+
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
 	grid = grid_manager
-
 	cell = start_cell
 	original_cell = cell
 	position = grid.cell_to_world(cell)
 
-	grid.occupy_cell(cell, size, self)
+	# UPDATED: Use get_shape_offsets()
+	grid.occupy_cell(cell, get_shape_offsets(), self)
 
 	for rule in rules:
 		rule.on_added(self)
@@ -84,23 +103,19 @@ func end_drag():
 	z_index = 0
 
 	var target_cell := grid.world_to_cell(global_position)
+	var shape = get_shape_offsets()
 
-# === DEBUG PRINTS ===
-	print("Attempting drop at: ", target_cell)
-	if grid.is_cell_occupied(target_cell, size, self):
-		print("FAIL: Cell ", target_cell, " is occupied by: ", grid.get_occupant(target_cell))
-# ====================
-
-	if grid.is_cell_valid(target_cell) and !grid.is_cell_occupied(target_cell, size, self):
+	if grid.is_cell_valid(target_cell) and !grid.is_cell_occupied(target_cell, shape, self):
 		move_to_cell(target_cell)
 	else:
 		move_to_cell(original_cell)
 
 # ===== MOVE =====
 func move_to_cell(target_cell: Vector2i):
-	grid.free_cell(cell, size)
+	var shape = get_shape_offsets()
+	grid.free_cell(cell, shape)
 	cell = target_cell
-	grid.occupy_cell(cell, size, self)
+	grid.occupy_cell(cell, shape, self)
 
 	position = grid.cell_to_world(cell)
 
@@ -161,7 +176,7 @@ func kill():
 		return
 
 	alive = false
-	grid.free_cell(cell, size)
+	grid.free_cell(cell, get_shape_offsets())
 
 	for rule in rules:
 		rule.on_removed(self)

@@ -21,7 +21,7 @@ func _ready():
 
 	
 	day_manager.start_day(0)
-	CurrencyManager.add(1000) # starting money
+	CurrencyManager.add(500) # starting money
 
 func buy_alien(alien_data: AlienData) -> void:
 	if CurrencyManager.spend(alien_data.price):

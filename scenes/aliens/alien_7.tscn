@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_5efdb"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_cn56h"]
 [ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_v8vs4"]
-[ext_resource type="Script" uid="uid://by1vrcirxj4b4" path="res://scripts/rules/eat_rule.gd" id="3_bjeyy"]
-[ext_resource type="Script" uid="uid://dhdgmlky0b8lw" path="res://scripts/rules/trigger_condition_rule.gd" id="3_mx140"]
-[ext_resource type="Script" uid="uid://0axwe42foyse" path="res://scripts/rules/los_inFrontOf_rule.gd" id="4_bjeyy"]
+[ext_resource type="Script" uid="uid://4pg1cudeuv05" path="res://scripts/rules/eat_rule.gd" id="3_bjeyy"]
+[ext_resource type="Script" uid="uid://di8hvpiaacyxt" path="res://scripts/rules/trigger_condition_rule.gd" id="3_mx140"]
+[ext_resource type="Script" uid="uid://dlyt8raxsyc8o" path="res://scripts/rules/los_inFrontOf_rule.gd" id="4_bjeyy"]
 
 [sub_resource type="Resource" id="Resource_uoksk"]
 script = ExtResource("3_bjeyy")
@@ -40,10 +40,10 @@ animations = [{
 size = Vector2(31, 62)
 
 [node name="Alien7" instance=ExtResource("1_5efdb")]
-alien_name = "Solar Lizard"
+alien_name = "Solaris"
 alien_type = 4
-cost = 4
-production_per_turn = 4
+cost = 140
+production_per_turn = 82
 size = Vector2i(1, 2)
 rules = Array[ExtResource("2_cn56h")]([SubResource("Resource_us2dw")])
 

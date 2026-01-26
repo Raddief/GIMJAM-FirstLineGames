@@ -1,21 +1,25 @@
-[gd_scene load_steps=25 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=29 format=3 uid="uid://bfvg3cyytfdqq"]
 
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
-[ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
-[ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_m2jm4"]
+[ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://Resources/Script/Shop.gd" id="1_vtuwb"]
+[ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://Resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_cc1rn"]
-[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://resources/data/alien_data/Blando.tres" id="3_6sfmx"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="3_s556k"]
-[ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
-[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
-[ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://resources/Asset/UI/secret-book.png" id="4_3kx1x"]
-[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://resources/data/alien_data/Nook.tres" id="4_6sfmx"]
-[ext_resource type="Texture2D" uid="uid://dwe4olxugkvv0" path="res://resources/Asset/UI/cog.png" id="5_rhti7"]
-[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
-[ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://resources/Asset/UI/flying-flag.png" id="6_57nro"]
+[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://Resources/data/alien_data/Blando.tres" id="3_6sfmx"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="3_s556k"]
+[ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://Resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
+[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://Resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
+[ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://Resources/Asset/UI/secret-book.png" id="4_3kx1x"]
+[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://Resources/data/alien_data/Nook.tres" id="4_6sfmx"]
+[ext_resource type="Texture2D" uid="uid://dwe4olxugkvv0" path="res://Resources/Asset/UI/cog.png" id="5_rhti7"]
+[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://Resources/data/alien_data/Pepari.tres" id="5_tcc56"]
+[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://Resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
+[ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://Resources/Asset/UI/flying-flag.png" id="6_57nro"]
 [ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="7_8ebbm"]
-[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
-[ext_resource type="PackedScene" uid="uid://c1drjqsvnhg0t" path="res://resources/Scene/popup.tscn" id="11_57nro"]
+[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://Resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
+[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://Resources/data/alien_data/Gulper.tres" id="8_umvc6"]
+[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://Resources/data/alien_data/Solaris.tres" id="9_attia"]
+[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://Resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
+[ext_resource type="PackedScene" uid="uid://c1drjqsvnhg0t" path="res://Resources/Scene/popup.tscn" id="11_57nro"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mur7"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
@@ -192,7 +196,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vtuwb")
-Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_w7eiy"), ExtResource("3_6sfmx"), ExtResource("5_x2ouj"), ExtResource("4_6sfmx"), ExtResource("7_v31mq")])
+Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_6sfmx"), ExtResource("4_6sfmx"), ExtResource("5_tcc56"), ExtResource("3_w7eiy"), ExtResource("5_x2ouj"), ExtResource("8_umvc6"), ExtResource("9_attia"), ExtResource("10_umvc6"), ExtResource("7_v31mq")])
 metadata/_edit_lock_ = true
 
 [node name="SidePanel" type="Control" parent="."]

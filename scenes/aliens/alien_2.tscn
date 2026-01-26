@@ -29,8 +29,7 @@ animations = [{
 alien_name = "Nook"
 alien_type = 2
 cost = 120
-production_per_turn = 28
-size = Vector2i(1, 1)
+production_per_turn = 44
 rules = Array[ExtResource("2_sydif")]([SubResource("Resource_2f3ca")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

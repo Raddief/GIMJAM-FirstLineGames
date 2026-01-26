@@ -28,7 +28,7 @@ animations = [{
 alien_name = "Blando"
 alien_type = 2
 cost = 100
-production_per_turn = 22
+production_per_turn = 44
 rules = Array[ExtResource("2_heyfl")]([SubResource("Resource_i2qp7")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

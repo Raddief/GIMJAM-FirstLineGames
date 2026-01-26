@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://ke4unhvcgqdw"]
+
+[ext_resource type="PackedScene" uid="uid://dkip4gf2f3w25" path="res://scenes/aliens/alien_9.tscn" id="1_7f76q"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_g4fgh"]
+
+[resource]
+script = ExtResource("2_g4fgh")
+name = "Void Knight"
+alien_trait = "No trait."
+price = 210
+rate = 126
+size = "2 x 1 (L)"
+alien_scene = ExtResource("1_7f76q")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

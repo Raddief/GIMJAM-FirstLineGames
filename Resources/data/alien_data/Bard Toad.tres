@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_2dxtf")
 name = "Bard Toad"
-alien_trait = "Any units directly above, below, left, or right of them gains +4 Credit yield."
+alien_trait = "Any units directly adjacent of Bard Toad gains +4 Credit yield."
 price = 180
-rate = 74
+rate = 60
 size = "1x1"
 alien_scene = ExtResource("1_dcn76")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"
