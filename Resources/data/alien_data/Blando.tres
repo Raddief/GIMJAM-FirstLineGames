@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://df7oswmrte5rn"]
+
+[ext_resource type="PackedScene" uid="uid://bkey2m3inbb2h" path="res://scenes/aliens/alien_1.tscn" id="1_uu8xd"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_x6l3q"]
+
+[resource]
+script = ExtResource("1_x6l3q")
+name = "Blando"
+origin = "How can an alien be so... basic? people says It's the most basic species in the galaxy. Not aggressive not passive. It doesnt morph, breath fire, teleport, or melt reality. It just stands there, taking up space and breathing your expensive oxygen."
+alien_trait = "No trait, just vibes."
+fun_fact = "Blando eggs are often mistaken for smooth rocks."
+price = 100
+rate = 44
+size = "1x1"
+alien_scene = ExtResource("1_uu8xd")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

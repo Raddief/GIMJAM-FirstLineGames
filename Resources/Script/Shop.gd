@@ -9,24 +9,48 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 @onready var anim = $Animation
 
 #Variable Status
-var day = 1
-@export var Database:GDScript
+var day = 6
+@export var Alien : Array[AlienData]
+@export var Item : Dictionary
 
-signal buyAlien(index:int, cost:int)
+var selected_alien : AlienData = null
 
-func showDesc():
+signal buyAlien(alien_data: AlienData)
+
+func showDesc(types:int, object):
 	$BottomPanel.visible = true
+	if types == 0 and object is AlienData:
+		$BottomPanel/Description/Icon.set_text(object.name)
+		$BottomPanel/Description/Contain1.set_text(str(object.price))
+		$BottomPanel/Description/Contain2.set_text(object.origin)
+		$BottomPanel/Description/Contain3.set_text(object.alien_trait)
 
 func addSlot(types:int):
-	match day:
-		1:
-			for i in 4+day:
-				var slot = slots.instantiate()
-				slot.slot = true
-				slot.type = types
-				slot.root = self
-				slot.index = i
-				$SidePanel/Scroll/Scroll/Stock.add_child(slot)
+	if types == 0:
+		var aliens: Array = Alien
+		for i in 4 + day:
+			if i >= aliens.size():
+				break
+			var slot = slots.instantiate()
+			slot.slot = true
+			slot.type = types
+			slot.root = self
+			slot.object = aliens[i]
+			slot.select_slot.connect(select_slot)
+			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
+	else:
+		var items : Dictionary = Item
+		var keys := items.keys()
+		for i in 4 + day:
+			if i >= keys.size():
+				break
+			var slot = slots.instantiate()
+			slot.slot = true
+			slot.type = types
+			slot.root = self
+			slot.object = keys[i]
+			slot.select_slot.connect(select_slot)
+			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
 
 func _on_open_close_pressed() -> void:
 	if $BottomPanel.visible == false && $SidePanel.get_position().x != 1111:
@@ -35,7 +59,8 @@ func _on_open_close_pressed() -> void:
 		anim.play("CloseShop")
 
 func _on_shop_pressed() -> void:
-	if $SidePanel/Menu/MenuList/Shop.get_text() == "Shop" :
+	var text = $SidePanel/Menu/MenuList/Shop.get_text()
+	if text == "Shop" :
 		$SidePanel/Menu/MenuList/Shop.set_text("Aliens")
 		$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/alien-stare.png"))
 		$SidePanel/Menu/MenuList/UseItem.set_text("Items")
@@ -43,7 +68,7 @@ func _on_shop_pressed() -> void:
 		$SidePanel/Menu/MenuList/Journal.set_button_icon(null)
 		$SidePanel/Menu/MenuList/Setting.visible = false
 		$SidePanel/Menu/MenuList/Forfeit.visible = false
-	elif $SidePanel/Menu/MenuList/Shop.get_text() == "Aliens" :
+	elif text == "Aliens" :
 		addSlot(0)
 		$SidePanel/Menu.visible = false
 		$SidePanel/Scroll.visible = true
@@ -52,7 +77,8 @@ func _on_use_item_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_journal_pressed() -> void:
-	if $SidePanel/Menu/MenuList/Journal.get_text() == "Back":
+	var text = $SidePanel/Menu/MenuList/Journal.get_text()
+	if text == "Back":
 		$SidePanel/Menu/MenuList/Shop.set_text("Shop")
 		$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/shopping-cart.png"))
 		$SidePanel/Menu/MenuList/UseItem.set_text("Use Item")
@@ -60,6 +86,8 @@ func _on_journal_pressed() -> void:
 		$SidePanel/Menu/MenuList/Journal.set_button_icon(load("res://Resources/Asset/UI/secret-book.png"))
 		$SidePanel/Menu/MenuList/Setting.visible = true
 		$SidePanel/Menu/MenuList/Forfeit.visible = true
+	elif text == "Journal" :
+		pass
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "CloseShop" :
@@ -73,8 +101,11 @@ func _on_forfeit_pressed() -> void:
 	$Popup.set_text("Are you sure want to surrender?")
 	$Popup.visible = true
 
+func select_slot(types:int, object) -> void:
+	selected_alien = object
+
 func _on_buy_pressed() -> void:
-	emit_signal("buyAlien", 0, 200) #Placeholder index and cost
+	emit_signal("buyAlien", selected_alien)
 
 func _on_popup_confirmed() -> void:
 	get_tree().change_scene_to_packed(Mainmenu)
