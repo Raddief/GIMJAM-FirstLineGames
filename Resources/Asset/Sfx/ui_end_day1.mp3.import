@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://diak4lx4gkvux"
-path="res://.godot/imported/ui_end_day1.mp3-0e8a2cd34f8e66f0cf9bd2f13fd51ad6.mp3str"
+path="res://.godot/imported/ui_end_day1.mp3-f572d9adf2cccae5ccf996a3949acbdc.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/ui_end_day1.mp3"
-dest_files=["res://.godot/imported/ui_end_day1.mp3-0e8a2cd34f8e66f0cf9bd2f13fd51ad6.mp3str"]
+source_file="res://Resources/Asset/Sfx/ui_end_day1.mp3"
+dest_files=["res://.godot/imported/ui_end_day1.mp3-f572d9adf2cccae5ccf996a3949acbdc.mp3str"]
 
 [params]
 
