@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cd1amj22767hk" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="32_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
-[ext_resource type="PackedScene" path="res://resources/Scene/sfx.tscn" id="34_dgi5k"]
+[ext_resource type="PackedScene" path="res://Resources/Scene/sfx.tscn" id="34_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
@@ -72,9 +72,8 @@ script = ExtResource("2_jkv2x")
 days = Array[ExtResource("3_0ld40")]([ExtResource("4_gqmmt"), ExtResource("5_yc10j"), ExtResource("6_jscy8"), ExtResource("8_y6deb"), ExtResource("9_og1vs"), ExtResource("10_2wyq8"), ExtResource("11_vxglm")])
 starting_money = 100
 
-[node name="GridManager" type="Node2D" parent="." node_paths=PackedStringArray("tilemap")]
+[node name="GridManager" type="Node2D" parent="."]
 script = ExtResource("1_0wfyh")
-tilemap = NodePath("../PenLayer")
 
 [node name="AlienManager" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager", "day_manager")]
 z_index = 1
@@ -161,6 +160,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "End Turn"
+theme_override_font_sizes/font_size = 32
 
 [node name="Shop" parent="CanvasLayer" node_paths=PackedStringArray("grid_manager", "alien_manager") instance=ExtResource("27_vxglm")]
 mouse_filter = 2

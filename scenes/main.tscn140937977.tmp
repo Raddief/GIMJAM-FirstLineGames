@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cd1amj22767hk" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="32_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
-[ext_resource type="PackedScene" path="res://resources/Scene/sfx.tscn" id="34_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="34_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
