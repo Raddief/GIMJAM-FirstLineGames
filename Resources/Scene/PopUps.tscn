@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://chguyrh8h8mqh"]
+[gd_scene load_steps=5 format=3 uid="uid://chguyrh8h8mqh"]
 
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="1_8c4hv"]
+[ext_resource type="Script" uid="uid://056golegvos5" path="res://Resources/Script/Popup.gd" id="1_m2qde"]
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="2_4pixp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pixp"]
@@ -16,14 +17,17 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Centering" type="CenterContainer"]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m2qde")
 metadata/_edit_lock_ = true
 
 [node name="GameOver" type="Panel" parent="."]
+visible = false
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4pixp")
@@ -41,31 +45,72 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="GameOver/VBoxContainer"]
 layout_mode = 2
-text = "Header"
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Statistic" type="RichTextLabel" parent="GameOver/VBoxContainer"]
+[node name="Column" type="HBoxContainer" parent="GameOver/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 7
-text = "Contain"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Element" type="VBoxContainer" parent="GameOver/VBoxContainer/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header1" type="Label" parent="GameOver/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Total Gold Gain"
+
+[node name="Header2" type="Label" parent="GameOver/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Total Alien Purchased"
+autowrap_mode = 2
+
+[node name="Number" type="VBoxContainer" parent="GameOver/VBoxContainer/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalGold" type="Label" parent="GameOver/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "1000"
+
+[node name="TotalAlien" type="Label" parent="GameOver/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "1000"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameOver/VBoxContainer"]
 layout_mode = 2
 
 [node name="TryAgain" parent="GameOver/VBoxContainer/HBoxContainer" instance=ExtResource("1_8c4hv")]
-custom_minimum_size = Vector2(64, 32)
+custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Try Again"
 
 [node name="Back" parent="GameOver/VBoxContainer/HBoxContainer" instance=ExtResource("1_8c4hv")]
-custom_minimum_size = Vector2(64, 32)
+custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Back"
 
 [node name="Setting" type="Panel" parent="."]
+visible = false
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4pixp")
@@ -128,3 +173,116 @@ custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Back"
+
+[node name="Forfeit" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4pixp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Forfeit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.078125
+anchor_right = 0.9375
+anchor_bottom = 0.953125
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Forfeit/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 64
+text = "Confirmation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contain" type="RichTextLabel" parent="Forfeit/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_4pixp")
+theme_override_font_sizes/normal_font_size = 32
+text = "Are you sure what are you doing is worth it?"
+
+[node name="Button" type="HBoxContainer" parent="Forfeit/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sure" parent="Forfeit/VBoxContainer/Button" instance=ExtResource("1_8c4hv")]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
+text = "Yeah"
+
+[node name="Refuse" parent="Forfeit/VBoxContainer/Button" instance=ExtResource("1_8c4hv")]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="EndDay" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4pixp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndDay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.078125
+anchor_right = 0.9375
+anchor_bottom = 0.953125
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="EndDay/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "End of the Day"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Column" type="HBoxContainer" parent="EndDay/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Element" type="VBoxContainer" parent="EndDay/VBoxContainer/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header1" type="Label" parent="EndDay/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Gold Gain This Day"
+
+[node name="Number" type="VBoxContainer" parent="EndDay/VBoxContainer/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoldGain" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "1000"
+
+[node name="Continue" parent="EndDay/VBoxContainer" instance=ExtResource("1_8c4hv")]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Next Day"
+
+[connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Forfeit/VBoxContainer/Button/Sure" to="." method="_on_sure_pressed"]
+[connection signal="pressed" from="Forfeit/VBoxContainer/Button/Refuse" to="." method="_on_refuse_pressed"]

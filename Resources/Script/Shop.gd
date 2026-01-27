@@ -10,12 +10,14 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 
 #Variable Status
 var day = 6
+var TotalAliens := 0
 @export var Alien : Array[AlienData]
 @export var Item : Dictionary
 
 var selected_alien : AlienData = null
 
 signal buyAlien(alien_data: AlienData)
+signal Forfeit(condition:bool)
 
 func resetPanel():
 	$SidePanel/Menu/MenuList/Shop.set_text("Shop")
@@ -109,9 +111,7 @@ func _on_setting_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_forfeit_pressed() -> void:
-	get_tree().set_pause(true)
-	$Popup.set_text("Are you sure want to surrender?")
-	$Popup.visible = true
+	emit_signal("Forfeit")
 
 func select_slot(types:int, object) -> void:
 	selected_alien = object

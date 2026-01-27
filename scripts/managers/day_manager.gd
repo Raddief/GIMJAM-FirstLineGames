@@ -13,6 +13,7 @@ var active_modifiers: Array[Resource] = []
 
 signal day_started(day: DayData)
 signal day_ended(day: DayData)
+signal day_fail(condition: bool)
 signal turn_changed(turn_left: int, max_turns: int)
 signal turn_consumed(current: int, total: int) # Logic only
 
@@ -44,7 +45,7 @@ func end_day():
 	if success:
 		start_day(current_day_index + 1)
 	else:
-		print("DAY FAILED")
+		emit_signal("day_fail")
 
 # ===== TURN FLOW =====
 func consume_turn():

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://btwa7qiceg3hx"
-path="res://.godot/imported/Skynight.otf-f2dc9b519e214b67e22c96a262a40fa9.fontdata"
+path="res://.godot/imported/Skynight.otf-e3459cd6fc34386879f84c9b40d09432.fontdata"
 
 [deps]
 
-source_file="res://resources/Asset/Skynight.otf"
-dest_files=["res://.godot/imported/Skynight.otf-f2dc9b519e214b67e22c96a262a40fa9.fontdata"]
+source_file="res://Resources/Asset/Skynight.otf"
+dest_files=["res://.godot/imported/Skynight.otf-e3459cd6fc34386879f84c9b40d09432.fontdata"]
 
 [params]
 

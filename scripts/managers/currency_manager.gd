@@ -3,9 +3,11 @@ extends Node
 signal currency_changed(value: int)
 
 var currency := 0
+var TotalGold := 0
 
 func add(amount: int):
 	currency += amount
+	TotalGold += amount
 	emit_signal("currency_changed", currency)
 
 func spend(amount: int) -> bool:
