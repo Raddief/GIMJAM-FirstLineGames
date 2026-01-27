@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(61.75, 32)
 
 [node name="Alien3" instance=ExtResource("1_p1y5m")]
+z_index = 1
 alien_name = "Faceoff"
 alien_type = 4
 cost = 230

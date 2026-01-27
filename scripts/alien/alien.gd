@@ -75,6 +75,7 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 			flip_button.pressed.connect(_on_flip_button_pressed)
 	
 	sprite.set_offset(Vector2(0, -64 * size.y))
+	self.set_z_index(2)
 	grid = grid_manager
 	cell = start_cell
 	original_cell = cell
@@ -198,6 +199,7 @@ func end_drag():
 		
 		if is_valid_spot and can_afford:
 			CurrencyManager.spend(price)
+			CurrencyManager.emit_signal("AlienPurchased")
 			is_new_purchase = false
 			setup(target_cell, grid)
 		else:

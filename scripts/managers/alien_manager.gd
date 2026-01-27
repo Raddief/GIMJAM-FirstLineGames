@@ -5,24 +5,6 @@ class_name AlienManager
 @export var grid_manager : GridManager
 @export var day_manager : DayManager
 
-func spawn_drag_alien(alien_data: AlienData):
-	# 1. Create the instance
-	var new_alien = alien_data.alien_scene.instantiate()
-	
-	# 2. TRACKING: Add it as a child of AlienManager immediately.
-	# This ensures on_turn_passed() will find it later.
-	add_child(new_alien)
-	
-	# 3. Setup necessary references for Dragging to work
-	new_alien.grid = grid_manager
-	new_alien.is_new_purchase = true
-	new_alien.price = alien_data.price
-	
-	# 4. Position it at the mouse and force-start the drag
-	var mouse_pos = get_global_mouse_position()
-	new_alien.global_position = mouse_pos
-	new_alien.start_drag(mouse_pos)
-
 func spawn_alien(alien_data: AlienData):
 	# 1. Instantiate FIRST to get the data (size)
 	var alien = alien_data.alien_scene.instantiate()

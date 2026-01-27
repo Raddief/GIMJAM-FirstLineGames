@@ -5,6 +5,8 @@ signal currency_changed(value: int)
 var currency := 0
 var TotalGold := 0
 
+signal AlienPurchased(bool)
+
 func add(amount: int):
 	currency += amount
 	TotalGold += amount

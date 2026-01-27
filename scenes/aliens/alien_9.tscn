@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(63.5, 64)
 
 [node name="Alien9" instance=ExtResource("1_ye6nl")]
+z_index = 1
 alien_name = "Void Knight"
 cost = 390
 production_per_turn = 290

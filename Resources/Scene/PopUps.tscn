@@ -129,7 +129,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="Label" parent="Setting/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4pixp")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 64
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -146,14 +146,14 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_4pixp")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 32
 text = "GUI Volume"
 
 [node name="BGM" type="Label" parent="Setting/VBoxContainer/Column/Element"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_4pixp")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 32
 text = "BGM Volume"
 
 [node name="Slider" type="VBoxContainer" parent="Setting/VBoxContainer/Column"]
@@ -163,12 +163,14 @@ size_flags_horizontal = 3
 [node name="GUI" type="HSlider" parent="Setting/VBoxContainer/Column/Slider"]
 layout_mode = 2
 size_flags_vertical = 3
+min_value = -50.0
+max_value = 10.0
 
 [node name="BGM" type="HSlider" parent="Setting/VBoxContainer/Column/Slider"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Back" parent="Setting/VBoxContainer" instance=ExtResource("1_8c4hv")]
+[node name="Continues" parent="Setting/VBoxContainer" instance=ExtResource("1_8c4hv")]
 custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -243,16 +245,25 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="Label" parent="EndDay/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4pixp")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "End of the Day"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Congrats" type="Label" parent="EndDay/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Congratulation, you just pass the "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Column" type="HBoxContainer" parent="EndDay/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 15
 
 [node name="Element" type="VBoxContainer" parent="EndDay/VBoxContainer/Column"]
 layout_mode = 2
@@ -263,26 +274,71 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pixp")
 theme_override_font_sizes/font_size = 32
-text = "Gold Gain This Day"
+text = "Credits Gain This Day"
+
+[node name="Header2" type="Label" parent="EndDay/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Quota of The Day"
+
+[node name="Line" type="Label" parent="EndDay/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "________________"
+
+[node name="Header4" type="Label" parent="EndDay/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Remaining Credits"
 
 [node name="Number" type="VBoxContainer" parent="EndDay/VBoxContainer/Column"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GoldGain" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+[node name="CurrentGold" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pixp")
 theme_override_font_sizes/font_size = 32
-text = "1000"
+text = "69"
+
+[node name="Quota" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "67"
+
+[node name="Line" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "_____ -"
+
+[node name="Credit" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "67"
 
 [node name="Continue" parent="EndDay/VBoxContainer" instance=ExtResource("1_8c4hv")]
-custom_minimum_size = Vector2(64, 32)
+custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Next Day"
 
 [connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="drag_ended" from="Setting/VBoxContainer/Column/Slider/GUI" to="." method="_on_gui_drag_ended"]
+[connection signal="pressed" from="Setting/VBoxContainer/Continues" to="." method="_on_continues_pressed"]
 [connection signal="pressed" from="Forfeit/VBoxContainer/Button/Sure" to="." method="_on_sure_pressed"]
 [connection signal="pressed" from="Forfeit/VBoxContainer/Button/Refuse" to="." method="_on_refuse_pressed"]
+[connection signal="pressed" from="EndDay/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

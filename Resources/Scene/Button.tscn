@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://05xxhmggpbl7"]
 
-[ext_resource type="Script" uid="uid://b5l5ynsh8mihb" path="res://resources/Script/Button.gd" id="1_pr0i5"]
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_suixg"]
+[ext_resource type="Script" uid="uid://b5l5ynsh8mihb" path="res://Resources/Script/Button.gd" id="1_pr0i5"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_suixg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfxc5"]
 bg_color = Color(0.12156863, 0.16078432, 0.21568628, 1)

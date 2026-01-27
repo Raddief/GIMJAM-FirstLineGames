@@ -10,6 +10,8 @@ signal on_end_turn
 
 var target_money := 0
 
+signal NewDay(condition:bool)
+
 func _ready():
 	end_turn_button.pressed.connect(_on_end_turn_pressed)
 

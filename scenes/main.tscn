@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=41 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cd1amj22767hk" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="32_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="34_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
@@ -175,21 +176,25 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="PenOpen" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(736, 531)
 texture = ExtResource("33_j8jky")
 metadata/_edit_lock_ = true
 
 [node name="PenLayer" type="TileMapLayer" parent="."]
+z_index = 1
 position = Vector2(94, 274)
 tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_o6xl0")
 
 [node name="GlassDome" type="Sprite2D" parent="."]
 visible = false
+z_index = 100
 position = Vector2(736, 531)
 texture = ExtResource("35_kmb1v")
 
 [node name="Lamp" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1680, 134)
 texture = ExtResource("36_fuf3a")
 
@@ -207,5 +212,15 @@ texture = ExtResource("23_og1vs")
 shape = SubResource("RectangleShape2D_2wyq8")
 
 [node name="Lamp2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1680, 543)
 texture = ExtResource("36_fuf3a")
+
+[node name="Sfx" parent="." instance=ExtResource("34_dgi5k")]
+
+[node name="SpawnPeople" type="Timer" parent="."]
+autostart = true
+
+[node name="ForPeople" type="Node2D" parent="."]
+
+[connection signal="timeout" from="SpawnPeople" to="." method="_on_spawn_people_timeout"]
