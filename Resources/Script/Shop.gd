@@ -25,14 +25,23 @@ func resetPanel():
 	$SidePanel/Menu/MenuList/Journal.set_button_icon(load("res://Resources/Asset/UI/secret-book.png"))
 	$SidePanel/Menu/MenuList/Setting.visible = true
 	$SidePanel/Menu/MenuList/Forfeit.visible = true
+	$SidePanel/Menu.visible = true
+	$BottomPanel.visible = false
+	$SidePanel/Scroll.visible = false
+	for i in $SidePanel/Scroll/Scroll/Stock.get_child_count():
+		$SidePanel/Scroll/Scroll/Stock.get_child($SidePanel/Scroll/Scroll/Stock.get_child_count(true)-(i+1)).queue_free()
 
 func showDesc(types:int, object):
 	$BottomPanel.visible = true
 	if types == 0 and object is AlienData:
+		var AlienScene = selected_alien.alien_scene.instantiate()
+		$BottomPanel/Description/Icon.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
+.get_frame_texture("default",0))
 		$BottomPanel/Description/Icon.set_text(object.name)
 		$BottomPanel/Description/Contain1.set_text(str(object.price))
 		$BottomPanel/Description/Contain2.set_text(object.origin)
 		$BottomPanel/Description/Contain3.set_text(object.alien_trait)
+		$BottomPanel/Description/Contain4.set_text(str(object.rate))
 
 func addSlot(types:int):
 	if types == 0:
@@ -41,9 +50,12 @@ func addSlot(types:int):
 			if i >= aliens.size():
 				break
 			var slot = slots.instantiate()
+			var AlienScene = aliens[i].alien_scene.instantiate()
 			slot.slot = true
 			slot.type = types
 			slot.root = self
+			slot.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
+.get_frame_texture("default",0))
 			slot.object = aliens[i]
 			slot.select_slot.connect(select_slot)
 			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
@@ -62,10 +74,8 @@ func addSlot(types:int):
 			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
 
 func _on_open_close_pressed() -> void:
-	print($SidePanel.get_anchor(SIDE_LEFT))
 	if $SidePanel.get_anchor(SIDE_LEFT) < 1 :
 		resetPanel()
-		$BottomPanel.visible = false
 		anim.play("CloseShop")
 	elif $SidePanel.get_anchor(SIDE_LEFT) > 1:
 		anim.play("OpenShop")
