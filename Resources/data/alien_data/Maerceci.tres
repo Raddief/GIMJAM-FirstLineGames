@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://ddx4jldnoyidc"]
+
+[ext_resource type="PackedScene" uid="uid://c4xuqp73jplsy" path="res://scenes/aliens/alien_maerceci.tscn" id="1_8d88s"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_abdal"]
+
+[resource]
+script = ExtResource("1_abdal")
+name = "Maerceci"
+origin = "A \"Toxic\" Alien."
+alien_trait = "When placed, all adjacent tiles to Maerceci become residue."
+price = 500
+rate = 120
+size = "1x1"
+alien_scene = ExtResource("1_8d88s")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

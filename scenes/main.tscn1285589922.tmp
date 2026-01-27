@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=31 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -27,11 +27,6 @@
 [ext_resource type="Script" uid="uid://b83c0lexhyul3" path="res://scripts/remove_area.gd" id="23_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="23_og1vs"]
 [ext_resource type="PackedScene" uid="uid://bfvg3cyytfdqq" path="res://resources/Scene/Shop.tscn" id="27_vxglm"]
-[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="28_pibwh"]
-[ext_resource type="Resource" uid="uid://qp6fip1wk40b" path="res://resources/data/alien_data/Hazmat Crab.tres" id="38_nvyfr"]
-[ext_resource type="Resource" uid="uid://d36rekxlia30u" path="res://resources/data/alien_data/Grubber.tres" id="39_5poiv"]
-[ext_resource type="Resource" uid="uid://cyv6jsmbcyhvo" path="res://resources/data/alien_data/Flower Buff.tres" id="40_2cjbq"]
-[ext_resource type="Resource" uid="uid://ddx4jldnoyidc" path="res://resources/data/alien_data/Maerceci.tres" id="41_chjal"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 texture = ExtResource("4_tbgi4")
@@ -212,4 +207,3 @@ text = "TURN: 0/0"
 
 [node name="Shop" parent="CanvasLayer" instance=ExtResource("27_vxglm")]
 mouse_filter = 2
-Alien = Array[ExtResource("28_pibwh")]([ExtResource("38_nvyfr"), ExtResource("39_5poiv"), ExtResource("40_2cjbq"), ExtResource("41_chjal")])

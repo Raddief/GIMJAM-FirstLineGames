@@ -1,6 +1,16 @@
 extends Resource
 class_name BaseAlienRule
 
+enum TileRange{
+	NONE,
+	CELL,
+	ADJACENT,
+	AREA
+}
+
+@export var tile_range: TileRange = TileRange.NONE
+@export var radius := 1
+
 # ==================================================
 # CORE RULE EVALUATION
 # ==================================================
@@ -40,7 +50,8 @@ func on_turn_start(alien, grid) -> void:
 
 # Dipanggil SETIAP turn setelah ekonomi
 func on_turn_end(alien, grid) -> void:
-	pass
+	if !grid.get_tile_state(alien.cell) == GridManager.SpaceCondition.CLEAN:
+		alien.kill()
 
 # Dipanggil SETIAP akhir day
 func on_day_end(alien, grid) -> void:

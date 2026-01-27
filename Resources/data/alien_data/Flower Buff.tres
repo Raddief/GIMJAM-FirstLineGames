@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://cyv6jsmbcyhvo"]
+
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_lrysi"]
+[ext_resource type="PackedScene" uid="uid://7d0ws0moy2e" path="res://scenes/aliens/alien_flowerBuff.tscn" id="1_xaefr"]
+
+[resource]
+script = ExtResource("1_lrysi")
+name = "Flower Buff"
+alien_trait = "- Can only stand adjacent to a residue.
+- Gives +12 Credit Yield to all adjacent Aliens."
+price = 120
+rate = 65
+size = "1x1"
+alien_scene = ExtResource("1_xaefr")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

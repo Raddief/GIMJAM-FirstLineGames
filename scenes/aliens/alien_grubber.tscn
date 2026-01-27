@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8bi2n1yjxebh"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_tgi8i"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_a7pwt"]
+[ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_toye2"]
+[ext_resource type="Script" uid="uid://bgjireooyc5g5" path="res://scripts/rules/residue_dependent_rule.gd" id="3_ymrir"]
+
+[sub_resource type="Resource" id="Resource_qkin8"]
+script = ExtResource("3_ymrir")
+die_if_missing = true
+tile_range = 1
+metadata/_custom_type_script = "uid://bgjireooyc5g5"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7pwt"]
+atlas = ExtResource("2_toye2")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymrir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7pwt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alien" instance=ExtResource("1_tgi8i")]
+alien_name = "Grubber"
+alien_type = 1
+production_per_turn = 30
+rules = Array[ExtResource("2_a7pwt")]([SubResource("Resource_qkin8")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ymrir")

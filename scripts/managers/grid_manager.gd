@@ -9,7 +9,7 @@ class_name GridManager
 # ===== TILE STATE =====
 enum SpaceCondition {
 	CLEAN,
-	SLIME,
+	TOXIC,
 	RADIATION,
 	HEAT,
 	VACUUM
@@ -17,7 +17,7 @@ enum SpaceCondition {
 
 enum AlienType {
 	NONE,
-	FARMER,
+	TOXIC,
 	SLIME,
 	QUEEN,
 	PREDATOR
@@ -26,7 +26,7 @@ enum AlienType {
 # TileState -> Atlas Coordinate
 var TILE_ATLAS := {
 	SpaceCondition.CLEAN: Vector2i(0, 0),
-	SpaceCondition.SLIME: Vector2i(1, 0),
+	SpaceCondition.TOXIC: Vector2i(1, 0),
 	SpaceCondition.RADIATION: Vector2i(2, 0),
 	SpaceCondition.HEAT: Vector2i(3, 0),
 	SpaceCondition.VACUUM: Vector2i(0, 1)
@@ -145,9 +145,9 @@ func free_cell(origin: Vector2i, offsets: Array[Vector2i]):
 func _input(event):
 	if event is InputEventMouseButton \
 	and event.pressed \
-	and event.button_index == MOUSE_BUTTON_LEFT:
+	and event.button_index == MOUSE_BUTTON_RIGHT:
 
 		var cell := world_to_cell(event.position)
 		if is_cell_valid(cell):
-			#set_tile_state(cell, SpaceCondition.SLIME)
+			set_tile_state(cell, SpaceCondition.TOXIC)
 			pass

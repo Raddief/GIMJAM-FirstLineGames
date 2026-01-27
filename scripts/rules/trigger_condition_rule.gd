@@ -79,6 +79,8 @@ func on_turn_start(alien, grid) -> void:
 		rule.on_turn_start(alien, grid)
 
 func on_turn_end(alien, grid) -> void:
+	super.on_turn_end(alien, grid)
+	
 	if trigger_rule and not trigger_rule.is_condition_met(alien, grid):
 		return
 

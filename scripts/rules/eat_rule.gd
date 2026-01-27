@@ -2,6 +2,8 @@ extends BaseAlienRule
 class_name EatTargetRule
 
 func on_turn_end(alien: Alien, grid: GridManager) -> void:
+	super.on_turn_end(alien, grid)
+
 	# 1. Check for list
 	if not alien.memory.has("targets"): return
 	

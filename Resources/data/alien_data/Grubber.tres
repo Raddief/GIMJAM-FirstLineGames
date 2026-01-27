@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://d36rekxlia30u"]
+
+[ext_resource type="PackedScene" uid="uid://c8bi2n1yjxebh" path="res://scenes/aliens/alien_grubber.tscn" id="1_1k8lt"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_ifhjg"]
+
+[resource]
+script = ExtResource("1_ifhjg")
+name = "Grubber"
+origin = "A \"Toxic\" Alien."
+alien_trait = "Can only stand on residue."
+price = 90
+rate = 30
+size = "1x1"
+alien_scene = ExtResource("1_1k8lt")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

@@ -2,7 +2,6 @@ extends BaseAlienRule
 class_name AdjacentBonusEmitterRule
 
 @export var bonus := 1
-@export var radius := 1
 @export var required_type : GridManager.AlienType = GridManager.AlienType.NONE
 
 func on_turn_start(alien, grid) -> void:

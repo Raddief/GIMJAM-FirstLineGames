@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://qp6fip1wk40b"]
+
+[ext_resource type="PackedScene" uid="uid://gu6cwguo81eu" path="res://scenes/aliens/alien_hazmatCrab.tscn" id="1_2cari"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_lqe00"]
+
+[resource]
+script = ExtResource("1_lqe00")
+name = "Hazmat Crab"
+origin = "A \"Toxic\" alien. "
+alien_trait = "Can stand and will not be damaged by any kind of residue."
+price = 80
+rate = 17
+size = "1x2"
+alien_scene = ExtResource("1_2cari")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

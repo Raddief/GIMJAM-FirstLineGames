@@ -7,6 +7,8 @@ class_name ExplodeAfterTurnsRule
 var turns := 0
 
 func on_turn_end(alien, grid) -> void:
+	super.on_turn_end(alien, grid)
+	
 	turns += 1
 
 	if turns >= explode_after:

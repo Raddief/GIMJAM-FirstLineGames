@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4xuqp73jplsy"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_i4604"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_qm60p"]
+[ext_resource type="Script" uid="uid://bpx4y1k0otst1" path="res://scripts/rules/residue_after_day_rule.gd" id="3_161ev"]
+
+[sub_resource type="Resource" id="Resource_mpg2h"]
+script = ExtResource("3_161ev")
+overwrite_existing = true
+tile_range = 2
+metadata/_custom_type_script = "uid://bpx4y1k0otst1"
+
+[node name="Alien" instance=ExtResource("1_i4604")]
+alien_name = "Maerceci"
+alien_type = 1
+production_per_turn = 120
+rules = Array[ExtResource("2_qm60p")]([SubResource("Resource_mpg2h")])
