@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ResidueDependentRule" load_steps=2 format=3 uid="uid://8imyc0vw0uv7"]
+
+[ext_resource type="Script" uid="uid://bgjireooyc5g5" path="res://scripts/rules/residue_dependent_rule.gd" id="1_aar4a"]
+
+[resource]
+script = ExtResource("1_aar4a")
+die_if_missing = true
+metadata/_custom_type_script = "uid://bgjireooyc5g5"

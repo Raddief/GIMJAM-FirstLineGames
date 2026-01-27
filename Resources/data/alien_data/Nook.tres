@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://bpwc1ue3sk1qk"]
+
+[ext_resource type="PackedScene" uid="uid://dwcmw2dsqno7j" path="res://scenes/aliens/alien_2.tscn" id="1_27pci"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_dllj8"]
+
+[resource]
+script = ExtResource("1_dllj8")
+name = "Nook"
+alien_trait = "When put in any of the 4 corners of the Pen, increases yield value."
+price = 120
+rate = 56
+size = "1x1"
+alien_scene = ExtResource("1_27pci")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

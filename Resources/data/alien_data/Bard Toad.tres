@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://csn57nj40yl0s"]
+
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_2dxtf"]
+[ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_4.tscn" id="1_dcn76"]
+
+[resource]
+script = ExtResource("1_2dxtf")
+name = "Bard Toad"
+alien_trait = "Any units directly adjacent of Bard Toad gains +4 Credit yield."
+price = 180
+rate = 60
+size = "1x1"
+alien_scene = ExtResource("1_dcn76")
+metadata/_custom_type_script = "uid://bh7kmmuvf7682"

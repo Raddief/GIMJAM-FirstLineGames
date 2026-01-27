@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://7d0ws0moy2e"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_8rp2c"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_irr2s"]
+[ext_resource type="Script" uid="uid://bgjireooyc5g5" path="res://scripts/rules/residue_dependent_rule.gd" id="3_2m2lm"]
+[ext_resource type="Script" uid="uid://blef1pmhv53kd" path="res://scripts/rules/adjacent_bonus_emitter_rule.gd" id="4_f6mj0"]
+
+[sub_resource type="Resource" id="Resource_mkwgd"]
+script = ExtResource("3_2m2lm")
+die_if_missing = true
+tile_range = 2
+metadata/_custom_type_script = "uid://bgjireooyc5g5"
+
+[sub_resource type="Resource" id="Resource_d6eoq"]
+script = ExtResource("4_f6mj0")
+metadata/_custom_type_script = "uid://blef1pmhv53kd"
+
+[node name="Alien" instance=ExtResource("1_8rp2c")]
+alien_name = "Flower Buff"
+alien_type = 1
+production_per_turn = 65
+rules = Array[ExtResource("2_irr2s")]([SubResource("Resource_mkwgd"), SubResource("Resource_d6eoq")])

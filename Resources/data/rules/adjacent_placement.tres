@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AdjacentPlacementRule" load_steps=2 format=3 uid="uid://cggdgduury6t0"]
+
+[ext_resource type="Script" uid="uid://biwgc576ldywb" path="res://scripts/rules/adjacent_placement_rule.gd" id="1_6xdvr"]
+
+[resource]
+script = ExtResource("1_6xdvr")
+required_type = 2
+metadata/_custom_type_script = "uid://biwgc576ldywb"

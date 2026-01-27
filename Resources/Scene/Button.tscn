@@ -50,8 +50,6 @@ anchors_preset = -1
 anchor_right = 0.05
 anchor_bottom = 0.089
 offset_bottom = -0.08000183
-size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_suixg")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_yfxc5")
@@ -63,6 +61,11 @@ expand_icon = true
 script = ExtResource("1_pr0i5")
 
 [node name="Sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="AlienNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

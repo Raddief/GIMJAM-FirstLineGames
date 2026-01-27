@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://oqg1p1p8hme7"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_npce0"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_k0642"]
+[ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_kyljg"]
+[ext_resource type="Script" uid="uid://dipeur6e8kb76" path="res://scripts/rules/immovable.gd" id="4_2534d"]
+
+[sub_resource type="Resource" id="Resource_1mc0m"]
+script = ExtResource("4_2534d")
+metadata/_custom_type_script = "uid://dipeur6e8kb76"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0642"]
+atlas = ExtResource("2_kyljg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2534d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0642")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0642"]
+size = Vector2(31, 121)
+
+[node name="Alien5" instance=ExtResource("1_npce0")]
+alien_name = "Obelisk"
+alien_type = 3
+cost = 900
+production_per_turn = 250
+size = Vector2i(1, 4)
+rules = Array[ExtResource("2_k0642")]([SubResource("Resource_1mc0m")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="0"]
+position = Vector2(0, 30)
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="1"]
+position = Vector2(0, 60)
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="2"]
+position = Vector2(0, 90)
+sprite_frames = SubResource("SpriteFrames_2534d")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 44.5)
+shape = SubResource("RectangleShape2D_k0642")

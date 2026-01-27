@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResidueAfterDayRule" load_steps=2 format=3 uid="uid://c2nnjj8f248gl"]
+
+[ext_resource type="Script" uid="uid://bpx4y1k0otst1" path="res://scripts/rules/residue_after_day_rule.gd" id="1_l0mci"]
+
+[resource]
+script = ExtResource("1_l0mci")
+residue_type = 4
+affect_self_tile = false
+radius = 1
+overwrite_existing = true
+metadata/_custom_type_script = "uid://bpx4y1k0otst1"

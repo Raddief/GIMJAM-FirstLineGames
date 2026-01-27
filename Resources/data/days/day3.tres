@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DayData" load_steps=4 format=3 uid="uid://bne2lhjrlqi1h"]
+
+[ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_6xr1o"]
+[ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_cjsfv"]
+
+[sub_resource type="Resource" id="Resource_wn1ow"]
+script = ExtResource("1_6xr1o")
+metadata/_custom_type_script = "uid://dkufqtjv5avif"
+
+[resource]
+script = ExtResource("1_cjsfv")
+day_name = "Wednesday"
+money_target = 28
+day_modifiers = Array[ExtResource("1_6xr1o")]([SubResource("Resource_wn1ow")])
+metadata/_custom_type_script = "uid://tc2rdebi4ptf"
