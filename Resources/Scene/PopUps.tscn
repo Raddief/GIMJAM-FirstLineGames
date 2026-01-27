@@ -281,20 +281,48 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pixp")
 theme_override_font_sizes/font_size = 32
-text = "Credits Spend This Day"
+text = "Quota of The Day"
+
+[node name="Line" type="Label" parent="EndDay/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "________________"
+
+[node name="Header4" type="Label" parent="EndDay/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Remaining Credits"
 
 [node name="Number" type="VBoxContainer" parent="EndDay/VBoxContainer/Column"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GoldGain" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+[node name="CurrentGold" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pixp")
 theme_override_font_sizes/font_size = 32
 text = "69"
 
-[node name="GoldSpend" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+[node name="Quota" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "67"
+
+[node name="Line" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "_____ -"
+
+[node name="Credit" type="Label" parent="EndDay/VBoxContainer/Column/Number"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pixp")

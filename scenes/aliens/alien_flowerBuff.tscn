@@ -16,6 +16,7 @@ script = ExtResource("4_f6mj0")
 metadata/_custom_type_script = "uid://blef1pmhv53kd"
 
 [node name="Alien" instance=ExtResource("1_8rp2c")]
+z_index = 1
 alien_name = "Flower Buff"
 alien_type = 1
 production_per_turn = 65

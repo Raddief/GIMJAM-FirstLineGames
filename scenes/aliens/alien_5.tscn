@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://oqg1p1p8hme7"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_npce0"]
-[ext_resource type="AudioStream" uid="uid://bu8vdptujrdfj" path="res://resources/Asset/Sfx/alien_obelisk_spawn.mp3" id="2_2534d"]
+[ext_resource type="AudioStream" uid="uid://bu8vdptujrdfj" path="res://Resources/Asset/Sfx/alien_obelisk_spawn.mp3" id="2_2534d"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_k0642"]
 [ext_resource type="Script" uid="uid://dipeur6e8kb76" path="res://scripts/rules/immovable.gd" id="4_2534d"]
 [ext_resource type="Texture2D" uid="uid://ciquc0j5073nt" path="res://assets/obelisk.png" id="5_2534d"]
@@ -25,6 +25,7 @@ animations = [{
 size = Vector2(31, 121)
 
 [node name="Alien5" instance=ExtResource("1_npce0")]
+z_index = 1
 alien_name = "Obelisk"
 alien_type = 3
 cost = 2000
