@@ -7,7 +7,7 @@
 script = ExtResource("1_05irw")
 name = "Obelisk"
 alien_trait = "Cannot be moved."
-price = 900
+price = 2000
 rate = 600
 size = "1x4"
 alien_scene = ExtResource("1_85ggw")

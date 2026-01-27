@@ -19,6 +19,7 @@ func _on_end_turn_pressed():
 func on_day_started(day: DayData):
 	day_label.text = "Day: " + str(day.day_name)
 	target_money = day.money_target
+	on_money_changed(CurrencyManager.currency)
 
 func on_day_ended(day: DayData):
 	day_label.text = "Day: " + str(day.day_name) + " (Ended)"

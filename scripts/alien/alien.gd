@@ -22,7 +22,13 @@ class_name Alien
 var cell: Vector2i
 var alive := true
 var can_produce := true
-var BreathAnim: float = 0
+
+# Breathing State
+var breath_state := 0        # 0 = shrinking, 1 = growing
+var breath_vel := 0.0        # Current velocity of the scale change
+var breath_accel := 0.0      # Speed at which velocity changes
+var breath_max_vel := 0.0    # The limit for velocity
+
 # Facing (for direction-based rules)
 enum Facing { LEFT, RIGHT }
 var facing := Facing.RIGHT
@@ -65,6 +71,16 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 
 	for rule in rules:
 		rule.on_added(self)
+		
+	# Initialize Breathing (RPG Maker Translation)
+	var sprite_height = $AnimatedSprite2D.sprite_frames.get_frame_texture($AnimatedSprite2D.animation, 0).get_height()
+	
+	# Logic: Smaller height = faster/larger relative pulse
+	breath_accel = 0.00003 + (0.01 / sprite_height) + (randf() * 0.00001)
+	breath_max_vel = 0.0006 + (0.25 / sprite_height)
+	
+	# Randomize start so they aren't all in sync
+	breath_vel = randf_range(-breath_max_vel, breath_max_vel)
 
 # ===== INPUT =====
 func _input(event):
@@ -191,15 +207,15 @@ func _is_mouse_on_self(mouse_pos: Vector2) -> bool:
 	# We calculate the rect based on the 'size' variable you exported.
 	
 	# Assuming your sprite anchor is Top-Left based on your grid logic:
-	var alien_width = size.x * 64 # Assuming 64 is tile size
-	var alien_height = size.y * 64
+	var alien_width = size.x * 128 # Assuming 64 is tile size
+	var alien_height = size.y * 128
 	
 	# If your sprites are centered, you need to offset the Rect. 
 	# Based on your previous 'global_position - Vector2(32, 32)', 
 	# it seems your pivot is the Center of the first tile. 
 	
 	# This creates a rect starting at top-left of the sprite
-	var top_left = global_position - Vector2(32, 32)
+	var top_left = global_position - Vector2(alien_width / 2.0, alien_height / 2.0)
 	var rect_size = Vector2(alien_width, alien_height)
 	
 	var rect := Rect2(top_left, rect_size)
@@ -207,18 +223,24 @@ func _is_mouse_on_self(mouse_pos: Vector2) -> bool:
 	return rect.has_point(mouse_pos)
 
 # ===== DEBUG VISUAL =====
-func _process(_delta):
-	BreathAnim += _delta
-	if BreathAnim <= 2 && self.scale.y <= 2 :
-		self.scale.y += randf_range(0,0.01)
-		self.position.x += randf_range(0,0.01)
-	elif BreathAnim <= 4 && self.scale.y >= 1:
-		self.scale.y -= randf_range(0,0.01)
-		self.position.x -= randf_range(0,0.01)
-	elif BreathAnim >= 4 : 
-		BreathAnim = 0
+func _process(delta):
+	# Multiply by delta (usually ~0.016) to normalize speed
+	var speed_multiplier = delta * 60.0 
+	
+	if breath_state == 0:
+		breath_vel -= breath_accel * speed_multiplier
+		scale.y += breath_vel * speed_multiplier
+		if breath_vel <= -breath_max_vel:
+			breath_state = 1
+	else:
+		breath_vel += breath_accel * speed_multiplier
+		scale.y += breath_vel * speed_multiplier
+		if breath_vel >= breath_max_vel:
+			breath_state = 0
+			
+	# 2. VISUAL FEEDBACK (Your existing logic)
 	if !can_produce:
-		modulate = Color(1, 0.5, 0.5) # merah = tidak produksi
+		modulate = Color(1, 0.5, 0.5) 
 	else:
 		modulate = Color.WHITE
 

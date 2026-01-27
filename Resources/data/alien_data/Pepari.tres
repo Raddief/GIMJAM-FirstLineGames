@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://y7f44vxhje8"]
 
-[ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_6.tscn" id="1_52p0k"]
+[ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_pepari.tscn" id="1_52p0k"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_bi0po"]
 
 [resource]

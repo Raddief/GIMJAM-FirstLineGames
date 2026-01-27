@@ -29,8 +29,8 @@ size = Vector2(63.5, 64)
 
 [node name="Alien9" instance=ExtResource("1_ye6nl")]
 alien_name = "Void Knight"
-cost = 210
-production_per_turn = 126
+cost = 390
+production_per_turn = 290
 custom_shape = Array[Vector2i]([Vector2i(0, 1), Vector2i(-1, 1)])
 rules = Array[ExtResource("2_evfl2")]([SubResource("Resource_ysvn1")])
 

@@ -10,6 +10,6 @@ metadata/_custom_type_script = "uid://dkufqtjv5avif"
 [resource]
 script = ExtResource("1_c3l8r")
 day_name = "Tuesday"
-money_target = 18
+money_target = 2300
 day_modifiers = Array[ExtResource("1_kxo1b")]([SubResource("Resource_jus2c")])
 metadata/_custom_type_script = "uid://tc2rdebi4ptf"

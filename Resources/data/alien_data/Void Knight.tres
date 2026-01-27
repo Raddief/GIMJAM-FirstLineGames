@@ -7,8 +7,8 @@
 script = ExtResource("2_g4fgh")
 name = "Void Knight"
 alien_trait = "No trait."
-price = 210
-rate = 126
+price = 390
+rate = 290
 size = "2 x 1 (L)"
 alien_scene = ExtResource("1_7f76q")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

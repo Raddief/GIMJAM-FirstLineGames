@@ -7,8 +7,8 @@
 script = ExtResource("1_j8v2y")
 name = "Faceoff"
 alien_trait = "Can only yield Credits when put on the Top Row."
-price = 170
-rate = 88
+price = 230
+rate = 138
 size = "2x1"
 alien_scene = ExtResource("1_syj0r")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

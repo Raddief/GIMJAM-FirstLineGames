@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkey2m3inbb2h"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_tgk1h"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_jup13"]
+[ext_resource type="Script" uid="uid://cda63q8gt0t3v" path="res://scripts/rules/no_rule.gd" id="3_hdsbi"]
+[ext_resource type="Texture2D" uid="uid://bonfh2uicmo3f" path="res://assets/blando.png" id="4_jlrg6"]
+
+[sub_resource type="Resource" id="Resource_i2qp7"]
+script = ExtResource("3_hdsbi")
+metadata/_custom_type_script = "uid://cda63q8gt0t3v"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mnjxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jlrg6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alien1" instance=ExtResource("1_tgk1h")]
+alien_name = "Blando"
+alien_type = 2
+cost = 100
+production_per_turn = 44
+rules = Array[ExtResource("2_jup13")]([SubResource("Resource_i2qp7")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_mnjxg")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+scale = Vector2(4, 4)

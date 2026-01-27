@@ -7,8 +7,8 @@
 script = ExtResource("2_h7arc")
 name = "Solaris"
 alien_trait = "Any aliens standing 1 tile in front of Solaris will gain a debuff of -8 Credit Yield."
-price = 140
-rate = 82
+price = 300
+rate = 197
 size = "1x2"
 alien_scene = ExtResource("1_r1fan")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

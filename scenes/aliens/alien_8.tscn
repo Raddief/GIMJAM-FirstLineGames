@@ -44,8 +44,8 @@ size = Vector2(31, 62)
 [node name="Alien8" instance=ExtResource("1_q5ee6")]
 alien_name = "Gulper"
 alien_type = 1
-cost = 200
-production_per_turn = 112
+cost = 330
+production_per_turn = 212
 size = Vector2i(1, 2)
 rules = Array[ExtResource("2_du74q")]([SubResource("Resource_cqjeu")])
 
