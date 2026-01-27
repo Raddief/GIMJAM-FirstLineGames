@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 CurrencyManager="*res://scripts/managers/currency_manager.gd"
 AudioManager="*res://Resources/Script/AudioManager.gd"
+Music="*res://Resources/Scene/music.tscn"
 
 [display]
 
