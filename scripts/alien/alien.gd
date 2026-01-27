@@ -136,7 +136,7 @@ func start_drag(mouse_pos: Vector2):
 
 func end_drag():
 	dragging = false
-	z_index = 0
+	z_index = 2
 	var overlaps = area_2d.get_overlapping_areas()
 
 	for area in overlaps:
