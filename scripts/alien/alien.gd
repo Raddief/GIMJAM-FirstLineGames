@@ -247,6 +247,9 @@ func on_turn_passed():
 	for rule in rules:
 		rule.on_turn_start(self, grid)
 
+	if !alive: 
+		return
+	
 	# Economy
 	if can_produce:
 		CurrencyManager.add(production_per_turn + bonus_production + external_production_bonus)

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_bi0po")
 name = "Pepari"
-alien_trait = "Pepari is invisible to those that are behind them."
+alien_trait = "Pepari is invisible to any aliens standing behind them."
 price = 150
 rate = 84
 size = "1x2"

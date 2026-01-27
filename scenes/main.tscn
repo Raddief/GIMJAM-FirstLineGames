@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_3.tscn" id="6_85g3d"]
 [ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://resources/data/days/day3.tres" id="6_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_bardToad.tscn" id="7_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_5.tscn" id="8_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_obelisk.tscn" id="8_jkv2x"]
 [ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://resources/data/days/day4.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_pepari.tscn" id="9_jbj1t"]
 [ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://resources/data/days/day5.tres" id="9_og1vs"]
@@ -193,7 +193,7 @@ texture = ExtResource("35_kmb1v")
 position = Vector2(1680, 134)
 texture = ExtResource("36_fuf3a")
 
-[node name="RemoveArea" type="Area2D" parent="."]
+[node name="RemoveArea" type="Area2D" parent="." groups=["trash"]]
 z_index = 4
 position = Vector2(1848, 936)
 collision_layer = 8
