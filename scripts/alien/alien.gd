@@ -72,6 +72,9 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 	original_cell = cell
 	position = grid.cell_to_world(cell)
 
+	for i in range(rules.size()):
+		rules[i] = rules[i].duplicate(true)
+
 	print("Setup called for: ", alien_name) # Debug 1
 	
 	if spawn_audio == null:
