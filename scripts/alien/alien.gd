@@ -66,7 +66,6 @@ func get_shape_offsets() -> Array[Vector2i]:
 
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
-	$AnimatedSprite2D.set_offset(Vector2(0,-128*size.y))
 	grid = grid_manager
 	cell = start_cell
 	original_cell = cell
@@ -156,6 +155,7 @@ func end_drag():
 		
 		if is_valid_spot and can_afford:
 			CurrencyManager.spend(price)
+			CurrencyManager.emit_signal("AlienPurchased")
 			is_new_purchase = false
 			setup(target_cell, grid)
 		else:

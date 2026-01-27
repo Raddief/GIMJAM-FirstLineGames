@@ -11,6 +11,7 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 #Variable Status
 var day = 6
 var TotalAliens := 0
+
 @export var Alien : Array[AlienData]
 @export var Item : Dictionary
 @export var grid_manager : GridManager
@@ -20,6 +21,7 @@ var selected_alien : AlienData = null
 
 signal buyAlien(alien_data: AlienData)
 signal Forfeit(condition:bool)
+signal Setting(bool)
 
 func resetPanel():
 	$SidePanel/Menu/MenuList/Shop.set_text("Shop")
@@ -27,6 +29,7 @@ func resetPanel():
 	$SidePanel/Menu/MenuList/UseItem.set_text("Use Item")
 	$SidePanel/Menu/MenuList/Journal.set_text("Journal")
 	$SidePanel/Menu/MenuList/Journal.set_button_icon(load("res://Resources/Asset/UI/secret-book.png"))
+	$SidePanel/Menu/MenuList/Journal.visible = false
 	$SidePanel/Menu/MenuList/Setting.visible = true
 	$SidePanel/Menu/MenuList/Forfeit.visible = true
 	$SidePanel/Menu.visible = true
@@ -92,6 +95,7 @@ func _on_shop_pressed() -> void:
 		$SidePanel/Menu/MenuList/UseItem.set_text("Items")
 		$SidePanel/Menu/MenuList/Journal.set_text("Back")
 		$SidePanel/Menu/MenuList/Journal.set_button_icon(null)
+		$SidePanel/Menu/MenuList/Journal.visible = true
 		$SidePanel/Menu/MenuList/Setting.visible = false
 		$SidePanel/Menu/MenuList/Forfeit.visible = false
 	elif text == "Aliens" :
@@ -106,11 +110,9 @@ func _on_journal_pressed() -> void:
 	var text = $SidePanel/Menu/MenuList/Journal.get_text()
 	if text == "Back":
 		resetPanel()
-	elif text == "Journal" :
-		pass
 
 func _on_setting_pressed() -> void:
-	pass # Replace with function body.
+	emit_signal("Setting")
 
 func _on_forfeit_pressed() -> void:
 	emit_signal("Forfeit")

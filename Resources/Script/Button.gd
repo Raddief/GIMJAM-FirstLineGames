@@ -5,12 +5,17 @@ var type:int = 0 #0 = Alien 1 = Items
 var object : AlienData = null
 var slot:bool = false
 var root = null
-var volume:int
 
 signal select_slot(type:int, object)
 
+func _ready() -> void:
+	AudioManager.connect("volumeGUIchanged", _volume_changed)
+
+func _volume_changed(value:float):
+	$Sfx.set_volume_db(value)
+
 func _on_mouse_entered() -> void:
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover1.mp3"))
+	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover2.mp3"))
 	$Sfx.play()
 
 func _on_pressed() -> void:

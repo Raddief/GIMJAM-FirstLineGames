@@ -5,7 +5,6 @@ class_name AlienManager
 @export var grid_manager : GridManager
 @export var day_manager : DayManager
 
-	
 func spawn_alien(alien_data: AlienData):
 	# 1. Instantiate FIRST to get the data (size)
 	var alien = alien_data.alien_scene.instantiate()

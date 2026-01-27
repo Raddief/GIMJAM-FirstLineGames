@@ -9,12 +9,16 @@ extends Node2D
 func _ready():
 	CurrencyManager.currency = 0
 	CurrencyManager.TotalGold = 0
+	CurrencyManager.GoldGainDay = 0
+	CurrencyManager.GoldSpendDay = 0
 	shop.buyAlien.connect(buy_alien)
 	
 	CurrencyManager.currency_changed.connect(day_manager.on_money_changed)
 	CurrencyManager.currency_changed.connect(ui.on_money_changed)
+	CurrencyManager.connect("AlienPurchased", add_alien)
 
 	day_manager.connect("day_started", ui.on_day_started)
+	day_manager.connect("day_started", _on_day_change)
 	day_manager.connect("day_ended", ui.on_day_ended)
 	day_manager.connect("day_ended", _on_day_ended)
 	day_manager.connect("day_fail", _on_day_fail)
@@ -22,6 +26,7 @@ func _ready():
 	day_manager.connect("turn_consumed", _on_turn_passed)
 	ui.on_end_turn.connect(day_manager.consume_turn)
 	shop.connect("Forfeit", _on_forfeit)
+	shop.connect("Setting", _on_setting)
 
 	
 	day_manager.start_day(0)
@@ -30,16 +35,35 @@ func _ready():
 func buy_alien(alien_data: AlienData) -> void:
 	if CurrencyManager.spend(alien_data.price):
 		alien_manager.spawn_alien(alien_data)
-		shop.TotalAliens += 1
+
+func add_alien():
+	shop.TotalAliens += 1
 
 func _on_turn_passed(turn: int, max_turns: int):
 	alien_manager.on_turn_passed()
+	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_turn1.mp3"))
+	$Sfx.emit_signal("streamChanged")
 
 func _on_day_ended(day: DayData):
 	alien_manager.on_day_ended()
+
+func _on_day_change(day:DayData):
+	var index: int
+	for i in day_manager.days.size() :
+		if day_manager.days[i].day_name == day.day_name :
+			index = i-1
+	if day.day_name != "Monday":
+		$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_day1.mp3"))
+		$Sfx.emit_signal("streamChanged")
+		popups.EndDay(day_manager.days[index].day_name, CurrencyManager.GoldGainDay, CurrencyManager.GoldSpendDay)
+		CurrencyManager.GoldGainDay = 0
+		CurrencyManager.GoldSpendDay = 0
 
 func _on_day_fail():
 	popups.GameOver(CurrencyManager.TotalGold, shop.TotalAliens)
 
 func _on_forfeit():
 	popups.Forfeit()
+
+func _on_setting():
+	popups.Setting()
