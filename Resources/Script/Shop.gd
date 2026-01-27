@@ -17,6 +17,15 @@ var selected_alien : AlienData = null
 
 signal buyAlien(alien_data: AlienData)
 
+func resetPanel():
+	$SidePanel/Menu/MenuList/Shop.set_text("Shop")
+	$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/shopping-cart.png"))
+	$SidePanel/Menu/MenuList/UseItem.set_text("Use Item")
+	$SidePanel/Menu/MenuList/Journal.set_text("Journal")
+	$SidePanel/Menu/MenuList/Journal.set_button_icon(load("res://Resources/Asset/UI/secret-book.png"))
+	$SidePanel/Menu/MenuList/Setting.visible = true
+	$SidePanel/Menu/MenuList/Forfeit.visible = true
+
 func showDesc(types:int, object):
 	$BottomPanel.visible = true
 	if types == 0 and object is AlienData:
@@ -53,10 +62,13 @@ func addSlot(types:int):
 			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
 
 func _on_open_close_pressed() -> void:
-	if $BottomPanel.visible == false && $SidePanel.get_position().x != 1111:
-		anim.play("OpenShop")
-	elif $SidePanel.get_position().x == 1111 : 
+	print($SidePanel.get_anchor(SIDE_LEFT))
+	if $SidePanel.get_anchor(SIDE_LEFT) < 1 :
+		resetPanel()
+		$BottomPanel.visible = false
 		anim.play("CloseShop")
+	elif $SidePanel.get_anchor(SIDE_LEFT) > 1:
+		anim.play("OpenShop")
 
 func _on_shop_pressed() -> void:
 	var text = $SidePanel/Menu/MenuList/Shop.get_text()
@@ -79,19 +91,9 @@ func _on_use_item_pressed() -> void:
 func _on_journal_pressed() -> void:
 	var text = $SidePanel/Menu/MenuList/Journal.get_text()
 	if text == "Back":
-		$SidePanel/Menu/MenuList/Shop.set_text("Shop")
-		$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/shopping-cart.png"))
-		$SidePanel/Menu/MenuList/UseItem.set_text("Use Item")
-		$SidePanel/Menu/MenuList/Journal.set_text("Journal")
-		$SidePanel/Menu/MenuList/Journal.set_button_icon(load("res://Resources/Asset/UI/secret-book.png"))
-		$SidePanel/Menu/MenuList/Setting.visible = true
-		$SidePanel/Menu/MenuList/Forfeit.visible = true
+		resetPanel()
 	elif text == "Journal" :
 		pass
-
-func _on_animation_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "CloseShop" :
-		anim.play("RESET")
 
 func _on_setting_pressed() -> void:
 	pass # Replace with function body.

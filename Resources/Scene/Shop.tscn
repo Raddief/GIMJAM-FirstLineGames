@@ -23,19 +23,15 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mur7"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 border_color = Color(0.34117648, 0.38431373, 0.45882353, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-expand_margin_left = 20.0
-expand_margin_top = 20.0
-expand_margin_right = 20.0
-expand_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtuwb"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
@@ -64,117 +60,117 @@ border_blend = true
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="Animation" id="Animation_57nro"]
-resource_name = "CloseShop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SidePanel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1111, 94), Vector2(1280, 94)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SidePanel/OpenClose:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["<"]
-}
-
-[sub_resource type="Animation" id="Animation_3kx1x"]
+[sub_resource type="Animation" id="Animation_umvc6"]
 resource_name = "OpenShop"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SidePanel:position")
+tracks/0/path = NodePath("SidePanel:anchor_left")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1280, 94), Vector2(1111, 94)]
+"values": [1.02, 0.89]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SidePanel/OpenClose:text")
+tracks/1/path = NodePath("SidePanel:anchor_right")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [">"]
-}
-
-[sub_resource type="Animation" id="Animation_rhti7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SidePanel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1280, 94)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SidePanel/Scroll:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [1.02, 0.89]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SidePanel/Menu:visible")
+tracks/2/path = NodePath("SidePanel/OpenClose:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [">"]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("BottomPanel:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+
+[sub_resource type="Animation" id="Animation_attia"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SidePanel:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.02]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SidePanel:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.02]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SidePanel/OpenClose:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": ["<"]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("SidePanel/OpenClose:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+
+[sub_resource type="Animation" id="Animation_s0bbe"]
+resource_name = "CloseShop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SidePanel:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.89, 1.02]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SidePanel:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.89, 1.02]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SidePanel/OpenClose:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -183,9 +179,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5haow"]
 _data = {
-&"CloseShop": SubResource("Animation_57nro"),
-&"OpenShop": SubResource("Animation_3kx1x"),
-&"RESET": SubResource("Animation_rhti7")
+&"CloseShop": SubResource("Animation_s0bbe"),
+&"OpenShop": SubResource("Animation_umvc6"),
+&"RESET": SubResource("Animation_attia")
 }
 
 [node name="Shop" type="Control"]
@@ -200,24 +196,27 @@ Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_6sfmx"), ExtResource("4_6s
 metadata/_edit_lock_ = true
 
 [node name="SidePanel" type="Control" parent="."]
+custom_minimum_size = Vector2(256, 700)
 layout_mode = 1
-anchor_left = 1.0
-anchor_top = 0.13100001
-anchor_right = 1.1
-anchor_bottom = 0.77500004
-offset_top = -0.32000732
+anchor_left = 1.02
+anchor_top = 0.149
+anchor_right = 1.02
+anchor_bottom = 0.79700005
+offset_left = 276.6399
+offset_top = 0.08000183
+offset_right = 211.99976
+offset_bottom = 0.2399292
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="OpenClose" parent="SidePanel" instance=ExtResource("3_s556k")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
+anchor_left = -0.25
+anchor_top = 0.011000001
 anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -63.0
-offset_top = 15.0
-offset_right = 1.0
-offset_bottom = 112.0
+anchor_bottom = 0.15
+offset_top = 0.29999924
+offset_bottom = -7.6293945e-06
 theme_override_font_sizes/font_size = 64
 text = "<"
 
@@ -226,26 +225,30 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 16.0
-offset_right = 21.0
-offset_bottom = 16.0
+offset_left = 2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2mur7")
 
 [node name="MenuList" type="VBoxContainer" parent="SidePanel/Menu"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.117000006
+anchor_top = 0.040000003
+anchor_right = 0.89800006
+anchor_bottom = 0.947
+offset_left = 0.04799843
+offset_top = -0.16000557
+offset_right = 0.11198425
+offset_bottom = -0.060058594
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Shop" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 custom_minimum_size = Vector2(64, 84)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "Shop"
 icon = ExtResource("2_8ebbm")
 vertical_icon_alignment = 0
@@ -253,7 +256,7 @@ vertical_icon_alignment = 0
 [node name="UseItem" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 custom_minimum_size = Vector2(64, 84)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "Use Item"
 icon = ExtResource("3_vtuwb")
 vertical_icon_alignment = 0
@@ -261,7 +264,7 @@ vertical_icon_alignment = 0
 [node name="Journal" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 custom_minimum_size = Vector2(64, 84)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "Journal"
 icon = ExtResource("4_3kx1x")
 vertical_icon_alignment = 0
@@ -269,7 +272,7 @@ vertical_icon_alignment = 0
 [node name="Setting" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 custom_minimum_size = Vector2(64, 84)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "Setting"
 icon = ExtResource("5_rhti7")
 vertical_icon_alignment = 0
@@ -277,7 +280,7 @@ vertical_icon_alignment = 0
 [node name="Forfeit" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 custom_minimum_size = Vector2(64, 84)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "Forfeit"
 icon = ExtResource("6_57nro")
 vertical_icon_alignment = 0
@@ -288,19 +291,21 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 16.0
-offset_right = 21.0
-offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2mur7")
 
 [node name="Scroll" type="ScrollContainer" parent="SidePanel/Scroll"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.062000003
+anchor_top = 0.027
+anchor_right = 0.94100004
+anchor_bottom = 0.9760001
+offset_left = 0.1279993
+offset_top = 0.10000038
+offset_right = 0.10398865
+offset_bottom = -0.20007324
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -319,6 +324,7 @@ offset_top = -6.1035156e-05
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_lock_ = true
 
 [node name="Description" type="Panel" parent="BottomPanel"]
 layout_mode = 1
@@ -332,9 +338,9 @@ metadata/_edit_lock_ = true
 
 [node name="Header1" type="Label" parent="BottomPanel/Description"]
 layout_mode = 1
-offset_left = 205.0
+offset_left = 213.0
 offset_top = 8.0
-offset_right = 276.0
+offset_right = 284.0
 offset_bottom = 45.0
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_m2jm4")
@@ -344,17 +350,10 @@ vertical_alignment = 1
 
 [node name="Header2" type="Label" parent="BottomPanel/Description"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -186.0
-offset_top = -58.0
-offset_right = -102.0
-offset_bottom = -21.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 563.0
+offset_top = 10.0
+offset_right = 647.0
+offset_bottom = 47.0
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_m2jm4")
 theme_override_font_sizes/font_size = 30
@@ -368,10 +367,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -388.0
-offset_top = -51.0
-offset_right = -326.0
-offset_bottom = -14.0
+offset_left = -646.0
+offset_top = -85.5
+offset_right = -584.0
+offset_bottom = -48.5
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -380,24 +379,39 @@ theme_override_font_sizes/font_size = 30
 text = "Trait"
 vertical_alignment = 1
 
+[node name="Header4" type="Label" parent="BottomPanel/Description"]
+layout_mode = 1
+offset_left = 213.0
+offset_top = 98.0
+offset_right = 284.0
+offset_bottom = 135.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_m2jm4")
+theme_override_font_sizes/font_size = 30
+text = "Yield"
+vertical_alignment = 1
+
 [node name="Contain1" type="RichTextLabel" parent="BottomPanel/Description"]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 39.0
-offset_right = 298.0
-offset_bottom = 119.0
+offset_left = 211.0
+offset_top = 49.0
+offset_right = 284.0
+offset_bottom = 94.0
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
 text = "1000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Contain2" type="RichTextLabel" parent="BottomPanel/Description"]
 layout_mode = 0
 offset_left = 296.0
-offset_top = 45.0
-offset_right = 735.0
-offset_bottom = 120.0
+offset_top = 55.0
+offset_right = 917.0
+offset_bottom = 180.0
 size_flags_horizontal = 3
 text = "A daylight never stress very well"
 vertical_alignment = 1
@@ -408,10 +422,10 @@ anchors_preset = -1
 anchor_top = 0.094000004
 anchor_right = 0.896
 anchor_bottom = 0.91400003
-offset_left = 740.0
-offset_top = 33.968
-offset_right = 0.11999512
-offset_bottom = 0.0079956055
+offset_left = 933.0
+offset_top = 37.045998
+offset_right = -0.32006836
+offset_bottom = 5.425995
 size_flags_horizontal = 3
 text = "- Never ever let this guy cook
 - He believes in Jewish
@@ -422,18 +436,33 @@ text = "- Never ever let this guy cook
 autowrap_mode = 2
 vertical_alignment = 1
 
+[node name="Contain4" type="RichTextLabel" parent="BottomPanel/Description"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 131.0
+offset_right = 284.0
+offset_bottom = 176.0
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 32
+text = "1000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Icon" type="Button" parent="BottomPanel/Description"]
 custom_minimum_size = Vector2(84, 84)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.013
-anchor_top = 0.039
-anchor_right = 0.13700001
-anchor_bottom = 0.906
-offset_left = 0.3600006
-offset_top = 1.0079999
-offset_right = 0.63998413
-offset_bottom = 0.03199768
+anchor_left = 0.007
+anchor_top = 0.044000003
+anchor_right = 0.113000005
+anchor_bottom = 0.93700004
+offset_left = -0.43999863
+offset_top = 0.05300045
+offset_right = 0.71998596
+offset_bottom = 0.032958984
 grow_vertical = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
@@ -441,7 +470,7 @@ theme_override_fonts/font = ExtResource("1_m2jm4")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/disabled = SubResource("StyleBoxFlat_3kx1x")
 disabled = true
-text = "Matriach"
+text = "Solar Lizard"
 icon = ExtResource("7_8ebbm")
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -478,6 +507,5 @@ visible = false
 [connection signal="pressed" from="SidePanel/Menu/MenuList/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="SidePanel/Menu/MenuList/Forfeit" to="." method="_on_forfeit_pressed"]
 [connection signal="pressed" from="BottomPanel/Description/Buy" to="." method="_on_buy_pressed"]
-[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
 [connection signal="canceled" from="Popup" to="." method="_on_popup_canceled"]
 [connection signal="confirmed" from="Popup" to="." method="_on_popup_confirmed"]
