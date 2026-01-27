@@ -124,11 +124,11 @@ func spawn_ghost_alien(data: AlienData):
 	
 	# FIX: Add the alien to the Manager, not the Scene Root
 	alien_manager.add_child(new_alien)
-	
+	selected_alien = data
 	new_alien.is_new_purchase = true
 	new_alien.price = data.price
 	new_alien.grid = grid_manager 
-	
+	showDesc(0, selected_alien)
 	new_alien.global_position = get_global_mouse_position()
 	new_alien.start_drag(get_global_mouse_position())
 

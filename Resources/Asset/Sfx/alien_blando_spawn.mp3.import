@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bulrplkx26v4y"
-path="res://.godot/imported/alien_blando_spawn.mp3-4b91d71e729fcee555f343c0cc361bfb.mp3str"
+path="res://.godot/imported/alien_blando_spawn.mp3-b6c121df7a27c70d77fba4c53a2d5314.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/alien_blando_spawn.mp3"
-dest_files=["res://.godot/imported/alien_blando_spawn.mp3-4b91d71e729fcee555f343c0cc361bfb.mp3str"]
+source_file="res://Resources/Asset/Sfx/alien_blando_spawn.mp3"
+dest_files=["res://.godot/imported/alien_blando_spawn.mp3-b6c121df7a27c70d77fba4c53a2d5314.mp3str"]
 
 [params]
 
