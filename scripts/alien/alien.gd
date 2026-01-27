@@ -66,7 +66,7 @@ func get_shape_offsets() -> Array[Vector2i]:
 
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
-	$AnimatedSprite2D.set_offset(Vector2(0,-10))
+	$AnimatedSprite2D.set_offset(Vector2(0,-128*size.y))
 	grid = grid_manager
 	cell = start_cell
 	original_cell = cell
