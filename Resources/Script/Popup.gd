@@ -1,5 +1,7 @@
 extends CenterContainer
 
+var GlassDome:Sprite2D
+
 func GameOver(golds:int, aliens:int):
 	self.visible = true
 	$GameOver.visible = true
@@ -27,15 +29,18 @@ func _on_refuse_pressed() -> void:
 	self.visible = false
 	get_tree().set_pause(false)
 
-func EndDay(Day:String, GoldGain:int, GoldSpend:int):
+func EndDay(Day:String, Gold:int, Quota:int, Dome:Sprite2D):
 	$EndDay.visible = true
+	GlassDome = Dome
 	self.visible = true
 	$EndDay/VBoxContainer/Congrats.set_text("Congratulation, you just pass the "+Day)
-	$EndDay/VBoxContainer/Column/Number/GoldGain.set_text(str(GoldGain))
-	$EndDay/VBoxContainer/Column/Number/GoldSpend.set_text(str(GoldSpend))
+	$EndDay/VBoxContainer/Column/Number/CurrentGold.set_text(str(Gold))
+	$EndDay/VBoxContainer/Column/Number/Quota.set_text(str(Quota))
+	$EndDay/VBoxContainer/Column/Number/Credit.set_text(str(Gold-Quota))
 	get_tree().set_pause(true)
 
 func _on_continue_pressed() -> void:
+	GlassDome.visible = false
 	$EndDay.visible = false
 	self.visible = false
 	get_tree().set_pause(false)

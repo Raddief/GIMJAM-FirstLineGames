@@ -33,4 +33,5 @@ production_per_turn = 30
 rules = Array[ExtResource("2_a7pwt")]([SubResource("Resource_qkin8")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_ymrir")

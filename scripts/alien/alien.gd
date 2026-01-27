@@ -66,6 +66,7 @@ func get_shape_offsets() -> Array[Vector2i]:
 
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
+	self.set_z_index(2)
 	grid = grid_manager
 	cell = start_cell
 	original_cell = cell

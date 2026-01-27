@@ -36,6 +36,7 @@ size = Vector2i(1, 2)
 rules = Array[ExtResource("2_5mxss")]([SubResource("Resource_4oghj")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_8vfxs")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
