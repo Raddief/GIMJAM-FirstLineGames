@@ -32,9 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wyq8"]
-size = Vector2(128, 128)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fuf3a"]
 texture = ExtResource("34_kmb1v")
 texture_region_size = Vector2i(128, 128)
@@ -43,6 +40,9 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_o6xl0"]
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_fuf3a")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wyq8"]
+size = Vector2(128, 128)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("ui", "shop", "day_manager", "alien_manager")]
 script = ExtResource("1_jyhfs")
@@ -70,17 +70,6 @@ alien_scenes = Array[PackedScene]([ExtResource("4_tipki"), ExtResource("5_85g3d"
 grid_manager = NodePath("../GridManager")
 day_manager = NodePath("../DayManager")
 
-[node name="RemoveArea" type="Area2D" parent="."]
-position = Vector2(66, 574)
-collision_layer = 8
-script = ExtResource("23_2wyq8")
-
-[node name="Sprite2D" type="Sprite2D" parent="RemoveArea"]
-texture = ExtResource("23_og1vs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RemoveArea"]
-shape = SubResource("RectangleShape2D_2wyq8")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Control" parent="CanvasLayer"]
@@ -94,16 +83,17 @@ script = ExtResource("4_jyhfs")
 
 [node name="EndTurnButton" type="Button" parent="CanvasLayer/UI"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = -1
+anchor_left = 0.8588542
+anchor_top = 0.912037
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
+offset_left = 82.0
+offset_top = 23.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "END TURN"
+metadata/_edit_use_anchors_ = true
 
 [node name="CurrencyLabel" type="Label" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -199,8 +189,10 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "TURN: 0/0"
 
-[node name="Shop" parent="CanvasLayer" instance=ExtResource("27_vxglm")]
+[node name="Shop" parent="CanvasLayer" node_paths=PackedStringArray("grid_manager", "alien_manager") instance=ExtResource("27_vxglm")]
 mouse_filter = 2
+grid_manager = NodePath("../../GridManager")
+alien_manager = NodePath("../../AlienManager")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("32_dgi5k")
@@ -227,3 +219,14 @@ texture = ExtResource("36_fuf3a")
 [node name="Lamp2" type="Sprite2D" parent="."]
 position = Vector2(1680, 543)
 texture = ExtResource("36_fuf3a")
+
+[node name="RemoveArea" type="Area2D" parent="." groups=["trash"]]
+position = Vector2(1852, 934)
+collision_layer = 8
+script = ExtResource("23_2wyq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="RemoveArea"]
+texture = ExtResource("23_og1vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RemoveArea"]
+shape = SubResource("RectangleShape2D_2wyq8")

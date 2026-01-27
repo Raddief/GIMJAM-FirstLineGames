@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv1ridls1aemg"]
+[gd_scene load_steps=9 format=3 uid="uid://bv1ridls1aemg"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_3x8sr"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_6es8o"]
+[ext_resource type="AudioStream" uid="uid://b7ijiybyrdh5u" path="res://resources/Asset/Sfx/alien_pepari_spawn.mp3" id="2_qpw2r"]
 [ext_resource type="Script" uid="uid://b4or6ghwjr6ed" path="res://scripts/rules/invisibility_rule.gd" id="3_qpw2r"]
 [ext_resource type="Texture2D" uid="uid://btr0enmr6ekea" path="res://assets/pepari.png" id="4_catov"]
 
@@ -28,6 +29,7 @@ alien_name = "Pepari"
 cost = 150
 production_per_turn = 84
 size = Vector2i(1, 3)
+spawn_audio = ExtResource("2_qpw2r")
 rules = Array[ExtResource("2_6es8o")]([SubResource("Resource_lvrii")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -38,3 +40,5 @@ sprite_frames = SubResource("SpriteFrames_lvrii")
 position = Vector2(0, 128)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_0vp3t")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

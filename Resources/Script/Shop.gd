@@ -12,6 +12,8 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 var day = 6
 @export var Alien : Array[AlienData]
 @export var Item : Dictionary
+@export var grid_manager : GridManager
+@export var alien_manager : AlienManager
 
 var selected_alien : AlienData = null
 
@@ -108,16 +110,22 @@ func _on_journal_pressed() -> void:
 func _on_setting_pressed() -> void:
 	pass # Replace with function body.
 
-func _on_forfeit_pressed() -> void:
-	get_tree().set_pause(true)
-	$Popup.set_text("Are you sure want to surrender?")
-	$Popup.visible = true
-
 func select_slot(types:int, object) -> void:
 	selected_alien = object
+	showDesc(types, object) # Keep information display on click
 
-func _on_buy_pressed() -> void:
-	emit_signal("buyAlien", selected_alien)
+func spawn_ghost_alien(data: AlienData):
+	var new_alien = data.alien_scene.instantiate()
+	
+	# FIX: Add the alien to the Manager, not the Scene Root
+	alien_manager.add_child(new_alien)
+	
+	new_alien.is_new_purchase = true
+	new_alien.price = data.price
+	new_alien.grid = grid_manager 
+	
+	new_alien.global_position = get_global_mouse_position()
+	new_alien.start_drag(get_global_mouse_position())
 
 func _on_popup_confirmed() -> void:
 	get_tree().change_scene_to_packed(Mainmenu)

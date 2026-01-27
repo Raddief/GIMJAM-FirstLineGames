@@ -46,3 +46,5 @@ sprite_frames = SubResource("SpriteFrames_tntct")
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(15.125, 0)
 shape = SubResource("RectangleShape2D_i86jg")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

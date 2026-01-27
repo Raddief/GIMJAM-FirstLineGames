@@ -7,6 +7,7 @@ class_name Alien
 @export var cost: int = 5
 @export var production_per_turn: int = 1
 @export var size: Vector2i
+@export var spawn_audio: AudioStream
 
 # CUSTOM SHAPE (Relative to 0,0). 
 # Example L-Shape inside a 2x2 box: [(0,0), (0,1), (1,1)]
@@ -17,6 +18,7 @@ class_name Alien
 @export var rules: Array[BaseAlienRule] = []
 
 @onready var area_2d: Area2D = $Area2D
+@onready var sfx_player: AudioStreamPlayer = $SFX
 
 # ===== STATE =====
 var cell: Vector2i
@@ -44,6 +46,10 @@ var grid: GridManager
 
 var external_production_bonus := 0
 
+# Shop Logic
+var is_new_purchase := false
+var price := 10 # You can get this from your AlienData
+
 # ===== HELPER: GET SHAPE =====
 # This is the magic function that bridges the gap.
 func get_shape_offsets() -> Array[Vector2i]:
@@ -66,6 +72,19 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 	original_cell = cell
 	position = grid.cell_to_world(cell)
 
+	print("Setup called for: ", alien_name) # Debug 1
+	
+	if spawn_audio == null:
+		print("Warning: spawn_audio is missing on ", alien_name) # Debug 2
+	
+	if sfx_player == null:
+		print("Error: AudioStreamPlayer2D node not found!") # Debug 3
+
+	if spawn_audio and sfx_player:
+		print("Playing sound now!") # Debug 4
+		sfx_player.stream = spawn_audio
+		sfx_player.play()
+		
 	# UPDATED: Use get_shape_offsets()
 	grid.occupy_cell(cell, get_shape_offsets(), self)
 
@@ -118,14 +137,37 @@ func start_drag(mouse_pos: Vector2):
 func end_drag():
 	dragging = false
 	z_index = 0
+	var overlaps = area_2d.get_overlapping_areas()
 
+	for area in overlaps:
+		# 2. If we touched an area tagged as "trash"
+		if area.is_in_group("trash"):
+			kill() # Die immediately
+	
 	var target_cell := grid.world_to_cell(global_position)
 	var shape = get_shape_offsets()
 
-	if grid.is_cell_valid(target_cell) and !grid.is_cell_occupied(target_cell, shape, self):
-		move_to_cell(target_cell)
+	# Check if placement is valid and player has enough money
+	var is_valid_spot = grid.is_cell_valid(target_cell) and !grid.is_cell_occupied(target_cell, shape, self)
+
+	if is_new_purchase:
+		# SHOP LOGIC: Must be a valid spot AND you must have the money
+		var can_afford = CurrencyManager.currency >= price
+		
+		if is_valid_spot and can_afford:
+			CurrencyManager.spend(price)
+			is_new_purchase = false
+			setup(target_cell, grid)
+		else:
+			queue_free() # Delete if can't afford or spot is blocked
 	else:
-		move_to_cell(original_cell)
+		# MOVEMENT LOGIC: Only check if the spot is valid (Moving is free!)
+		if is_valid_spot:
+			move_to_cell(target_cell)
+		else:
+			move_to_cell(original_cell)
+	
+	
 
 # ===== MOVE =====
 func move_to_cell(target_cell: Vector2i):
@@ -224,6 +266,22 @@ func _is_mouse_on_self(mouse_pos: Vector2) -> bool:
 
 # ===== DEBUG VISUAL =====
 func _process(delta):
+	# 1. PURCHASE GHOSTING
+	if is_new_purchase:
+		modulate.a = 0.5 
+		var target_cell = grid.world_to_cell(global_position)
+		if !grid.is_cell_valid(target_cell) or grid.is_cell_occupied(target_cell, get_shape_offsets(), self):
+			modulate = Color(1, 0, 0, 0.5)
+		else:
+			modulate = Color(0, 1, 0, 0.5)
+	else:
+		# 2. NORMAL VISUAL FEEDBACK (Only runs after placement)
+		modulate.a = 1.0 # Ensure it returns to opaque
+		if !can_produce:
+			modulate = Color(1, 0.5, 0.5) 
+		else:
+			modulate = Color.WHITE
+			
 	# Multiply by delta (usually ~0.016) to normalize speed
 	var speed_multiplier = delta * 60.0 
 	

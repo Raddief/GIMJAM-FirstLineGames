@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkey2m3inbb2h"]
+[gd_scene load_steps=8 format=3 uid="uid://bkey2m3inbb2h"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_tgk1h"]
+[ext_resource type="AudioStream" uid="uid://bulrplkx26v4y" path="res://resources/Asset/Sfx/alien_blando_spawn.mp3" id="2_hdsbi"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_jup13"]
 [ext_resource type="Script" uid="uid://cda63q8gt0t3v" path="res://scripts/rules/no_rule.gd" id="3_hdsbi"]
 [ext_resource type="Texture2D" uid="uid://bonfh2uicmo3f" path="res://assets/blando.png" id="4_jlrg6"]
@@ -25,6 +26,7 @@ alien_name = "Blando"
 alien_type = 2
 cost = 100
 production_per_turn = 44
+spawn_audio = ExtResource("2_hdsbi")
 rules = Array[ExtResource("2_jup13")]([SubResource("Resource_i2qp7")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -33,3 +35,5 @@ sprite_frames = SubResource("SpriteFrames_mnjxg")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 scale = Vector2(4, 4)
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

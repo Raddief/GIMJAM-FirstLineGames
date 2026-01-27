@@ -52,3 +52,5 @@ visible = false
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(-16.25, 16)
 shape = SubResource("RectangleShape2D_du74q")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

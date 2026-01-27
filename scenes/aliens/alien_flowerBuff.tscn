@@ -20,3 +20,5 @@ alien_name = "Flower Buff"
 alien_type = 1
 production_per_turn = 65
 rules = Array[ExtResource("2_irr2s")]([SubResource("Resource_mkwgd"), SubResource("Resource_d6eoq")])
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

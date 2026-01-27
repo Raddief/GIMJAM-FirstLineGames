@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_g4fgh")
 name = "Void Knight"
-alien_trait = "No trait."
+alien_trait = "When v"
 price = 390
 rate = 290
 size = "2 x 1 (L)"
