@@ -22,7 +22,7 @@ class_name Alien
 var cell: Vector2i
 var alive := true
 var can_produce := true
-
+var BreathAnim: float = 0
 # Facing (for direction-based rules)
 enum Facing { LEFT, RIGHT }
 var facing := Facing.RIGHT
@@ -54,6 +54,7 @@ func get_shape_offsets() -> Array[Vector2i]:
 
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
+	$AnimatedSprite2D.set_offset(Vector2(0,-10))
 	grid = grid_manager
 	cell = start_cell
 	original_cell = cell
@@ -207,6 +208,15 @@ func _is_mouse_on_self(mouse_pos: Vector2) -> bool:
 
 # ===== DEBUG VISUAL =====
 func _process(_delta):
+	BreathAnim += _delta
+	if BreathAnim <= 2 && self.scale.y <= 2 :
+		self.scale.y += randf_range(0,0.01)
+		self.position.x += randf_range(0,0.01)
+	elif BreathAnim <= 4 && self.scale.y >= 1:
+		self.scale.y -= randf_range(0,0.01)
+		self.position.x -= randf_range(0,0.01)
+	elif BreathAnim >= 4 : 
+		BreathAnim = 0
 	if !can_produce:
 		modulate = Color(1, 0.5, 0.5) # merah = tidak produksi
 	else:
