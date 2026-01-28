@@ -40,14 +40,17 @@ rules = Array[ExtResource("2_24t11")]([SubResource("Resource_ysvn1")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(-61, 64)
+scale = Vector2(0.898, 0.898)
 sprite_frames = SubResource("SpriteFrames_503ok")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, 64)
+position = Vector2(0, 57)
+scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_du74q")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="1"]
-position = Vector2(-128, 128)
+position = Vector2(-115, 115)
+scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_24t11")
 
 [node name="FlipButton" type="Button" parent="." index="2"]

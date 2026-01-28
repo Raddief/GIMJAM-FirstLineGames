@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du74q"]
-size = Vector2(31, 62)
+size = Vector2(128, 256)
 
 [node name="Alien8" instance=ExtResource("1_gvi5r")]
 alien_name = "Gulper"
@@ -47,12 +47,11 @@ spawn_audio = ExtResource("2_y1j3g")
 rules = Array[ExtResource("3_ov4yd")]([SubResource("Resource_cqjeu")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(1, 168)
-scale = Vector2(0.9, 0.9)
+position = Vector2(0, 67)
+scale = Vector2(0.809, 0.809)
 sprite_frames = SubResource("SpriteFrames_503ok")
-offset = Vector2(-1.1111112, -112.22221)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, 64)
-scale = Vector2(4, 4)
+scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_du74q")

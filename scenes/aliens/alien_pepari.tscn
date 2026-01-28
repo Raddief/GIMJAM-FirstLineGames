@@ -22,7 +22,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vp3t"]
-size = Vector2(31, 92)
+size = Vector2(128, 384)
 
 [node name="Alien6" instance=ExtResource("1_3x8sr")]
 alien_name = "Pepari"
@@ -34,9 +34,10 @@ rules = Array[ExtResource("2_6es8o")]([SubResource("Resource_lvrii")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, 104)
+scale = Vector2(0.898, 0.898)
 sprite_frames = SubResource("SpriteFrames_lvrii")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, 128)
-scale = Vector2(4, 4)
+scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_0vp3t")

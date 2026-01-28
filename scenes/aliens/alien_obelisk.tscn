@@ -29,7 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0642"]
-size = Vector2(31, 121)
+size = Vector2(128, 512)
 
 [node name="Alien5" instance=ExtResource("1_wtyor")]
 alien_name = "Obelisk"
@@ -42,15 +42,13 @@ face_agnostic = true
 rules = Array[ExtResource("3_dnu1t")]([SubResource("Resource_1mc0m"), SubResource("Resource_dnu1t")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(1, 403)
+position = Vector2(0, 167)
+scale = Vector2(0.898, 0.898)
 sprite_frames = SubResource("SpriteFrames_2534d")
-offset = Vector2(-1, -236)
-
-[node name="Area2D" parent="." index="1"]
-scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, 44.5)
+position = Vector2(0, 160)
+scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_k0642")
 
 [node name="FlipButton" type="Button" parent="." index="2"]
