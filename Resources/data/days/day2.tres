@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="DayData" load_steps=4 format=3 uid="uid://dckp2mlk5pk6v"]
+[gd_resource type="Resource" script_class="DayData" load_steps=7 format=3 uid="uid://dckp2mlk5pk6v"]
 
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_c3l8r"]
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_kxo1b"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_fmsyi"]
+[ext_resource type="Resource" uid="uid://d36rekxlia30u" path="res://resources/data/alien_data/Grubber.tres" id="3_oxn1o"]
+[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://resources/data/alien_data/Gulper.tres" id="4_44y16"]
 
 [sub_resource type="Resource" id="Resource_jus2c"]
 script = ExtResource("1_kxo1b")
@@ -12,4 +15,5 @@ script = ExtResource("1_c3l8r")
 day_name = "Tuesday"
 money_target = 2300
 day_modifiers = Array[ExtResource("1_kxo1b")]([SubResource("Resource_jus2c")])
+new_aliens = Array[ExtResource("2_fmsyi")]([ExtResource("3_oxn1o"), ExtResource("4_44y16")])
 metadata/_custom_type_script = "uid://tc2rdebi4ptf"

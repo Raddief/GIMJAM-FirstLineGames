@@ -18,6 +18,8 @@ var TotalAliens := 0
 @export var alien_manager : AlienManager
 
 var selected_alien : AlienData = null
+var avaliable_aliens : Array[AlienData] = []
+var current_day_data : DayData = null
 
 signal buyAlien(alien_data: AlienData)
 signal Forfeit(condition:bool)
@@ -35,8 +37,6 @@ func resetPanel():
 	$SidePanel/Menu.visible = true
 	$BottomPanel.visible = false
 	$SidePanel/Scroll.visible = false
-	for i in $SidePanel/Scroll/Scroll/Stock.get_child_count():
-		$SidePanel/Scroll/Scroll/Stock.get_child($SidePanel/Scroll/Scroll/Stock.get_child_count(true)-(i+1)).queue_free()
 
 func showDesc(types:int, object):
 	$BottomPanel.visible = true
@@ -50,35 +50,19 @@ func showDesc(types:int, object):
 		$BottomPanel/Description/Contain3.set_text(object.alien_trait)
 		$BottomPanel/Description/Contain4.set_text(str(object.rate))
 
-func addSlot(types:int):
-	if types == 0:
-		var aliens: Array = Alien
-		for i in 4 + day:
-			if i >= aliens.size():
-				break
-			var slot = slots.instantiate()
-			var AlienScene = aliens[i].alien_scene.instantiate()
-			slot.slot = true
-			slot.type = types
-			slot.root = self
-			slot.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
+func addSlot(day_data: DayData = null) -> void:
+	var aliens: Array = Alien
+	for avaliable_alien in day_data.new_aliens:
+		avaliable_aliens.append(avaliable_alien)
+		var slot = slots.instantiate()
+		var AlienScene = avaliable_alien.alien_scene.instantiate()
+		slot.slot = true
+		slot.root = self
+		slot.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
 .get_frame_texture("default",0))
-			slot.object = aliens[i]
-			slot.select_slot.connect(select_slot)
-			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
-	else:
-		var items : Dictionary = Item
-		var keys := items.keys()
-		for i in 4 + day:
-			if i >= keys.size():
-				break
-			var slot = slots.instantiate()
-			slot.slot = true
-			slot.type = types
-			slot.root = self
-			slot.object = keys[i]
-			slot.select_slot.connect(select_slot)
-			$SidePanel/Scroll/Scroll/Stock.add_child(slot)
+		slot.object = avaliable_alien
+		slot.select_slot.connect(select_slot)
+		$SidePanel/Scroll/Scroll/Stock.add_child(slot)
 
 func _on_open_close_pressed() -> void:
 	if $SidePanel.get_anchor(SIDE_LEFT) < 1 :
@@ -99,7 +83,6 @@ func _on_shop_pressed() -> void:
 		$SidePanel/Menu/MenuList/Setting.visible = false
 		$SidePanel/Menu/MenuList/Forfeit.visible = false
 	elif text == "Aliens" :
-		addSlot(0)
 		$SidePanel/Menu.visible = false
 		$SidePanel/Scroll.visible = true
 

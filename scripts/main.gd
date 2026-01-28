@@ -18,6 +18,7 @@ func _ready():
 
 	day_manager.connect("day_started", ui.on_day_started)
 	day_manager.connect("day_started", _on_day_change)
+	day_manager.connect("day_started", shop.addSlot)
 	day_manager.connect("day_ended", ui.on_day_ended)
 	day_manager.connect("day_ended", _on_day_ended)
 	day_manager.connect("day_fail", _on_day_fail)
