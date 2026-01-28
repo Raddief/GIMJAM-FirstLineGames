@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cqpa6xvs34u1o"
-path="res://.godot/imported/alien_bardtoad_spawn.mp3-0d5ab406fc3ac94a66bcea7600e17c66.mp3str"
+path="res://.godot/imported/alien_bardtoad_spawn.mp3-927e037b109ca50f4223cfa0e209edd6.mp3str"
 
 [deps]
 
-source_file="res://Resources/Asset/Sfx/alien_bardtoad_spawn.mp3"
-dest_files=["res://.godot/imported/alien_bardtoad_spawn.mp3-0d5ab406fc3ac94a66bcea7600e17c66.mp3str"]
+source_file="res://resources/Asset/Sfx/alien_bardtoad_spawn.mp3"
+dest_files=["res://.godot/imported/alien_bardtoad_spawn.mp3-927e037b109ca50f4223cfa0e209edd6.mp3str"]
 
 [params]
 

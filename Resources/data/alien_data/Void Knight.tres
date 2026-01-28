@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://ke4unhvcgqdw"]
 
-[ext_resource type="PackedScene" uid="uid://dkip4gf2f3w25" path="res://scenes/aliens/alien_9.tscn" id="1_7f76q"]
+[ext_resource type="PackedScene" uid="uid://dkip4gf2f3w25" path="res://scenes/aliens/alien_voidKnight.tscn" id="1_7f76q"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_g4fgh"]
 
 [resource]
 script = ExtResource("2_g4fgh")
 name = "Void Knight"
-alien_trait = "When v"
+alien_trait = "No two Void Knights can exist in the same row, else one of them explodes."
 price = 390
 rate = 290
 size = "2 x 1 (L)"

@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2ysejs1ny0qp"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_31glb"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="3_rtxd7"]
+[ext_resource type="Script" uid="uid://tdhsxutxsew2" path="res://scripts/rules/perimeter_death_rule.gd" id="4_rjigh"]
+[ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="7_aoguy"]
+
+[sub_resource type="Resource" id="Resource_lobjr"]
+script = ExtResource("4_rjigh")
+metadata/_custom_type_script = "uid://tdhsxutxsew2"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn56h"]
+atlas = ExtResource("7_aoguy")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mx140"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn56h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn56h"]
+size = Vector2(31, 62)
+
+[node name="Alien7" instance=ExtResource("1_31glb")]
+alien_name = "Matriarch"
+alien_type = 3
+cost = 3100
+production_per_turn = 2200
+size = Vector2i(3, 3)
+rules = Array[ExtResource("3_rtxd7")]([SubResource("Resource_lobjr")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_mx140")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_cn56h")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

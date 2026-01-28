@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://damrmo300xnwl"]
 
-[ext_resource type="PackedScene" uid="uid://do3y6xveixpmi" path="res://scenes/aliens/alien_7.tscn" id="1_dpx13"]
+[ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_gulper.tscn" id="1_8gwuk"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_hwv5x"]
 
 [resource]
@@ -10,5 +10,5 @@ alien_trait = "Any aliens standing 1 tile in front of Gulper will be eaten."
 price = 330
 rate = 212
 size = "1x2"
-alien_scene = ExtResource("1_dpx13")
+alien_scene = ExtResource("1_8gwuk")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

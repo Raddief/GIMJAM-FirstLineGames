@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkip4gf2f3w25"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_0vj67"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_24t11"]
+[ext_resource type="AudioStream" uid="uid://b5wrbe7ubmkqg" path="res://resources/Asset/Sfx/alien_voidknight_spawn.mp3" id="2_rmtec"]
+[ext_resource type="Script" uid="uid://bdds4trk06tg4" path="res://scripts/rules/unique_row_rule.gd" id="3_rmtec"]
+[ext_resource type="Texture2D" uid="uid://dcvkc2co3rk64" path="res://assets/void_knight.png" id="4_6f8tn"]
+[ext_resource type="Script" uid="uid://by7rpj0257m8c" path="res://scenes/aliens/flip_button.gd" id="5_u0wl4"]
+
+[sub_resource type="Resource" id="Resource_ysvn1"]
+script = ExtResource("3_rmtec")
+metadata/_custom_type_script = "uid://bdds4trk06tg4"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_503ok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6f8tn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du74q"]
+size = Vector2(63.5, 64)
+
+[node name="Alien9" instance=ExtResource("1_0vj67")]
+alien_name = "Void Knight"
+cost = 390
+production_per_turn = 290
+size = Vector2i(1, 2)
+spawn_audio = ExtResource("2_rmtec")
+face_agnostic = true
+custom_shape = Array[Vector2i]([Vector2i(0, 1), Vector2i(-1, 1), Vector2i(0, 0)])
+rules = Array[ExtResource("2_24t11")]([SubResource("Resource_ysvn1")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-61, 64)
+sprite_frames = SubResource("SpriteFrames_503ok")
+
+[node name="Area2D" parent="." index="1"]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-16.25, 16)
+shape = SubResource("RectangleShape2D_du74q")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]
+
+[node name="FlipButton" type="Button" parent="." index="3"]
+visible = false
+top_level = true
+z_index = 10
+anchors_preset = -1
+anchor_right = 0.0578125
+anchor_bottom = 0.028703704
+size_flags_horizontal = 4
+text = "Flip Direction"
+script = ExtResource("5_u0wl4")
+metadata/_edit_use_anchors_ = true

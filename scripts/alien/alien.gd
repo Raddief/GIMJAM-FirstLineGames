@@ -8,6 +8,7 @@ class_name Alien
 @export var production_per_turn: int = 1
 @export var size: Vector2i
 @export var spawn_audio: AudioStream
+@export var face_agnostic: bool = false
 
 # CUSTOM SHAPE (Relative to 0,0). 
 # Example L-Shape inside a 2x2 box: [(0,0), (0,1), (1,1)]
@@ -20,6 +21,7 @@ class_name Alien
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var sfx_player: AudioStreamPlayer = $SFX
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var grass_particle: GPUParticles2D = $"Grass particle"
 @onready var blood_particle: GPUParticles2D = $"Blood particle"
 
@@ -36,7 +38,7 @@ var breath_max_vel := 0.0    # The limit for velocity
 
 # Facing (for direction-based rules)
 enum Facing { LEFT, RIGHT }
-var facing := Facing.RIGHT
+var facing := Facing.LEFT
 
 var memory: Dictionary = {}
 
@@ -51,7 +53,6 @@ var external_production_bonus := 0
 
 # Shop Logic
 var is_new_purchase := false
-var price := 10 # You can get this from your AlienData
 
 # ===== HELPER: GET SHAPE =====
 # This is the magic function that bridges the gap.
@@ -66,6 +67,12 @@ func get_shape_offsets() -> Array[Vector2i]:
 		for y in range(size.y):
 			offsets.append(Vector2i(x, y))
 	return offsets
+
+func initialize_drag(grid_manager: GridManager):
+	grid = grid_manager # 1. Fix the Null Crash
+	if sprite:
+		sprite.set_offset(Vector2(0, -64 * size.y))
+		sprite.position += Vector2(0, 64 * size.y * sprite.scale.y)
 
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
@@ -100,7 +107,7 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 		rule.on_added(self)
 		
 	# Initialize Breathing (RPG Maker Translation)
-	var sprite_height = $AnimatedSprite2D.sprite_frames.get_frame_texture($AnimatedSprite2D.animation, 0).get_height()
+	var sprite_height = sprite.sprite_frames.get_frame_texture(sprite.animation, 0).get_height()
 	
 	# Logic: Smaller height = faster/larger relative pulse
 	breath_accel = 0.00003 + (0.01 / sprite_height) + (randf() * 0.00001)
@@ -112,11 +119,11 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 # ===== INPUT =====
 func _input(event):
 	if event is InputEventMouseButton:
+		# 1. Use GLOBAL mouse position to match World Coordinates
+		var mouse_world_pos = get_global_mouse_position()
+		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				# 1. Use GLOBAL mouse position to match World Coordinates
-				var mouse_world_pos = get_global_mouse_position()
-				
 				if _is_mouse_on_self(mouse_world_pos):
 					start_drag(mouse_world_pos)
 					
@@ -127,13 +134,53 @@ func _input(event):
 			elif !event.pressed and dragging:
 				# Mouse Up logic remains the same
 				end_drag()
-
+		
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			if _is_mouse_on_self(mouse_world_pos):
+				toggle_flip_menu()
+				get_viewport().set_input_as_handled()
+		
 	elif event is InputEventMouseMotion and dragging:
 		# Use global position for smoother dragging with cameras
 		position = get_global_mouse_position() - drag_offset
 
+# ===== FLIP LOGIC =====
+func toggle_flip_menu():
+	# if face_agnostic or !flip_button:
+	if face_agnostic:
+		return
+	
+	# flip_button.visible = !flip_button.visible
+	# Position the button slightly above the alien
+	# flip_button.global_position = global_position
+	flip_axis()
+
+func _on_flip_button_pressed():
+	if facing == Facing.LEFT:
+		facing = Facing.RIGHT
+		sprite.flip_h = true
+	else:
+		facing = Facing.LEFT
+		sprite.flip_h = false
+	
+	# Notify rules that we flipped (useful for direction-based rules)
+	for rule in rules:
+		rule.on_moved(self)
+
+func flip_axis():
+	if facing == Facing.LEFT:
+		facing = Facing.RIGHT
+		sprite.flip_h = true
+	else:
+		facing = Facing.LEFT
+		sprite.flip_h = false
+	
+	# Notify rules that we flipped (useful for direction-based rules)
+	for rule in rules:
+		rule.on_moved(self)
+
 # ===== DRAG LOGIC =====
-func start_drag(mouse_pos: Vector2):
+func start_drag(mouse_pos: Vector2):	
 	if !can_move():
 		return
 
@@ -160,10 +207,10 @@ func end_drag():
 
 	if is_new_purchase:
 		# SHOP LOGIC: Must be a valid spot AND you must have the money
-		var can_afford = CurrencyManager.currency >= price
+		var can_afford = CurrencyManager.currency >= cost
 		
 		if is_valid_spot and can_afford:
-			CurrencyManager.spend(price)
+			CurrencyManager.spend(cost)
 			CurrencyManager.emit_signal("AlienPurchased")
 			is_new_purchase = false
 			setup(target_cell, grid)
@@ -173,6 +220,8 @@ func end_drag():
 		# MOVEMENT LOGIC: Only check if the spot is valid (Moving is free!)
 		if is_valid_spot:
 			move_to_cell(target_cell)
+			sfx_player.set_stream(load("res://Resources/Asset/Sfx/alien_move.mp3"))
+			sfx_player.play()
 		else:
 			move_to_cell(original_cell)
 	
@@ -214,6 +263,9 @@ func on_turn_passed():
 	for rule in rules:
 		rule.on_turn_start(self, grid)
 
+	if !alive: 
+		return
+	
 	# Economy
 	if can_produce:
 		CurrencyManager.add(production_per_turn + bonus_production + external_production_bonus)
@@ -302,12 +354,12 @@ func _process(delta):
 	
 	if breath_state == 0:
 		breath_vel -= breath_accel * speed_multiplier
-		scale.y += breath_vel * speed_multiplier
+		sprite.scale.y += breath_vel * speed_multiplier
 		if breath_vel <= -breath_max_vel:
 			breath_state = 1
 	else:
 		breath_vel += breath_accel * speed_multiplier
-		scale.y += breath_vel * speed_multiplier
+		sprite.scale.y += breath_vel * speed_multiplier
 		if breath_vel >= breath_max_vel:
 			breath_state = 0
 			

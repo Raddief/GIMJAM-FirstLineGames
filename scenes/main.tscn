@@ -14,27 +14,38 @@
 [ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_3.tscn" id="6_85g3d"]
 [ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://resources/data/days/day3.tres" id="6_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_bardToad.tscn" id="7_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_5.tscn" id="8_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_obelisk.tscn" id="8_jkv2x"]
 [ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://resources/data/days/day4.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_pepari.tscn" id="9_jbj1t"]
 [ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://resources/data/days/day5.tres" id="9_og1vs"]
 [ext_resource type="Resource" uid="uid://dkbdv47lqevx4" path="res://resources/data/days/day6.tres" id="10_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://do3y6xveixpmi" path="res://scenes/aliens/alien_7.tscn" id="10_muem4"]
-[ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_8.tscn" id="11_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_gulper.tscn" id="11_dp3eg"]
 [ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://resources/data/days/day7.tres" id="11_vxglm"]
 [ext_resource type="Script" uid="uid://b83c0lexhyul3" path="res://scripts/remove_area.gd" id="23_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="23_og1vs"]
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="25_qkpxi"]
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="26_5q0nq"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="26_vchkt"]
+[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://resources/data/alien_data/Blando.tres" id="27_txyw0"]
 [ext_resource type="PackedScene" uid="uid://bfvg3cyytfdqq" path="res://resources/Scene/Shop.tscn" id="27_vxglm"]
-[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://cd1amj22767hk" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
+[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://resources/data/alien_data/Nook.tres" id="28_vc5cj"]
+[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://resources/data/alien_data/Pepari.tres" id="29_nvyfr"]
+[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://resources/data/alien_data/Bard Toad.tres" id="30_ty1g6"]
+[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://resources/data/alien_data/Faceoff.tres" id="31_j2jfr"]
+[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://resources/data/alien_data/Gulper.tres" id="32_bjg73"]
 [ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="32_dgi5k"]
+[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://resources/data/alien_data/Solaris.tres" id="33_bu4jf"]
 [ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_bard.tscn" id="32_j8jky"]
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
 [ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://resources/Scene/sfx.tscn" id="34_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
+[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="34_o7ddy"]
+[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://resources/data/alien_data/Obelisk.tres" id="35_0loja"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
+[ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="36_ids8r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
 bg_color = Color(0.7607843, 0.9607843, 1, 1)
@@ -165,6 +176,7 @@ text = "End Turn"
 
 [node name="Shop" parent="CanvasLayer" node_paths=PackedStringArray("grid_manager", "alien_manager") instance=ExtResource("27_vxglm")]
 mouse_filter = 2
+Alien = Array[ExtResource("26_vchkt")]([ExtResource("27_txyw0"), ExtResource("28_vc5cj"), ExtResource("29_nvyfr"), ExtResource("30_ty1g6"), ExtResource("31_j2jfr"), ExtResource("32_bjg73"), ExtResource("33_bu4jf"), ExtResource("34_o7ddy"), ExtResource("35_0loja"), ExtResource("36_ids8r")])
 grid_manager = NodePath("../../GridManager")
 alien_manager = NodePath("../../AlienManager")
 

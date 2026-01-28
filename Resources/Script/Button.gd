@@ -26,10 +26,9 @@ func _on_pressed() -> void:
 		root.showDesc(type, object)
 
 # This function triggers when Godot detects a drag attempt on this button
-func _get_drag_data(_at_position: Vector2):
-	if type == 0 and object is AlienData:
-		# We tell the Shop to start the spawning process
-		root.spawn_ghost_alien(object)
-		# We return a dummy value so Godot knows a drag is happening
-		return object 
-	return null
+func _get_drag_data(at_position):
+	# This is Godot's built-in Drag & Drop system
+	# But since you are using a custom "Ghost" system:
+	
+	root.spawn_ghost_alien(object) # Call the function in Shop.gd
+	return null # Return null so Godot doesn't try to create its own drag preview
