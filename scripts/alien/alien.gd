@@ -21,7 +21,6 @@ class_name Alien
 @onready var area_2d: Area2D = $Area2D
 @onready var sfx_player: AudioStreamPlayer = $SFX
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var flip_button: Button = $FlipButton
 
 # ===== STATE =====
 var cell: Vector2i
@@ -51,7 +50,6 @@ var external_production_bonus := 0
 
 # Shop Logic
 var is_new_purchase := false
-var price := 10 # You can get this from your AlienData
 
 # ===== HELPER: GET SHAPE =====
 # This is the magic function that bridges the gap.
@@ -67,20 +65,19 @@ func get_shape_offsets() -> Array[Vector2i]:
 			offsets.append(Vector2i(x, y))
 	return offsets
 
+func initialize_drag(grid_manager: GridManager):
+	grid = grid_manager # 1. Fix the Null Crash
+	if sprite:
+		sprite.set_offset(Vector2(0, -64 * size.y))
+		sprite.position += Vector2(0, 64 * size.y * sprite.scale.y)
+
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
-	if flip_button:
-		flip_button.visible = false
-		if !flip_button.pressed.is_connected(_on_flip_button_pressed):
-			flip_button.pressed.connect(_on_flip_button_pressed)
-	
-	sprite.set_offset(Vector2(0, -64 * size.y))
 	self.set_z_index(2)
 	grid = grid_manager
 	cell = start_cell
 	original_cell = cell
 	position = grid.cell_to_world(cell)
-	sprite.position += Vector2(0, 64 * size.y * sprite.scale.y)
 
 	print("Setup called for: ", alien_name) # Debug 1
 	
@@ -134,8 +131,6 @@ func _input(event):
 			if _is_mouse_on_self(mouse_world_pos):
 				toggle_flip_menu()
 				get_viewport().set_input_as_handled()
-			else:
-				if flip_button: flip_button.visible = false
 		
 	elif event is InputEventMouseMotion and dragging:
 		# Use global position for smoother dragging with cameras
@@ -143,15 +138,16 @@ func _input(event):
 
 # ===== FLIP LOGIC =====
 func toggle_flip_menu():
-	if face_agnostic or !flip_button:
+	# if face_agnostic or !flip_button:
+	if face_agnostic:
 		return
 	
-	flip_button.visible = !flip_button.visible
+	# flip_button.visible = !flip_button.visible
 	# Position the button slightly above the alien
-	flip_button.global_position = global_position
+	# flip_button.global_position = global_position
+	flip_axis()
 
 func _on_flip_button_pressed():
-	print("I am NOT Agnostic!")
 	if facing == Facing.LEFT:
 		facing = Facing.RIGHT
 		sprite.flip_h = true
@@ -159,18 +155,26 @@ func _on_flip_button_pressed():
 		facing = Facing.LEFT
 		sprite.flip_h = false
 	
-	flip_button.visible = false
+	# Notify rules that we flipped (useful for direction-based rules)
+	for rule in rules:
+		rule.on_moved(self)
+
+func flip_axis():
+	if facing == Facing.LEFT:
+		facing = Facing.RIGHT
+		sprite.flip_h = true
+	else:
+		facing = Facing.LEFT
+		sprite.flip_h = false
 	
 	# Notify rules that we flipped (useful for direction-based rules)
 	for rule in rules:
 		rule.on_moved(self)
 
 # ===== DRAG LOGIC =====
-func start_drag(mouse_pos: Vector2):
+func start_drag(mouse_pos: Vector2):	
 	if !can_move():
 		return
-
-	flip_button.visible = false
 
 	dragging = true
 	drag_offset = mouse_pos - global_position
@@ -195,10 +199,10 @@ func end_drag():
 
 	if is_new_purchase:
 		# SHOP LOGIC: Must be a valid spot AND you must have the money
-		var can_afford = CurrencyManager.currency >= price
+		var can_afford = CurrencyManager.currency >= cost
 		
 		if is_valid_spot and can_afford:
-			CurrencyManager.spend(price)
+			CurrencyManager.spend(cost)
 			CurrencyManager.emit_signal("AlienPurchased")
 			is_new_purchase = false
 			setup(target_cell, grid)

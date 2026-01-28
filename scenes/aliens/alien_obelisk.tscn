@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://by7rpj0257m8c" path="res://scenes/aliens/flip_button.gd" id="7_dnu1t"]
 
 [sub_resource type="Resource" id="Resource_1mc0m"]
+resource_local_to_scene = true
 script = ExtResource("4_wt8rj")
 metadata/_custom_type_script = "uid://dipeur6e8kb76"
 
@@ -37,6 +38,7 @@ cost = 2000
 production_per_turn = 1225
 size = Vector2i(1, 4)
 spawn_audio = ExtResource("2_b00cm")
+face_agnostic = true
 rules = Array[ExtResource("3_dnu1t")]([SubResource("Resource_1mc0m"), SubResource("Resource_dnu1t")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_2dxtf")
 name = "Bard Toad"
-alien_trait = "Any units directly adjacent of Bard Toad gains +4 Credit yield."
+alien_trait = "All aliens directly 1 tile above, below, or beside Bard Toad gain +8 Credit yield. Only effects coming from the same instance of Bard Toad stacks."
 price = 250
 rate = 100
 size = "1x1"

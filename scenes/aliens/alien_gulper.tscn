@@ -3,15 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_gvi5r"]
 [ext_resource type="AudioStream" uid="uid://bmpgg3bkjw3hi" path="res://resources/Asset/Sfx/alien_gulper_spawn.mp3" id="2_y1j3g"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="3_ov4yd"]
-[ext_resource type="Script" uid="uid://ccsskfol03446" path="res://scripts/rules/buff_bonus_rule.gd" id="4_lb7dd"]
+[ext_resource type="Script" uid="uid://4pg1cudeuv05" path="res://scripts/rules/eat_rule.gd" id="4_tuogo"]
 [ext_resource type="Script" uid="uid://di8hvpiaacyxt" path="res://scripts/rules/trigger_condition_rule.gd" id="5_qngnb"]
 [ext_resource type="Script" uid="uid://dlyt8raxsyc8o" path="res://scripts/rules/los_inFrontOf_rule.gd" id="6_mdlgb"]
 [ext_resource type="Texture2D" uid="uid://bbootidhuo6wv" path="res://assets/gulper.png" id="8_0dbw1"]
 
-[sub_resource type="Resource" id="Resource_mdktm"]
-script = ExtResource("4_lb7dd")
-production_bonus = -8
-metadata/_custom_type_script = "uid://cbq8t40r0d04c"
+[sub_resource type="Resource" id="Resource_gvi5r"]
+script = ExtResource("4_tuogo")
+metadata/_custom_type_script = "uid://4pg1cudeuv05"
 
 [sub_resource type="Resource" id="Resource_oemo4"]
 script = ExtResource("6_mdlgb")
@@ -21,7 +20,7 @@ metadata/_custom_type_script = "uid://0axwe42foyse"
 [sub_resource type="Resource" id="Resource_cqjeu"]
 script = ExtResource("5_qngnb")
 trigger_rule = SubResource("Resource_oemo4")
-chained_rules = Array[ExtResource("3_ov4yd")]([SubResource("Resource_mdktm")])
+chained_rules = Array[ExtResource("3_ov4yd")]([SubResource("Resource_gvi5r")])
 metadata/_custom_type_script = "uid://dhdgmlky0b8lw"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_503ok"]
