@@ -54,6 +54,8 @@ var external_production_bonus := 0
 # Shop Logic
 var is_new_purchase := false
 
+var mouse_over := false
+
 # ===== HELPER: GET SHAPE =====
 # This is the magic function that bridges the gap.
 func get_shape_offsets() -> Array[Vector2i]:
@@ -121,7 +123,7 @@ func _input(event):
 		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				if _is_mouse_on_self(mouse_world_pos):
+				if mouse_over:
 					start_drag(mouse_world_pos)
 					
 					# 2. CRITICAL: Consume the event!
@@ -133,7 +135,7 @@ func _input(event):
 				end_drag()
 		
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			if _is_mouse_on_self(mouse_world_pos):
+			if mouse_over:
 				toggle_flip_menu()
 				get_viewport().set_input_as_handled()
 		
@@ -307,26 +309,11 @@ func kill():
 	queue_free()
 
 # ===== HIT TEST =====
-func _is_mouse_on_self(mouse_pos: Vector2) -> bool:
-	# 3. Dynamic Hitbox Size
-	# Your old code hardcoded 64x64. This failed for 2x1 or 1x3 aliens.
-	# We calculate the rect based on the 'size' variable you exported.
-	
-	# Assuming your sprite anchor is Top-Left based on your grid logic:
-	var alien_width = size.x * 128 # Assuming 64 is tile size
-	var alien_height = size.y * 128
-	
-	# If your sprites are centered, you need to offset the Rect. 
-	# Based on your previous 'global_position - Vector2(32, 32)', 
-	# it seems your pivot is the Center of the first tile. 
-	
-	# This creates a rect starting at top-left of the sprite
-	var top_left = global_position - Vector2(alien_width / 2.0, alien_height / 2.0)
-	var rect_size = Vector2(alien_width, alien_height)
-	
-	var rect := Rect2(top_left, rect_size)
-	
-	return rect.has_point(mouse_pos)
+func _on_area_2d_mouse_entered() -> void:
+	mouse_over = true
+
+func _on_area_2d_mouse_exited() -> void:
+	mouse_over = false
 
 # ===== DEBUG VISUAL =====
 func _process(delta):

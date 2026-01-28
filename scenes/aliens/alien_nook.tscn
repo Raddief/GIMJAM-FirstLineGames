@@ -31,9 +31,10 @@ spawn_audio = ExtResource("2_w5yha")
 rules = Array[ExtResource("2_o72qa")]([SubResource("Resource_2f3ca")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(0, -10.999999)
+position = Vector2(0, 57)
 scale = Vector2(0.67, 0.67)
 sprite_frames = SubResource("SpriteFrames_srym8")
+offset = Vector2(0, -101.49253)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 scale = Vector2(4, 4)

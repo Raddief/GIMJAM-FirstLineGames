@@ -12,9 +12,6 @@ func on_turn_start(alien: Alien, grid: GridManager) -> void:
 		return
  
 	for cell in alien.cells:
-		var occupant = grid.get_occupant(cell)
-		if occupant == null or occupant.alien_type != required_type or occupant == alien:
-			return  # Not the right type, do nothing
 		var center : Vector2i = cell
 
 		# Scan the radius
@@ -28,6 +25,8 @@ func on_turn_start(alien: Alien, grid: GridManager) -> void:
 
 				var target : Alien = grid.get_occupant(target_cell)
 				if target == null: continue
+				if required_type != GridManager.AlienType.NONE and target.alien_type != required_type:
+					continue
 
 				# --- THE LOGIC ---
 				
@@ -56,7 +55,7 @@ func on_turn_end(alien: Alien, grid: GridManager) -> void:
 
 	for cell in alien.cells:
 		var occupant = grid.get_occupant(cell)
-		if occupant == null or occupant.alien_type != required_type or occupant == alien:
+		if occupant == null or (required_type != GridManager.AlienType.NONE and occupant.alien_type != required_type) or occupant == alien:
 			return  # Not the right type, do nothing
 
 		var center : Vector2i = cell

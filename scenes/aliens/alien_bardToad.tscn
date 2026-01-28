@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_e60en"]
 [ext_resource type="Script" uid="uid://blef1pmhv53kd" path="res://scripts/rules/adjacent_bonus_emitter_rule.gd" id="3_e60en"]
 [ext_resource type="Texture2D" uid="uid://ympehtlm030g" path="res://assets/bard_toad.png" id="4_e60en"]
-[ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_bard.tscn" id="6_kxigb"]
+[ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="6_kxigb"]
 
 [sub_resource type="Resource" id="Resource_cxdyn"]
 script = ExtResource("3_e60en")
@@ -25,7 +25,6 @@ animations = [{
 
 [node name="Alien4" instance=ExtResource("1_23kv5")]
 alien_name = "Bard Toad"
-alien_type = 1
 cost = 250
 production_per_turn = 100
 spawn_audio = ExtResource("2_2qjfm")
