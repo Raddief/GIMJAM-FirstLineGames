@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://c2dly0llg2d48"]
+
+[ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_siawx"]
+[ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_am4w3"]
+[ext_resource type="AudioStream" uid="uid://dwo1ulysh3e5n" path="res://resources/Asset/Sfx/alien_faceoff_spawn.mp3" id="2_hc0if"]
+[ext_resource type="Script" uid="uid://dgwgdky0u8kjx" path="res://scripts/rules/top_row_production_rule.gd" id="3_hc0if"]
+[ext_resource type="Texture2D" uid="uid://cjf60wyykyqor" path="res://assets/cutoff/faceoff_face.png" id="3_k54kb"]
+[ext_resource type="Texture2D" uid="uid://dtjhwuwtgviua" path="res://assets/faceoff_1.png" id="4_k54kb"]
+[ext_resource type="Texture2D" uid="uid://c8652qfya56cq" path="res://assets/faceoff_2.png" id="5_iemqi"]
+[ext_resource type="Texture2D" uid="uid://caxuu3e8jnjd6" path="res://assets/faceoff_3.png" id="6_p47yt"]
+[ext_resource type="Texture2D" uid="uid://bjwmco5xo2w40" path="res://assets/faceoff_4.png" id="7_8rsxq"]
+
+[sub_resource type="Resource" id="Resource_tntct"]
+script = ExtResource("3_hc0if")
+show_warning = false
+metadata/_custom_type_script = "uid://dgwgdky0u8kjx"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tntct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k54kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iemqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p47yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8rsxq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i86jg"]
+size = Vector2(61.75, 32)
+
+[node name="Alien3" instance=ExtResource("1_siawx")]
+alien_name = "Faceoff"
+alien_type = 4
+cost = 230
+production_per_turn = 138
+size = Vector2i(2, 1)
+spawn_audio = ExtResource("2_hc0if")
+facecard = ExtResource("3_k54kb")
+rules = Array[ExtResource("2_am4w3")]([SubResource("Resource_tntct")])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(60, 0)
+sprite_frames = SubResource("SpriteFrames_tntct")
+autoplay = "default"
+frame_progress = 0.9851523
+
+[node name="Area2D" parent="." index="1"]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(15.125, 0)
+shape = SubResource("RectangleShape2D_i86jg")

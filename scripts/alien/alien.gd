@@ -9,6 +9,7 @@ class_name Alien
 @export var size: Vector2i
 @export var spawn_audio: AudioStream
 @export var face_agnostic: bool = false
+@export var facecard: Texture2D
 
 # CUSTOM SHAPE (Relative to 0,0). 
 # Example L-Shape inside a 2x2 box: [(0,0), (0,1), (1,1)]

@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxFlat" script_class="StyleBoxFlatPlus" load_steps=2 format=3 uid="uid://dssuogccdbwqf"]
+
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="1_kgpgg"]
+
+[resource]
+bg_color = Color(0.7607843, 0.9607843, 1, 1)
+border_width_bottom = 12
+border_color = Color(0.29411766, 0.42352942, 0.56078434, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+script = ExtResource("1_kgpgg")
+metadata/_custom_type_script = "uid://cst1doe48hcbq"

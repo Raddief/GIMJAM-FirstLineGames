@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dahoi8jnm0mbq"
-path="res://.godot/imported/ui_delete1.mp3-bb01b51f6cf75f65dd970d10d2967886.mp3str"
+path="res://.godot/imported/ui_delete1.mp3-4c9b53acd39bb0d48297afc4f41371d1.mp3str"
 
 [deps]
 
-source_file="res://Resources/Asset/Sfx/ui_delete1.mp3"
-dest_files=["res://.godot/imported/ui_delete1.mp3-bb01b51f6cf75f65dd970d10d2967886.mp3str"]
+source_file="res://resources/Asset/Sfx/ui_delete1.mp3"
+dest_files=["res://.godot/imported/ui_delete1.mp3-4c9b53acd39bb0d48297afc4f41371d1.mp3str"]
 
 [params]
 

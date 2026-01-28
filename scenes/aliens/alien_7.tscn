@@ -15,6 +15,7 @@ metadata/_custom_type_script = "uid://ccsskfol03446"
 
 [sub_resource type="Resource" id="Resource_xktv6"]
 script = ExtResource("4_bjeyy")
+los_range = 1
 metadata/_custom_type_script = "uid://0axwe42foyse"
 
 [sub_resource type="Resource" id="Resource_us2dw"]
