@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if $AnimationSprite.get_animation() == "Walking":
+		$AnimationPlayer.play("Walking")
 		if direction:
 			self.position.x -= delta*100
 		else :
@@ -25,6 +26,7 @@ func _process(delta: float) -> void:
 
 func _on_see_timeout() -> void:
 	if !state:
+		$AnimationPlayer.play("RESET")
 		$AnimationSprite.play("Idle")
 		$See.start(randi_range(2,5))
 		state = true

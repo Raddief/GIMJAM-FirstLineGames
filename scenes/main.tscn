@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=56 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -6,35 +6,37 @@
 [ext_resource type="Script" uid="uid://b20wqv6q1mx3q" path="res://scripts/managers/day_manager.gd" id="2_jkv2x"]
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="3_0ld40"]
 [ext_resource type="Script" uid="uid://tsrrcocbwtvo" path="res://scripts/managers/alien_manager.gd" id="3_tbgi4"]
-[ext_resource type="Resource" uid="uid://pidshi2hyblv" path="res://resources/data/days/day1.tres" id="4_gqmmt"]
+[ext_resource type="Resource" uid="uid://pidshi2hyblv" path="res://Resources/data/days/day1.tres" id="4_gqmmt"]
 [ext_resource type="Script" uid="uid://dur0oij32o63j" path="res://scripts/ui/ui.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bkey2m3inbb2h" path="res://scenes/aliens/alien_blando.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://dwcmw2dsqno7j" path="res://scenes/aliens/alien_nook.tscn" id="5_85g3d"]
-[ext_resource type="Resource" uid="uid://dckp2mlk5pk6v" path="res://resources/data/days/day2.tres" id="5_yc10j"]
+[ext_resource type="Resource" uid="uid://dckp2mlk5pk6v" path="res://Resources/data/days/day2.tres" id="5_yc10j"]
 [ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_3.tscn" id="6_85g3d"]
-[ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://resources/data/days/day3.tres" id="6_jscy8"]
+[ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://Resources/data/days/day3.tres" id="6_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_bardToad.tscn" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_obelisk.tscn" id="8_jkv2x"]
-[ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://resources/data/days/day4.tres" id="8_y6deb"]
+[ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://Resources/data/days/day4.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_pepari.tscn" id="9_jbj1t"]
-[ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://resources/data/days/day5.tres" id="9_og1vs"]
-[ext_resource type="Resource" uid="uid://dkbdv47lqevx4" path="res://resources/data/days/day6.tres" id="10_2wyq8"]
+[ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://Resources/data/days/day5.tres" id="9_og1vs"]
+[ext_resource type="Resource" uid="uid://dkbdv47lqevx4" path="res://Resources/data/days/day6.tres" id="10_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://do3y6xveixpmi" path="res://scenes/aliens/alien_7.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_gulper.tscn" id="11_dp3eg"]
-[ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://resources/data/days/day7.tres" id="11_vxglm"]
+[ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://Resources/data/days/day7.tres" id="11_vxglm"]
 [ext_resource type="Script" uid="uid://b83c0lexhyul3" path="res://scripts/remove_area.gd" id="23_2wyq8"]
-[ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="23_og1vs"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="25_qkpxi"]
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="26_5q0nq"]
-[ext_resource type="PackedScene" uid="uid://bfvg3cyytfdqq" path="res://resources/Scene/Shop.tscn" id="27_vxglm"]
-[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="25_qkpxi"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="26_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://bfvg3cyytfdqq" path="res://Resources/Scene/Shop.tscn" id="27_vxglm"]
+[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://Resources/Scene/PopUps.tscn" id="28_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://ps2ctbb33vay" path="res://Resources/Asset/UI/toggle circle.png" id="28_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="32_dgi5k"]
 [ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="32_j8jky"]
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
-[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://resources/Scene/sfx.tscn" id="34_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="34_dgi5k"]
+[ext_resource type="Texture2D" uid="uid://cthkdwoa6le1f" path="res://Resources/Asset/UI/trash-can.png" id="34_j8jky"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
+[ext_resource type="PackedScene" uid="uid://drqjal2ylfjs2" path="res://assets/environment/vignette.tscn" id="36_kmb1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
 bg_color = Color(0.7607843, 0.9607843, 1, 1)
@@ -44,6 +46,693 @@ bg_color = Color(0.7607843, 0.9607843, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8jky"]
 bg_color = Color(0.6313726, 0.9882353, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmb1v"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fuf3a"]
+
+[sub_resource type="Animation" id="Animation_pibwh"]
+resource_name = "Step1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Marker:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Marker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1813, 152)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Marker:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Marker:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(341, 39)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1458, 194)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click here to open menu"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Marker/PointLight2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Marker/PointLight2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Marker/PointLight2D:offset")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_c6pm6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Marker:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_5he1u"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Marker:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fuf3a"]
+resource_name = "Step2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Marker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1716, 240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click here to open shop"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(330, 39)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1351, 282)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Marker:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 128)]
+}
+
+[sub_resource type="Animation" id="Animation_5poiv"]
+resource_name = "Step3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Marker:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Marker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1714, 279)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Marker:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(330, 39)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1345, 319)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Click Alien to buy alien"]
+}
+
+[sub_resource type="Animation" id="Animation_2cjbq"]
+resource_name = "Step4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["There is many alien with different
+price, yield, size and trait.
+Try clicking one of them"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(472, 123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1168, 426)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Marker:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 696)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Marker:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1656, 160)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Marker:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 348)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Marker:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_chjal"]
+resource_name = "Step5"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Here the information about alien is displayed
+Read it carefully, because some alien dislike
+other"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(633, 123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(146, 765)]
+}
+
+[sub_resource type="Animation" id="Animation_cjqg0"]
+resource_name = "Step6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["To buy alien, 
+drag them to \"Pen\""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1305, 348)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(269, 81)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Marker:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1177, 696)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Marker:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193, 160)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Marker:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(588.5, 348)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Marker/PointLight2D:energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Marker/PointLight2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34.433346, -20.766676)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Marker/PointLight2D:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9.608334, 6.191667)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Marker:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vchkt"]
+resource_name = "Step7"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TextMarker:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["That's all, Your goal is to fullfill quota beside
+credits '\\'.... Good Luck"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TextMarker:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(623, 86)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(484, 110)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Marker:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(987, 188)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Marker:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(296, 63)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Marker:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(588.5, 348)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Marker/PointLight2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(53.44998, 10.750002)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Marker/PointLight2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.241666, 1.625)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Marker/PointLight2D:offset")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54, 54)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5poiv"]
+_data = {
+&"Idle": SubResource("Animation_5he1u"),
+&"RESET": SubResource("Animation_c6pm6"),
+&"Step1": SubResource("Animation_pibwh"),
+&"Step2": SubResource("Animation_fuf3a"),
+&"Step3": SubResource("Animation_5poiv"),
+&"Step4": SubResource("Animation_2cjbq"),
+&"Step5": SubResource("Animation_chjal"),
+&"Step6": SubResource("Animation_cjqg0"),
+&"Step7": SubResource("Animation_vchkt")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fuf3a"]
 texture = ExtResource("34_kmb1v")
@@ -64,6 +753,8 @@ shop = NodePath("CanvasLayer/Shop")
 day_manager = NodePath("DayManager")
 alien_manager = NodePath("AlienManager")
 popups = NodePath("CanvasLayer/Centering")
+
+[node name="Vignette" parent="." instance=ExtResource("36_kmb1v")]
 
 [node name="CurrencyManager" type="Node" parent="."]
 script = ExtResource("2_gqmmt")
@@ -91,6 +782,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 51.0
+offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -104,14 +797,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 148.0
-offset_top = -129.0
+offset_top = -113.0
 offset_right = 429.0
 offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.15294118, 0.20392157, 0.35686275, 1)
 theme_override_fonts/font = ExtResource("26_5q0nq")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_5q0nq")
 text = " Currency : 100"
 vertical_alignment = 1
@@ -122,9 +815,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -549.0
-offset_top = 950.0
+offset_top = 966.0
 offset_right = 103.0
-offset_bottom = 1007.0
+offset_bottom = 1004.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.14901961, 0.19607843, 0.34509805, 1)
 theme_override_fonts/font = ExtResource("26_5q0nq")
@@ -150,19 +843,16 @@ text = "DAY : 0"
 
 [node name="EndTurnButton" parent="CanvasLayer/UI" instance=ExtResource("25_qkpxi")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
+anchor_left = 0.89375
+anchor_top = 0.94074076
+anchor_right = 0.97083336
 anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = -72.0
-offset_right = -4.0
-offset_bottom = -8.0
+offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "End Turn"
+metadata/_edit_use_anchors_ = true
 
 [node name="Shop" parent="CanvasLayer" node_paths=PackedStringArray("grid_manager", "alien_manager") instance=ExtResource("27_vxglm")]
 mouse_filter = 2
@@ -171,6 +861,44 @@ alien_manager = NodePath("../../AlienManager")
 
 [node name="Centering" parent="CanvasLayer" instance=ExtResource("28_5q0nq")]
 visible = false
+
+[node name="Marker" type="Button" parent="CanvasLayer"]
+visible = false
+offset_left = 1813.0
+offset_top = 152.0
+offset_right = 1941.0
+offset_bottom = 280.0
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kmb1v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fuf3a")
+disabled = true
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasLayer/Marker"]
+texture = ExtResource("28_fuf3a")
+offset = Vector2(64, 64)
+
+[node name="TextMarker" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 1458.0
+offset_top = 194.0
+offset_right = 1799.0
+offset_bottom = 233.0
+theme_override_fonts/font = ExtResource("26_5q0nq")
+theme_override_font_sizes/font_size = 32
+text = "Click here to open menu"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="CanvasLayer"]
+visible = false
+color = Color(0.86898494, 0.8689849, 0.8689849, 1)
+blend_mode = 1
+
+[node name="TutorialPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5poiv")
+}
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("32_dgi5k")
@@ -199,6 +927,7 @@ centered = false
 z_index = 1
 position = Vector2(1680, 134)
 texture = ExtResource("36_fuf3a")
+metadata/_edit_lock_ = true
 
 [node name="Light particle" parent="Lamp" instance=ExtResource("32_j8jky")]
 
@@ -210,7 +939,8 @@ script = ExtResource("23_2wyq8")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="RemoveArea"]
-texture = ExtResource("23_og1vs")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("34_j8jky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RemoveArea"]
 shape = SubResource("RectangleShape2D_2wyq8")
@@ -219,6 +949,7 @@ shape = SubResource("RectangleShape2D_2wyq8")
 z_index = 1
 position = Vector2(1680, 543)
 texture = ExtResource("36_fuf3a")
+metadata/_edit_lock_ = true
 
 [node name="Light particle" parent="Lamp2" instance=ExtResource("32_j8jky")]
 
@@ -229,4 +960,5 @@ autostart = true
 
 [node name="ForPeople" type="Node2D" parent="."]
 
+[connection signal="animation_finished" from="TutorialPlayer" to="." method="_on_tutorial_player_animation_finished"]
 [connection signal="timeout" from="SpawnPeople" to="." method="_on_spawn_people_timeout"]

@@ -1,19 +1,19 @@
 [gd_scene load_steps=33 format=3 uid="uid://bfvg3cyytfdqq"]
 
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
-[ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
-[ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_m2jm4"]
+[ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://Resources/Script/Shop.gd" id="1_vtuwb"]
+[ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://Resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_cc1rn"]
-[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://resources/data/alien_data/Blando.tres" id="3_6sfmx"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="3_s556k"]
-[ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
-[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
-[ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://resources/Asset/UI/secret-book.png" id="4_3kx1x"]
-[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://resources/data/alien_data/Nook.tres" id="4_6sfmx"]
-[ext_resource type="Texture2D" uid="uid://dwe4olxugkvv0" path="res://resources/Asset/UI/cog.png" id="5_rhti7"]
-[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://resources/data/alien_data/Pepari.tres" id="5_tcc56"]
-[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
-[ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://resources/Asset/UI/flying-flag.png" id="6_57nro"]
+[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://Resources/data/alien_data/Blando.tres" id="3_6sfmx"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="3_s556k"]
+[ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://Resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
+[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://Resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
+[ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://Resources/Asset/UI/secret-book.png" id="4_3kx1x"]
+[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://Resources/data/alien_data/Nook.tres" id="4_6sfmx"]
+[ext_resource type="Texture2D" uid="uid://dwe4olxugkvv0" path="res://Resources/Asset/UI/cog.png" id="5_rhti7"]
+[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://Resources/data/alien_data/Pepari.tres" id="5_tcc56"]
+[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://Resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
+[ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://Resources/Asset/UI/flying-flag.png" id="6_57nro"]
 [ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="7_8ebbm"]
 [ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
 [ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://resources/data/alien_data/Gulper.tres" id="8_umvc6"]
@@ -454,17 +454,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_5haow")
 }
 
-[node name="Popup" parent="." instance=ExtResource("11_57nro")]
-process_mode = 3
-size = Vector2i(256, 128)
-visible = false
-min_size = Vector2i(256, 128)
-
 [connection signal="pressed" from="SidePanel/OpenClose" to="." method="_on_open_close_pressed"]
 [connection signal="pressed" from="SidePanel/Menu/MenuList/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="SidePanel/Menu/MenuList/UseItem" to="." method="_on_use_item_pressed"]
 [connection signal="pressed" from="SidePanel/Menu/MenuList/Journal" to="." method="_on_journal_pressed"]
 [connection signal="pressed" from="SidePanel/Menu/MenuList/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="SidePanel/Menu/MenuList/Forfeit" to="." method="_on_forfeit_pressed"]
-[connection signal="canceled" from="Popup" to="." method="_on_popup_canceled"]
-[connection signal="confirmed" from="Popup" to="." method="_on_popup_confirmed"]

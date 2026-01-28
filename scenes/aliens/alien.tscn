@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_n5c48")
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 
 [node name="Grass particle" parent="." instance=ExtResource("3_qbxjc")]
+z_index = -1
 rotation = 3.1415927
 scale = Vector2(0.125, 0.125)
 emitting = false

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b7ijiybyrdh5u"
-path="res://.godot/imported/alien_pepari_spawn.mp3-cac2bd0fc98362e748c1aadc077ce574.mp3str"
+path="res://.godot/imported/alien_pepari_spawn.mp3-41788b2759aa72744764d40767da7d1d.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/alien_pepari_spawn.mp3"
-dest_files=["res://.godot/imported/alien_pepari_spawn.mp3-cac2bd0fc98362e748c1aadc077ce574.mp3str"]
+source_file="res://Resources/Asset/Sfx/alien_pepari_spawn.mp3"
+dest_files=["res://.godot/imported/alien_pepari_spawn.mp3-41788b2759aa72744764d40767da7d1d.mp3str"]
 
 [params]
 
