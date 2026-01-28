@@ -125,7 +125,7 @@ func is_cell_occupied(origin: Vector2i, offsets: Array[Vector2i], ignore_occupan
 	return false 
 
 func get_occupant(cell: Vector2i):
-	return occupied.get(cell, null)
+	return occupied.get(cell, null) if occupied.get(cell, null) != null else null
 
 # Locks specific cells based on offsets
 func occupy_cell(origin: Vector2i, offsets: Array[Vector2i], alien) -> Array[Vector2i]:

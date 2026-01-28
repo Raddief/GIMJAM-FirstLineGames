@@ -35,7 +35,7 @@ func on_turn_start(alien: Alien, grid: GridManager) -> void:
 				
 				# 2. RIVAL CHECK (Different Source = No Stack)
 				# If someone signed it, and that someone is NOT me, I stop.
-				if current_source != null and current_source != alien:
+				if current_source != null:
 					continue 
 				
 				# 3. APPLY BONUS (Same Source = Stack)
@@ -54,10 +54,6 @@ func on_turn_end(alien: Alien, grid: GridManager) -> void:
 	if alien.grid == null: return
 
 	for cell in alien.cells:
-		var occupant = grid.get_occupant(cell)
-		if occupant == null or (required_type != GridManager.AlienType.NONE and occupant.alien_type != required_type) or occupant == alien:
-			return  # Not the right type, do nothing
-
 		var center : Vector2i = cell
 
 		# Re-scan to find who we buffed
@@ -69,7 +65,8 @@ func on_turn_end(alien: Alien, grid: GridManager) -> void:
 				if !grid.is_cell_valid(target_cell): continue
 				
 				var target : Alien = grid.get_occupant(target_cell)
-				if target == null: continue
+				if target == null or (required_type != GridManager.AlienType.NONE and target.alien_type != required_type) or target == alien:
+					continue
 				
 				# Only erase MY signatures. Don't touch others.
 				if target.memory.get("bard_source") == alien:
