@@ -6,6 +6,7 @@ class_name DayData
 @export var money_target: int = 100
 
 @export var day_modifiers: Array[BaseDayModifier] = []
+@export var new_aliens: Array[AlienData] = []
 
 # Optional future expansion
 @export var sell_price_multiplier: float = 1.0

@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddleptbigphkm"]
+[gd_scene load_steps=6 format=3 uid="uid://ddleptbigphkm"]
 
 [ext_resource type="Script" uid="uid://djr6f5rktwdm5" path="res://scripts/alien/alien.gd" id="1_u8rjw"]
+[ext_resource type="PackedScene" path="res://scenes/particles/particle_blood.tscn" id="2_x1jr7"]
+[ext_resource type="PackedScene" path="res://scenes/particles/particle_grass.tscn" id="3_qbxjc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5c48"]
 
@@ -20,3 +22,11 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_n5c48")
+
+[node name="Grass particle" parent="." instance=ExtResource("3_qbxjc")]
+rotation = 3.1415927
+scale = Vector2(0.125, 0.125)
+emitting = false
+one_shot = true
+
+[node name="Blood particle" parent="." instance=ExtResource("2_x1jr7")]

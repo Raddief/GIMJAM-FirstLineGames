@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="DayData" load_steps=4 format=3 uid="uid://dkbdv47lqevx4"]
+[gd_resource type="Resource" script_class="DayData" load_steps=5 format=3 uid="uid://dkbdv47lqevx4"]
 
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_6wxpj"]
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_hww7n"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_6ge6x"]
 
 [sub_resource type="Resource" id="Resource_16jh8"]
 script = ExtResource("1_hww7n")

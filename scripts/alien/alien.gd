@@ -18,9 +18,12 @@ class_name Alien
 # Rules attached to this alien
 @export var rules: Array[BaseAlienRule] = []
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var sfx_player: AudioStreamPlayer = $SFX
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var grass_particle: GPUParticles2D = $"Grass particle"
+@onready var blood_particle: GPUParticles2D = $"Blood particle"
 
 # ===== STATE =====
 var cell: Vector2i
@@ -79,8 +82,13 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 	original_cell = cell
 	position = grid.cell_to_world(cell)
 
+	for i in range(rules.size()):
+		rules[i] = rules[i].duplicate(true)
+
 	print("Setup called for: ", alien_name) # Debug 1
 	
+	grass_particle.emitting = true
+
 	if spawn_audio == null:
 		print("Warning: spawn_audio is missing on ", alien_name) # Debug 2
 	
@@ -183,7 +191,7 @@ func start_drag(mouse_pos: Vector2):
 
 func end_drag():
 	dragging = false
-	z_index = 1
+	z_index = 2
 	var overlaps = area_2d.get_overlapping_areas()
 
 	for area in overlaps:
@@ -292,6 +300,12 @@ func kill():
 
 	for rule in rules:
 		rule.on_removed(self)
+	
+	blood_particle.emitting = true
+	animated_sprite_2d.hide()
+	area_2d.monitoring = false
+
+	await get_tree().create_timer(1.0).timeout
 
 	queue_free()
 

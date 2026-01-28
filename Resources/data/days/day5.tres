@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="DayData" load_steps=5 format=3 uid="uid://cgav4xflcs820"]
+[gd_resource type="Resource" script_class="DayData" load_steps=6 format=3 uid="uid://cgav4xflcs820"]
 
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_10ic5"]
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_e5y0r"]
 [ext_resource type="Script" uid="uid://xt26xy35i8nr" path="res://scripts/days/double_production_day.gd" id="2_r33qk"]
+[ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="3_dcie2"]
 
 [sub_resource type="Resource" id="Resource_o8j4u"]
 script = ExtResource("2_r33qk")
