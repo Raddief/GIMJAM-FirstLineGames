@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=29 format=3 uid="uid://bfvg3cyytfdqq"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://resources/data/alien_data/Solaris.tres" id="9_attia"]
 [ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
 [ext_resource type="PackedScene" uid="uid://c1drjqsvnhg0t" path="res://resources/Scene/popup.tscn" id="11_57nro"]
+[ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mur7"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
@@ -182,7 +183,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vtuwb")
-Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_6sfmx"), ExtResource("4_6sfmx"), ExtResource("5_tcc56"), ExtResource("3_w7eiy"), ExtResource("5_x2ouj"), ExtResource("8_umvc6"), ExtResource("9_attia"), ExtResource("10_umvc6"), ExtResource("7_v31mq")])
+Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_6sfmx"), ExtResource("4_6sfmx"), ExtResource("5_tcc56"), ExtResource("3_w7eiy"), ExtResource("5_x2ouj"), ExtResource("8_umvc6"), ExtResource("9_attia"), ExtResource("10_umvc6"), ExtResource("7_v31mq"), ExtResource("12_8cqjm")])
 metadata/_edit_lock_ = true
 
 [node name="SidePanel" type="Control" parent="."]

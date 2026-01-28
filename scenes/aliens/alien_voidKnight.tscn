@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkip4gf2f3w25"]
+[gd_scene load_steps=10 format=3 uid="uid://dkip4gf2f3w25"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_0vj67"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_24t11"]
+[ext_resource type="AudioStream" uid="uid://b5wrbe7ubmkqg" path="res://resources/Asset/Sfx/alien_voidknight_spawn.mp3" id="2_rmtec"]
 [ext_resource type="Script" uid="uid://bdds4trk06tg4" path="res://scripts/rules/unique_row_rule.gd" id="3_rmtec"]
 [ext_resource type="Texture2D" uid="uid://dcvkc2co3rk64" path="res://assets/void_knight.png" id="4_6f8tn"]
 [ext_resource type="Script" uid="uid://by7rpj0257m8c" path="res://scenes/aliens/flip_button.gd" id="5_u0wl4"]
@@ -29,6 +30,7 @@ alien_name = "Void Knight"
 cost = 390
 production_per_turn = 290
 size = Vector2i(1, 2)
+spawn_audio = ExtResource("2_rmtec")
 face_agnostic = true
 custom_shape = Array[Vector2i]([Vector2i(0, 1), Vector2i(-1, 1), Vector2i(0, 0)])
 rules = Array[ExtResource("2_24t11")]([SubResource("Resource_ysvn1")])

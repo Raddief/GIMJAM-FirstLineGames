@@ -129,6 +129,7 @@ func spawn_ghost_alien(data: AlienData):
 	
 	selected_alien = data
 	new_alien.is_new_purchase = true
+	new_alien.cost = data.price
 	
 	# 2. Position it immediately at the mouse
 	new_alien.global_position = get_global_mouse_position()

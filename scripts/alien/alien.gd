@@ -212,6 +212,8 @@ func end_drag():
 		# MOVEMENT LOGIC: Only check if the spot is valid (Moving is free!)
 		if is_valid_spot:
 			move_to_cell(target_cell)
+			sfx_player.set_stream(load("res://Resources/Asset/Sfx/alien_move.mp3"))
+			sfx_player.play()
 		else:
 			move_to_cell(original_cell)
 	

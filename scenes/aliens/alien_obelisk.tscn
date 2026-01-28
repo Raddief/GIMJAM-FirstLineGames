@@ -55,6 +55,7 @@ shape = SubResource("RectangleShape2D_k0642")
 [node name="SFX" type="AudioStreamPlayer" parent="." index="2"]
 
 [node name="FlipButton" type="Button" parent="." index="3"]
+visible = false
 top_level = true
 z_index = 10
 anchors_preset = -1
