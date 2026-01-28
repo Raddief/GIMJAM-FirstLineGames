@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs2dwkijtcdbv"]
+[gd_scene load_steps=9 format=3 uid="uid://cs2dwkijtcdbv"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_23kv5"]
-[ext_resource type="AudioStream" uid="uid://cqpa6xvs34u1o" path="res://Resources/Asset/Sfx/alien_bardtoad_spawn.mp3" id="2_2qjfm"]
+[ext_resource type="AudioStream" uid="uid://cqpa6xvs34u1o" path="res://resources/Asset/Sfx/alien_bardtoad_spawn.mp3" id="2_2qjfm"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_e60en"]
 [ext_resource type="Script" uid="uid://blef1pmhv53kd" path="res://scripts/rules/adjacent_bonus_emitter_rule.gd" id="3_e60en"]
 [ext_resource type="Texture2D" uid="uid://ympehtlm030g" path="res://assets/bard_toad.png" id="4_e60en"]
+[ext_resource type="PackedScene" path="res://scenes/particles/particle_bard.tscn" id="6_kxigb"]
 
 [sub_resource type="Resource" id="Resource_cxdyn"]
 script = ExtResource("3_e60en")
@@ -23,7 +24,6 @@ animations = [{
 }]
 
 [node name="Alien4" instance=ExtResource("1_23kv5")]
-z_index = 1
 alien_name = "Bard Toad"
 alien_type = 1
 cost = 250
@@ -39,3 +39,5 @@ sprite_frames = SubResource("SpriteFrames_cxdyn")
 scale = Vector2(4, 4)
 
 [node name="SFX" type="AudioStreamPlayer" parent="." index="2"]
+
+[node name="Bard particle" parent="." index="5" instance=ExtResource("6_kxigb")]

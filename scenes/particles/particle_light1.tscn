@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://chy7b175ld55u"]
+
+[ext_resource type="Texture2D" uid="uid://cvhg15m6jdmxd" path="res://assets/particles/particle_light1.png" id="1_exunw"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yitgc"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_rp0iw"]
+offsets = PackedFloat32Array(0, 0.35731414, 0.8417266, 1)
+colors = PackedColorArray(0.9793151, 0.97804135, 0.93204665, 0, 0.97036844, 0.9240295, 0.6708902, 0.25490198, 0.8644625, 0.8171345, 0.5365305, 0.47843137, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yitgc"]
+gradient = SubResource("Gradient_rp0iw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lf67a"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(50, 1, 1)
+direction = Vector3(50, 100, 0)
+spread = 15.254
+initial_velocity_min = 317.09
+initial_velocity_max = 437.66998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+color = Color(1, 1, 1, 0.34901962)
+color_ramp = SubResource("GradientTexture1D_yitgc")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+anim_offset_max = 1.0
+
+[node name="Light particle" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_yitgc")
+amount = 100
+texture = ExtResource("1_exunw")
+lifetime = 1.3800000000000001
+speed_scale = 0.28
+process_material = SubResource("ParticleProcessMaterial_lf67a")
