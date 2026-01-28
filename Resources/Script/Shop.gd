@@ -42,13 +42,12 @@ func showDesc(types:int, object):
 	$BottomPanel.visible = true
 	if types == 0 and object is AlienData:
 		var AlienScene = selected_alien.alien_scene.instantiate()
-		$BottomPanel/Description/Icon.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
+		$BottomPanel/Description/Grid/Icon.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
 .get_frame_texture("default",0))
-		$BottomPanel/Description/Icon.set_text(object.name)
-		$BottomPanel/Description/Contain1.set_text(str(object.price))
-		$BottomPanel/Description/Contain2.set_text(object.origin)
-		$BottomPanel/Description/Contain3.set_text(object.alien_trait)
-		$BottomPanel/Description/Contain4.set_text(str(object.rate))
+		$BottomPanel/Description/Grid/Profile/Header.set_text(object.name)
+		$BottomPanel/Description/Grid/PriceYield/Price/Contain.set_text(str(object.price))
+		$BottomPanel/Description/Grid/Profile/Contain.set_text(object.alien_trait)
+		$BottomPanel/Description/Grid/PriceYield/Yield/Contain.set_text(str(object.rate))
 
 func addSlot(day_data: DayData = null) -> void:
 	var aliens: Array = Alien
