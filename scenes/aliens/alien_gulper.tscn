@@ -47,9 +47,10 @@ spawn_audio = ExtResource("2_y1j3g")
 rules = Array[ExtResource("3_ov4yd")]([SubResource("Resource_cqjeu")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(0, 67.00001)
+position = Vector2(1, 168)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_503ok")
+offset = Vector2(-1.1111112, -112.22221)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, 64)
