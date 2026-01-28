@@ -14,7 +14,7 @@ func _on_try_again_pressed() -> void:
 	get_tree().change_scene_to_packed(load("res://scenes/main.tscn"))
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_packed(load("res://Resources/Scene/Button.tscn")) #Placeholder
+	get_tree().change_scene_to_packed(load("res://Resources/Scene/Main_Menu.tscn"))
 
 func Forfeit():
 	$Forfeit.visible = true
@@ -22,7 +22,8 @@ func Forfeit():
 	get_tree().set_pause(true)
 
 func _on_sure_pressed() -> void:
-	get_tree().change_scene_to_packed(load("res://Resources/Scene/Button.tscn")) #Placeholder
+	get_tree().set_pause(false)
+	get_tree().change_scene_to_packed(load("res://Resources/Scene/Main_Menu.tscn"))
 
 func _on_refuse_pressed() -> void:
 	$Forfeit.visible = false
@@ -56,5 +57,12 @@ func _on_continues_pressed() -> void:
 	self.visible = false
 	get_tree().set_pause(false)
 
-func _on_gui_drag_ended(value_changed: bool) -> void:
+func _on_gui_value_changed(value: float) -> void:
 	AudioManager.emit_signal("volumeGUIchanged", $Setting/VBoxContainer/Column/Slider/GUI.get_value())
+	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover2.mp3"))
+	$Sfx.play()
+
+func _on_bgm_value_changed(value: float) -> void:
+	AudioManager.emit_signal("volumeBGMchanged", $Setting/VBoxContainer/Column/Slider/BGM.get_value())
+	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover2.mp3"))
+	$Sfx.play()

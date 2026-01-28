@@ -70,10 +70,14 @@ func _on_open_close_pressed() -> void:
 		anim.play("CloseShop")
 	elif $SidePanel.get_anchor(SIDE_LEFT) > 1:
 		anim.play("OpenShop")
+		if CurrencyManager.Tutorial == 1 : 
+			CurrencyManager.emit_signal("TutorialNext")
 
 func _on_shop_pressed() -> void:
 	var text = $SidePanel/Menu/MenuList/Shop.get_text()
 	if text == "Shop" :
+		if CurrencyManager.Tutorial == 2 : 
+			CurrencyManager.emit_signal("TutorialNext")
 		$SidePanel/Menu/MenuList/Shop.set_text("Aliens")
 		$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/alien-stare.png"))
 		$SidePanel/Menu/MenuList/UseItem.set_text("Items")
@@ -83,6 +87,8 @@ func _on_shop_pressed() -> void:
 		$SidePanel/Menu/MenuList/Setting.visible = false
 		$SidePanel/Menu/MenuList/Forfeit.visible = false
 	elif text == "Aliens" :
+		if CurrencyManager.Tutorial == 3 : 
+			CurrencyManager.emit_signal("TutorialNext")
 		$SidePanel/Menu.visible = false
 		$SidePanel/Scroll.visible = true
 

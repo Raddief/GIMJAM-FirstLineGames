@@ -76,6 +76,10 @@ func initialize_drag(grid_manager: GridManager):
 		sprite.set_offset(Vector2(0, -64 * size.y))
 		sprite.position += Vector2(0, 64 * size.y * sprite.scale.y)
 
+func _ready() -> void:
+	sfx_player.set_volume_db(AudioManager.GUI)
+	AudioManager.connect("volumeGUIchanged", _on_gui_changed)
+
 # ===== SETUP =====
 func setup(start_cell: Vector2i, grid_manager: GridManager):
 	self.set_z_index(2)
@@ -211,6 +215,8 @@ func end_drag():
 		if is_valid_spot and can_afford:
 			CurrencyManager.spend(cost)
 			CurrencyManager.emit_signal("AlienPurchased")
+			if CurrencyManager.Tutorial == 6 :
+				CurrencyManager.emit_signal("TutorialNext")
 			is_new_purchase = false
 			setup(target_cell, grid)
 		else:
@@ -299,7 +305,8 @@ func kill():
 
 	for rule in rules:
 		rule.on_removed(self)
-	
+	$SFX.set_stream(load("res://Resources/Asset/Sfx/ui_delete1.mp3"))
+	$SFX.play()
 	blood_particle.emitting = true
 	animated_sprite_2d.hide()
 	area_2d.monitoring = false
@@ -349,3 +356,6 @@ func _process(delta):
 
 	for rule in rules:
 		rule.debug_visual(self)
+
+func _on_gui_changed(value:float):
+	$SFX.set_volume_db(value)

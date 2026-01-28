@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://chguyrh8h8mqh"]
+[gd_scene load_steps=6 format=3 uid="uid://chguyrh8h8mqh"]
 
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="1_8c4hv"]
 [ext_resource type="Script" uid="uid://056golegvos5" path="res://Resources/Script/Popup.gd" id="1_m2qde"]
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="2_4pixp"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="4_7q0k1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pixp"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
@@ -101,12 +102,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
 text = "Try Again"
 
 [node name="Back" parent="GameOver/VBoxContainer/HBoxContainer" instance=ExtResource("1_8c4hv")]
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
 [node name="Setting" type="Panel" parent="."]
@@ -169,11 +172,14 @@ max_value = 10.0
 [node name="BGM" type="HSlider" parent="Setting/VBoxContainer/Column/Slider"]
 layout_mode = 2
 size_flags_vertical = 3
+min_value = -50.0
+max_value = 10.0
 
 [node name="Continues" parent="Setting/VBoxContainer" instance=ExtResource("1_8c4hv")]
-custom_minimum_size = Vector2(64, 32)
+custom_minimum_size = Vector2(122, 64)
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
 text = "Back"
 
 [node name="Forfeit" type="Panel" parent="."]
@@ -333,11 +339,15 @@ text = "67"
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
 text = "Next Day"
+
+[node name="Sfx" parent="." instance=ExtResource("4_7q0k1")]
 
 [connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="drag_ended" from="Setting/VBoxContainer/Column/Slider/GUI" to="." method="_on_gui_drag_ended"]
+[connection signal="value_changed" from="Setting/VBoxContainer/Column/Slider/GUI" to="." method="_on_gui_value_changed"]
+[connection signal="value_changed" from="Setting/VBoxContainer/Column/Slider/BGM" to="." method="_on_bgm_value_changed"]
 [connection signal="pressed" from="Setting/VBoxContainer/Continues" to="." method="_on_continues_pressed"]
 [connection signal="pressed" from="Forfeit/VBoxContainer/Button/Sure" to="." method="_on_sure_pressed"]
 [connection signal="pressed" from="Forfeit/VBoxContainer/Button/Refuse" to="." method="_on_refuse_pressed"]

@@ -6,15 +6,32 @@ extends Node2D
 @export var alien_manager: AlienManager
 @export var popups: CenterContainer
 @onready var people_scene: PackedScene = preload("res://Resources/Scene/people.tscn")
+@onready var tutorials = $TutorialPlayer
 
 func _ready():
 	CurrencyManager.currency = 0
 	CurrencyManager.TotalGold = 0
+	Music.play_level()
 	shop.buyAlien.connect(buy_alien)
 	
+
 	CurrencyManager.currency_changed.connect(day_manager.on_money_changed)
 	CurrencyManager.currency_changed.connect(ui.on_money_changed)
 	CurrencyManager.connect("AlienPurchased", add_alien)
+	CurrencyManager.connect("TutorialNext", _on_tutorial)
+	if CurrencyManager.Tutorial != 7 :
+		CurrencyManager.Tutorial = 1
+		$CanvasLayer/UI/CurrencyLabel.visible = false
+		$CanvasLayer/UI/TurnProgress.visible = false
+		$CanvasLayer/UI/EndTurnButton.visible = false
+		$CanvasLayer/Marker.visible = true
+		$CanvasLayer/DirectionalLight2D.visible = true
+		$CanvasLayer/TextMarker.visible = true
+	elif CurrencyManager.Tutorial == 7 :
+		$CanvasLayer/DirectionalLight2D.queue_free()
+		$CanvasLayer/Marker.queue_free()
+		$CanvasLayer/TextMarker.queue_free()
+		tutorials.queue_free()
 
 	day_manager.connect("day_started", ui.on_day_started)
 	day_manager.connect("day_started", _on_day_change)
@@ -35,6 +52,10 @@ func _ready():
 func buy_alien(alien_data: AlienData) -> void:
 	if CurrencyManager.spend(alien_data.price):
 		alien_manager.spawn_alien(alien_data)
+
+func _on_tutorial():
+	CurrencyManager.Tutorial += 1
+	tutorials.play("Step"+str(CurrencyManager.Tutorial))
 
 func add_alien():
 	shop.TotalAliens += 1
@@ -73,6 +94,19 @@ func _on_setting():
 func _on_spawn_people_timeout() -> void:
 	$SpawnPeople.start(randf_range(1,5))
 	var people = people_scene.instantiate()
-	people.position.y = randf_range(10,DisplayServer.screen_get_size().y/4)
+	people.position.y = randf_range(10,180)
 	people.direction = randi_range(0,1)
 	$ForPeople.add_child(people)
+
+
+func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Step5" :
+		CurrencyManager.emit_signal("TutorialNext")
+	elif anim_name == "Step7" :
+		$CanvasLayer/UI/CurrencyLabel.visible = true
+		$CanvasLayer/UI/TurnProgress.visible = true
+		$CanvasLayer/UI/EndTurnButton.visible = true
+		$CanvasLayer/DirectionalLight2D.queue_free()
+		$CanvasLayer/Marker.queue_free()
+		$CanvasLayer/TextMarker.queue_free()
+		tutorials.queue_free()

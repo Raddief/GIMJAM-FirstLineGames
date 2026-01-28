@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://b81ho6inaw2dt"]
 
-[ext_resource type="Script" uid="uid://ctbjx4tywe2i3" path="res://Resources/Script/music.gd" id="1_tqwn3"]
+[ext_resource type="Script" uid="uid://c2lsfv16emhee" path="res://Resources/Script/music.gd" id="1_tqwn3"]
 [ext_resource type="AudioStream" uid="uid://ceqw7ntg5yxmf" path="res://Resources/Asset/music/Song5 3.mp3" id="2_muxm0"]
 [ext_resource type="AudioStream" uid="uid://diuyqucaaddke" path="res://Resources/Asset/music/Song3 1.mp3" id="3_2mndj"]
 
 [node name="Music" type="AudioStreamPlayer"]
+process_mode = 3
 bus = &"Music"
 script = ExtResource("1_tqwn3")
 
