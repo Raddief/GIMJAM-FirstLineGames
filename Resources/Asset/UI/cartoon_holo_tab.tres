@@ -1,0 +1,78 @@
+[gd_resource type="StyleBox" script_class="StyleBoxStacked" load_steps=7 format=3 uid="uid://dbcyq6fbrvkj4"]
+
+[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="1_xagfu"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="2_5mff6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpgfo"]
+bg_color = Color(0.7490196, 0.95686275, 1, 0.6117647)
+border_width_left = 20
+border_width_right = 20
+border_color = Color(0.05882353, 0.9607843, 0.9882353, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+expand_margin_top = -10.0
+expand_margin_bottom = -10.0
+script = ExtResource("2_5mff6")
+margin_top = -10
+margin_bottom = -10
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfn21"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 32
+border_width_bottom = 32
+border_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+script = ExtResource("2_5mff6")
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sdd5"]
+bg_color = Color(0.2769, 0.32025498, 0.39, 0)
+border_width_top = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+script = ExtResource("2_5mff6")
+margin_top = 1
+margin_bottom = 1
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yimeg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_top = -32.0
+expand_margin_bottom = -32.0
+script = ExtResource("2_5mff6")
+margin_top = -32
+margin_bottom = -32
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("1_xagfu")
+style_boxes = Array[StyleBox]([SubResource("StyleBoxFlat_tpgfo"), SubResource("StyleBoxFlat_cfn21"), SubResource("StyleBoxFlat_7sdd5"), SubResource("StyleBoxFlat_yimeg")])
+metadata/_custom_type_script = "uid://bgl147d3q5c62"

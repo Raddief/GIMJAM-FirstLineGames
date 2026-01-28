@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=33 format=3 uid="uid://bfvg3cyytfdqq"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
@@ -21,32 +21,39 @@
 [ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
 [ext_resource type="PackedScene" uid="uid://c1drjqsvnhg0t" path="res://resources/Scene/popup.tscn" id="11_57nro"]
 [ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
+[ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
+[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
+[ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mur7"]
-bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.34117648, 0.38431373, 0.45882353, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yimeg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+script = ExtResource("15_yimeg")
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtuwb"]
-bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0.2627451, 0.30588236, 0.3764706, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 4
+[sub_resource type="StyleBox" id="StyleBox_tpgfo"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("14_cfn21")
+style_boxes = Array[StyleBox]([ExtResource("22_6by2v"), SubResource("StyleBoxFlat_yimeg")])
+metadata/_custom_type_script = "uid://bgl147d3q5c62"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kx1x"]
 bg_color = Color(1, 1, 1, 0)
@@ -193,7 +200,7 @@ anchor_left = 1.02
 anchor_top = 0.149
 anchor_right = 1.02
 anchor_bottom = 0.79700005
-offset_left = 276.6399
+offset_left = -5.600342
 offset_top = 0.08000183
 offset_right = 211.99976
 offset_bottom = 0.2399292
@@ -203,24 +210,26 @@ grow_vertical = 2
 [node name="OpenClose" parent="SidePanel" instance=ExtResource("3_s556k")]
 layout_mode = 1
 anchor_left = -0.25
-anchor_top = 0.011000001
+anchor_top = 0.126
 anchor_right = 0.0
-anchor_bottom = 0.15
-offset_top = 0.29999924
-offset_bottom = -7.6293945e-06
+anchor_bottom = 0.264
+offset_top = -0.20000458
+offset_bottom = 0.19999695
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "<"
 
 [node name="Menu" type="Panel" parent="SidePanel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.80300003
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 2.0
+offset_left = 7.0
+offset_right = -7.9676666
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2mur7")
+theme_override_styles/panel = ExtResource("14_0mwk0")
 
 [node name="MenuList" type="VBoxContainer" parent="SidePanel/Menu"]
 layout_mode = 1
@@ -284,9 +293,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -43.39966
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2mur7")
+theme_override_styles/panel = ExtResource("14_0mwk0")
 
 [node name="Scroll" type="ScrollContainer" parent="SidePanel/Scroll"]
 layout_mode = 1
@@ -308,7 +319,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BottomPanel" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchor_top = 0.87000006
 anchor_right = 1.0
@@ -321,48 +331,49 @@ grow_vertical = 0
 [node name="Description" type="Panel" parent="BottomPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.75600004
+anchor_right = 1.327
 anchor_bottom = 1.0
-offset_right = -0.68811035
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -6.4959717
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vtuwb")
+theme_override_styles/panel = SubResource("StyleBox_tpgfo")
 
-[node name="Header1" type="Label" parent="BottomPanel/Description"]
+[node name="Grid" type="HBoxContainer" parent="BottomPanel/Description"]
 layout_mode = 1
-offset_left = 280.0
-offset_top = 28.0
-offset_right = 352.0
-offset_bottom = 65.0
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_m2jm4")
-theme_override_font_sizes/font_size = 30
-text = "Price"
-vertical_alignment = 1
-
-[node name="Header2" type="Label" parent="BottomPanel/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5622999
-anchor_top = 0.2
-anchor_right = 0.62863487
-anchor_bottom = 0.4642857
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_m2jm4")
-theme_override_font_sizes/font_size = 30
-text = "Origin"
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Header3" type="Label" parent="BottomPanel/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.793808
-anchor_top = 0.2
-anchor_right = 0.8504808
-anchor_bottom = 0.4642857
-grow_horizontal = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -16.0
+grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Icon" type="Button" parent="BottomPanel/Description/Grid"]
+custom_minimum_size = Vector2(120, 84)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_m2jm4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3kx1x")
+disabled = true
+icon = ExtResource("7_8ebbm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Profile" type="VBoxContainer" parent="BottomPanel/Description/Grid"]
+custom_minimum_size = Vector2(600, 90)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Header" type="Label" parent="BottomPanel/Description/Grid/Profile"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_m2jm4")
 theme_override_font_sizes/font_size = 30
@@ -370,104 +381,73 @@ text = "Trait"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Header4" type="Label" parent="BottomPanel/Description"]
-layout_mode = 1
-offset_left = 408.0
-offset_top = 28.0
-offset_right = 480.0
-offset_bottom = 65.0
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_m2jm4")
-theme_override_font_sizes/font_size = 30
-text = "Yield"
-vertical_alignment = 1
-
-[node name="Contain1" type="RichTextLabel" parent="BottomPanel/Description"]
-layout_mode = 0
-offset_left = 280.0
-offset_top = 68.0
-offset_right = 352.0
-offset_bottom = 116.0
-size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 31
-text = "1000"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Contain2" type="RichTextLabel" parent="BottomPanel/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.511532
-anchor_top = 0.4857143
-anchor_right = 0.66964805
-anchor_bottom = 0.94285715
-offset_right = -6.1035156e-05
-size_flags_horizontal = 3
-text = "A daylight never stress very well"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Contain3" type="RichTextLabel" parent="BottomPanel/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.71809393
-anchor_top = 0.4857143
-anchor_right = 0.9473149
-anchor_bottom = 0.94285715
-size_flags_horizontal = 3
+[node name="Contain" type="RichTextLabel" parent="BottomPanel/Description/Grid/Profile"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_separation = 0
+theme_override_constants/paragraph_separation = 0
 theme_override_fonts/normal_font = ExtResource("1_m2jm4")
+theme_override_font_sizes/normal_font_size = 18
 text = "- Never ever let this guy cook
 - He believes in Jewish
 - Nah bro, I'd Win
 - If you can keep this guy, you win
 - Fabulous
 - Freaky Alien"
+scroll_active = false
 autowrap_mode = 2
-horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Contain4" type="RichTextLabel" parent="BottomPanel/Description"]
-layout_mode = 0
-offset_left = 408.0
-offset_top = 68.0
-offset_right = 481.0
-offset_bottom = 113.0
+[node name="MarginContainer" type="MarginContainer" parent="BottomPanel/Description/Grid"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="PriceYield" type="VBoxContainer" parent="BottomPanel/Description/Grid"]
+layout_mode = 2
+alignment = 1
+
+[node name="Price" type="HBoxContainer" parent="BottomPanel/Description/Grid/PriceYield"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="BottomPanel/Description/Grid/PriceYield/Price"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 32
+theme_override_fonts/font = ExtResource("1_m2jm4")
+theme_override_font_sizes/font_size = 25
+text = "Price : "
+vertical_alignment = 1
+
+[node name="Contain" type="RichTextLabel" parent="BottomPanel/Description/Grid/PriceYield/Price"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
 text = "1000"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Icon" type="Button" parent="BottomPanel/Description"]
-custom_minimum_size = Vector2(84, 84)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.007
-anchor_top = 0.07300001
-anchor_right = 0.113000005
-anchor_bottom = 0.93700004
-offset_left = -0.43999863
-offset_top = -0.0069999695
-offset_right = 0.71998596
-offset_bottom = 4.032959
-grow_vertical = 2
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+[node name="Yield" type="HBoxContainer" parent="BottomPanel/Description/Grid/PriceYield"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="BottomPanel/Description/Grid/PriceYield/Yield"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_m2jm4")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/disabled = SubResource("StyleBoxFlat_3kx1x")
-disabled = true
-text = "Solar Lizard"
-icon = ExtResource("7_8ebbm")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
+theme_override_font_sizes/font_size = 25
+text = "Yield : "
+vertical_alignment = 1
+
+[node name="Contain" type="RichTextLabel" parent="BottomPanel/Description/Grid/PriceYield/Yield"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "1000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
