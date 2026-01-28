@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqh1j6k5pki6o"
-path="res://.godot/imported/Box One.png-2dff250841e398cb4ec605b97a551133.ctex"
+uid="uid://bw84jbis0ijub"
+path="res://.godot/imported/beam1.png-b4275d7df9cbf9a7386da28a702593f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Asset/UI/Box One.png"
-dest_files=["res://.godot/imported/Box One.png-2dff250841e398cb4ec605b97a551133.ctex"]
+source_file="res://assets/particles/beam1.png"
+dest_files=["res://.godot/imported/beam1.png-b4275d7df9cbf9a7386da28a702593f9.ctex"]
 
 [params]
 

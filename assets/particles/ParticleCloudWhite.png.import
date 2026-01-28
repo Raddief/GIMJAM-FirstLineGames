@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqh1j6k5pki6o"
-path="res://.godot/imported/Box One.png-2dff250841e398cb4ec605b97a551133.ctex"
+uid="uid://tkfs3bhirbff"
+path="res://.godot/imported/ParticleCloudWhite.png-fda7738a836d01be387a60d8d9c01c40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Asset/UI/Box One.png"
-dest_files=["res://.godot/imported/Box One.png-2dff250841e398cb4ec605b97a551133.ctex"]
+source_file="res://assets/particles/ParticleCloudWhite.png"
+dest_files=["res://.godot/imported/ParticleCloudWhite.png-fda7738a836d01be387a60d8d9c01c40.ctex"]
 
 [params]
 

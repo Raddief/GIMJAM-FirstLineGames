@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://64th5q5o8tn6"]
+
+[ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://Resources/Shaders/vhs.gdshader" id="1_dvuyg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_laijw"]
+shader = ExtResource("1_dvuyg")
+shader_parameter/scanline_strength = 0.0
+shader_parameter/noise_strength = 0.00400000019
+shader_parameter/distortion = 0.0
+shader_parameter/chroma_offset = 0.0
+shader_parameter/vignette_strength = 0.0
+shader_parameter/time_scale = 1.0
+
+[node name="vhs filter" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_laijw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=34 format=3 uid="uid://bfvg3cyytfdqq"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://Resources/Script/Shop.gd" id="1_vtuwb"]
@@ -15,16 +15,25 @@
 [ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://Resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
 [ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://Resources/Asset/UI/flying-flag.png" id="6_57nro"]
 [ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="7_8ebbm"]
-[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
-[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://resources/data/alien_data/Gulper.tres" id="8_umvc6"]
-[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://resources/data/alien_data/Solaris.tres" id="9_attia"]
-[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
-[ext_resource type="PackedScene" uid="uid://c1drjqsvnhg0t" path="res://resources/Scene/popup.tscn" id="11_57nro"]
-[ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
-[ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
-[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
-[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
-[ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
+[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://Resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
+[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://Resources/data/alien_data/Gulper.tres" id="8_umvc6"]
+[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://Resources/data/alien_data/Solaris.tres" id="9_attia"]
+[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://Resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
+[ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://Resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
+[ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://Resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
+[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://Resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
+[ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://Resources/Shaders/vhs.gdshader" id="15_ow7in"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://Resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
+[ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://Resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0pjgs"]
+shader = ExtResource("15_ow7in")
+shader_parameter/scanline_strength = 0.070000003325
+shader_parameter/noise_strength = 0.0
+shader_parameter/distortion = 0.0
+shader_parameter/chroma_offset = 0.002000000095
+shader_parameter/vignette_strength = 0.3
+shader_parameter/time_scale = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yimeg"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -230,6 +239,17 @@ offset_right = -7.9676666
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("14_0mwk0")
+
+[node name="ColorRect" type="ColorRect" parent="SidePanel/Menu"]
+material = SubResource("ShaderMaterial_0pjgs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 47.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MenuList" type="VBoxContainer" parent="SidePanel/Menu"]
 layout_mode = 1

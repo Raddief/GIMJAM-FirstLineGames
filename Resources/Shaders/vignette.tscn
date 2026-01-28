@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://drqjal2ylfjs2"]
 
-[ext_resource type="Shader" uid="uid://bgaxhsl6takin" path="res://assets/environment/vignette.gdshader" id="1_fgys5"]
+[ext_resource type="Shader" uid="uid://bm3d1eh2oj4mb" path="res://Resources/Shaders/vignette.gdshader" id="1_fgys5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7sab7"]
 shader = ExtResource("1_fgys5")
-shader_parameter/intensity = 1.2430000590425
+shader_parameter/intensity = 0.7130000338675
 shader_parameter/softness = 1.0
 shader_parameter/roundness = 0.74300002877273
 shader_parameter/inner_radius = 0.4090000194275

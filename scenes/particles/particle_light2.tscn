@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://o643rj04bxhy"]
+
+[ext_resource type="Texture2D" uid="uid://cvhg15m6jdmxd" path="res://assets/particles/particle_light1.png" id="1_4la5m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yl5dq"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_4la5m"]
+offsets = PackedFloat32Array(0, 0.18004866, 1)
+colors = PackedColorArray(0.5882353, 0.99607843, 0.99607843, 0, 0.6627451, 0.99607843, 0.99607843, 0.039215688, 0.61960787, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yl5dq"]
+gradient = SubResource("Gradient_4la5m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_31yr0"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 100, 0)
+spread = 13.906
+initial_velocity_min = 301.05
+initial_velocity_max = 301.05
+gravity = Vector3(0, 0, 0)
+scale_max = 7.3199997
+color_ramp = SubResource("GradientTexture1D_yl5dq")
+anim_offset_max = 1.0
+
+[node name="Particle light blue" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_yl5dq")
+amount = 50
+texture = ExtResource("1_4la5m")
+lifetime = 7.3
+process_material = SubResource("ParticleProcessMaterial_31yr0")
