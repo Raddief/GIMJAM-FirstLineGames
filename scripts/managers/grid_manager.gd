@@ -128,15 +128,17 @@ func get_occupant(cell: Vector2i):
 	return occupied.get(cell, null)
 
 # Locks specific cells based on offsets
-func occupy_cell(origin: Vector2i, offsets: Array[Vector2i], alien):
+func occupy_cell(origin: Vector2i, offsets: Array[Vector2i], alien) -> Array[Vector2i]:
+	var occupied_cells: Array[Vector2i] = []
 	for offset in offsets:
 		var cell = origin + offset
 		occupied[cell] = alien
+		occupied_cells.append(cell)
+	return occupied_cells
 
 # Frees specific cells
-func free_cell(origin: Vector2i, offsets: Array[Vector2i]):
-	for offset in offsets:
-		var cell = origin + offset
+func free_cell(cells: Array[Vector2i]):
+	for cell in cells:
 		occupied.erase(cell)
 
 # ===== DEBUG INPUT (OPTIONAL) =====

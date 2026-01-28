@@ -29,7 +29,6 @@ animations = [{
 size = Vector2(61.75, 32)
 
 [node name="Alien3" instance=ExtResource("1_p1y5m")]
-z_index = 1
 alien_name = "Faceoff"
 alien_type = 4
 cost = 230
@@ -47,5 +46,3 @@ sprite_frames = SubResource("SpriteFrames_tntct")
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(15.125, 0)
 shape = SubResource("RectangleShape2D_i86jg")
-
-[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

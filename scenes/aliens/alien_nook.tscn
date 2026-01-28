@@ -37,5 +37,3 @@ sprite_frames = SubResource("SpriteFrames_srym8")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 scale = Vector2(4, 4)
-
-[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

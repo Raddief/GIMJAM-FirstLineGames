@@ -15,7 +15,10 @@ func on_moved(alien: Alien) -> void:
 	_apply_corner_visuals(alien)
 
 func get_production_modifier(alien, grid) -> int:
-	if _get_corner_type(alien.cell, grid) != -1:
+	if alien.cells.size() != 1:
+		return 0
+
+	if _get_corner_type(alien.cells[0], grid) != -1:
 		return bonus_production
 	return 0
 
@@ -35,7 +38,7 @@ func _apply_corner_visuals(alien: Alien):
 	var base_pos = alien.memory.get("base_sprite_pos", alien.sprite.position)
 	var base_flip = alien.memory.get("base_flip", false)
 	
-	var corner_type = _get_corner_type(alien.cell, alien.grid)
+	var corner_type = _get_corner_type(alien.cells[0], alien.grid)
 	
 	match corner_type:
 		0: # TOP LEFT (0, 0) -> Offset (-12, 12) & FLIP

@@ -26,7 +26,7 @@ class_name Alien
 @onready var blood_particle: GPUParticles2D = $"Blood particle"
 
 # ===== STATE =====
-var cell: Vector2i
+var cells: Array[Vector2i] = []   # Currently occupied cells
 var alive := true
 var can_produce := true
 
@@ -78,9 +78,9 @@ func initialize_drag(grid_manager: GridManager):
 func setup(start_cell: Vector2i, grid_manager: GridManager):
 	self.set_z_index(2)
 	grid = grid_manager
-	cell = start_cell
-	original_cell = cell
-	position = grid.cell_to_world(cell)
+	cells = grid.occupy_cell(start_cell, get_shape_offsets(), self)
+	original_cell = start_cell
+	position = grid.cell_to_world(start_cell)
 
 	for i in range(rules.size()):
 		rules[i] = rules[i].duplicate(true)
@@ -99,9 +99,6 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 		print("Playing sound now!") # Debug 4
 		sfx_player.stream = spawn_audio
 		sfx_player.play()
-		
-	# UPDATED: Use get_shape_offsets()
-	grid.occupy_cell(cell, get_shape_offsets(), self)
 
 	for rule in rules:
 		rule.on_added(self)
@@ -186,7 +183,7 @@ func start_drag(mouse_pos: Vector2):
 
 	dragging = true
 	drag_offset = mouse_pos - global_position
-	original_cell = cell
+	original_cell = grid.world_to_cell(global_position)
 	z_index = 10
 
 func end_drag():
@@ -230,11 +227,11 @@ func end_drag():
 # ===== MOVE =====
 func move_to_cell(target_cell: Vector2i):
 	var shape = get_shape_offsets()
-	grid.free_cell(cell, shape)
-	cell = target_cell
-	grid.occupy_cell(cell, shape, self)
+	grid.free_cell(cells)
+	cells.clear()
+	cells = grid.occupy_cell(target_cell, shape, self)
 
-	position = grid.cell_to_world(cell)
+	position = grid.cell_to_world(target_cell)
 
 	for rule in rules:
 		rule.on_moved(self)
@@ -296,7 +293,7 @@ func kill():
 		return
 
 	alive = false
-	grid.free_cell(cell, get_shape_offsets())
+	grid.free_cell(cells)
 
 	for rule in rules:
 		rule.on_removed(self)
@@ -362,12 +359,6 @@ func _process(delta):
 		sprite.scale.y += breath_vel * speed_multiplier
 		if breath_vel >= breath_max_vel:
 			breath_state = 0
-			
-	# 2. VISUAL FEEDBACK (Your existing logic)
-	if !can_produce:
-		modulate = Color(1, 0.5, 0.5) 
-	else:
-		modulate = Color.WHITE
 
 	for rule in rules:
 		rule.debug_visual(self)

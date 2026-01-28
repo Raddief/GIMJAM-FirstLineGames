@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_jup13"]
 [ext_resource type="Script" uid="uid://cda63q8gt0t3v" path="res://scripts/rules/no_rule.gd" id="3_hdsbi"]
 [ext_resource type="Texture2D" uid="uid://bonfh2uicmo3f" path="res://assets/blando.png" id="4_jlrg6"]
-[ext_resource type="Script" uid="uid://by7rpj0257m8c" path="res://scenes/aliens/flip_button.gd" id="6_hdsbi"]
+[ext_resource type="Script" path="res://scenes/aliens/flip_button.gd" id="6_hdsbi"]
 
 [sub_resource type="Resource" id="Resource_i2qp7"]
 script = ExtResource("3_hdsbi")
@@ -38,9 +38,7 @@ sprite_frames = SubResource("SpriteFrames_mnjxg")
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 scale = Vector2(4, 4)
 
-[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]
-
-[node name="FlipButton" type="Button" parent="." index="3"]
+[node name="FlipButton" type="Button" parent="." index="2"]
 visible = false
 top_level = true
 z_index = 10

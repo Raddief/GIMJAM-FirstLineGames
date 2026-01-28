@@ -18,14 +18,17 @@ func explode(alien, grid) -> void:
 	# Contoh efek: merusak alien lain di sekitar
 	for dx in range(-explosion_radius, explosion_radius + 1):
 		for dy in range(-explosion_radius, explosion_radius + 1):
-			var cell : Vector2i = alien.cell + Vector2i(dx, dy)
+			for cell in alien.cells:
+				var target_cell : Vector2i = cell + Vector2i(dx, dy)
+				if alien.cells.has(target_cell):
+					continue
 
-			if !grid.is_cell_valid(cell):
-				continue
+				if !grid.is_cell_valid(target_cell):
+					continue
 
-			var other = grid.get_alien_at(cell)
-			if other and other != alien:
-				other.kill()
+				var other = grid.get_alien_at(target_cell)
+				if other and other != alien:
+					other.kill()
 
 	# Hancurkan diri sendiri
 	alien.kill()

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DayData" load_steps=8 format=3 uid="uid://pidshi2hyblv"]
+[gd_resource type="Resource" script_class="DayData" load_steps=10 format=3 uid="uid://pidshi2hyblv"]
 
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_a4ej0"]
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_pkvef"]
@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://resources/data/alien_data/Blando.tres" id="3_oklne"]
 [ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://resources/data/alien_data/Nook.tres" id="4_vtkpf"]
 [ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://resources/data/alien_data/Pepari.tres" id="5_qber8"]
+[ext_resource type="Resource" uid="uid://d36rekxlia30u" path="res://resources/data/alien_data/Grubber.tres" id="6_vtkpf"]
+[ext_resource type="Resource" uid="uid://cgcv01uipp7a" path="res://resources/data/alien_data/Strange Fungus.tres" id="7_qber8"]
 
 [sub_resource type="Resource" id="Resource_b5d11"]
 script = ExtResource("1_pkvef")
@@ -16,5 +18,5 @@ script = ExtResource("1_a4ej0")
 day_name = "Monday"
 money_target = 600
 day_modifiers = Array[ExtResource("1_pkvef")]([SubResource("Resource_b5d11")])
-new_aliens = Array[ExtResource("2_46l7g")]([ExtResource("3_oklne"), ExtResource("4_vtkpf"), ExtResource("5_qber8")])
+new_aliens = Array[ExtResource("2_46l7g")]([ExtResource("3_oklne"), ExtResource("4_vtkpf"), ExtResource("5_qber8"), ExtResource("6_vtkpf"), ExtResource("7_qber8")])
 metadata/_custom_type_script = "uid://tc2rdebi4ptf"

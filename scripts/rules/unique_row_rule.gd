@@ -11,10 +11,8 @@ func on_turn_start(alien: Alien, grid: GridManager) -> void:
 	# 1. IDENTIFY ALL ROWS I OCCUPY
 	# We use a Dictionary as a "Set" to store unique Row numbers
 	var my_rows = {}
-	var shape = alien.get_shape_offsets()
-	
-	for offset in shape:
-		var abs_y = alien.cell.y + offset.y
+	for cell in alien.cells:
+		var abs_y = cell.y
 		my_rows[abs_y] = true # Mark this row as "Mine"
 
 	# 2. SCAN THOSE ROWS FOR RIVALS
@@ -26,7 +24,8 @@ func on_turn_start(alien: Alien, grid: GridManager) -> void:
 			
 			# Optimization: Don't check my own cell(s)
 			# (We rely on identity check later, so simple bounds check is fine)
-			
+			if alien.cells.has(check_cell):
+				continue
 			var rival = grid.get_occupant(check_cell)
 			
 			if rival != null and rival != alien:

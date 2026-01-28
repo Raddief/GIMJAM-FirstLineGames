@@ -13,20 +13,14 @@ func on_turn_end(alien: Alien, grid: GridManager) -> void:
 
 	# 2. GET MY BODY PARTS
 	# We need to calculate the world coordinate of every tile this alien occupies.
-	var my_body_cells = []
-	var shape = alien.get_shape_offsets()
-	for offset in shape:
-		my_body_cells.append(alien.cell + offset)
-
-	# 3. SCAN PERIMETER
-	var targets_to_kill = []
-	
-	for body_part in my_body_cells:
+	for cell in alien.cells:
+		# 3. SCAN PERIMETER
+		var targets_to_kill = []
 		for dir in directions:
-			var target_cell = body_part + dir
+			var target_cell = cell + dir
 			
 			# Don't check my own body (for L-shapes, or internal corners)
-			if target_cell in my_body_cells:
+			if alien.cells.has(target_cell):
 				continue
 				
 			if not grid.is_cell_valid(target_cell):
@@ -40,7 +34,7 @@ func on_turn_end(alien: Alien, grid: GridManager) -> void:
 				# 4. THE INVISIBILITY CHECK ("Unless...")
 				# We pass 'body_part' as the looker_pos. 
 				# This simulates "Sight from where they stand outwards".
-				if _is_target_hidden(body_part, victim):
+				if _is_target_hidden(cell, victim):
 					# They are physically there, but invisible to us.
 					continue
 				
@@ -48,10 +42,10 @@ func on_turn_end(alien: Alien, grid: GridManager) -> void:
 				if not victim in targets_to_kill:
 					targets_to_kill.append(victim)
 
-	# 5. EXECUTE
-	for victim in targets_to_kill:
-		print(alien.alien_name, " sees and kills ", victim.alien_name)
-		victim.kill()
+		# 5. EXECUTE
+		for victim in targets_to_kill:
+			print(alien.alien_name, " sees and kills ", victim.alien_name)
+			victim.kill()
 
 # Helper to check if the target's invisibility rules block our sight
 func _is_target_hidden(looker_pos: Vector2i, target_alien: Alien) -> bool:
@@ -66,7 +60,7 @@ func _is_target_hidden(looker_pos: Vector2i, target_alien: Alien) -> bool:
 	# Look Vector: From My specific Body Part -> To Their Pivot Cell
 	# Note: For perfect accuracy on large targets, you might want to calculate 
 	# vector to the specific tile touching you, but Pivot is usually sufficient.
-	var vector_to_target = Vector2(target_alien.cell - looker_pos)
+	var vector_to_target = Vector2(target_alien.cells[0] - looker_pos)
 	
 	var target_facing_vec = Vector2.RIGHT
 	if target_alien.facing == Alien.Facing.LEFT:
@@ -83,10 +77,10 @@ func _is_target_hidden(looker_pos: Vector2i, target_alien: Alien) -> bool:
 
 		InvisibilityAttributeRule.InvisibilityType.FROM_LEFT_ABSOLUTE:
 			# If Looker is physically to the LEFT (smaller X) of the target
-			return looker_pos.x < target_alien.cell.x
+			return looker_pos.x < target_alien.cells[0].x
 
 		InvisibilityAttributeRule.InvisibilityType.FROM_RIGHT_ABSOLUTE:
 			# If Looker is physically to the RIGHT (larger X) of the target
-			return looker_pos.x > target_alien.cell.x
+			return looker_pos.x > target_alien.cells[0].x
 
 	return false

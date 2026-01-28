@@ -9,22 +9,31 @@ func is_condition_met(alien, grid) -> bool:
 		TileRange.NONE:
 			return true
 		TileRange.CELL:
-			return grid.get_tile_state(alien.cell) == required_residue
+			for cell in alien.cells:
+				if grid.get_tile_state(cell) == required_residue:
+					return true
+			return false
 		TileRange.ADJACENT:
-			for x in range(-radius, radius + 1):
-				for y in range(-radius, radius + 1):
-					if abs(x) + abs(y) > radius:
-						continue
-					var cell : Vector2i = alien.cell + Vector2i(x, y)
-					if grid.is_cell_valid(cell) and grid.get_tile_state(cell) == required_residue:
-						return true
+			for cell in alien.cells:
+				for x in range(-radius, radius + 1):
+					for y in range(-radius, radius + 1):
+						var target_cell : Vector2i = cell + Vector2i(x, y)
+						if alien.cells.has(target_cell):
+							continue
+					
+						if grid.is_cell_valid(target_cell) and grid.get_tile_state(target_cell) == required_residue:
+							return true
 			return false
 		TileRange.AREA:
-			for x in range(-radius, radius + 1):
-				for y in range(-radius, radius + 1):
-					var cell : Vector2i = alien.cell + Vector2i(x, y)
-					if grid.is_cell_valid(cell) and grid.get_tile_state(cell) == required_residue:
-						return true
+			for cell in alien.cells:
+				for x in range(-radius, radius + 1):
+					for y in range(-radius, radius + 1):
+						var target_cell : Vector2i = cell + Vector2i(x, y)
+						if alien.cells.has(target_cell):
+							continue
+
+						if grid.is_cell_valid(target_cell) and grid.get_tile_state(target_cell) == required_residue:
+							return true
 			return false
 	return true
 

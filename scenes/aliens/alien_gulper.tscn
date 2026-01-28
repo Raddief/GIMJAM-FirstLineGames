@@ -55,5 +55,3 @@ sprite_frames = SubResource("SpriteFrames_503ok")
 position = Vector2(0, 64)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_du74q")
-
-[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

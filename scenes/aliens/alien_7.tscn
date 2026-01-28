@@ -60,5 +60,3 @@ sprite_frames = SubResource("SpriteFrames_mx140")
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_cn56h")
-
-[node name="SFX" type="AudioStreamPlayer" parent="." index="2"]

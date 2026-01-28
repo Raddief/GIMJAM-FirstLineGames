@@ -106,20 +106,18 @@ func select_slot(types:int, object) -> void:
 
 func spawn_ghost_alien(data: AlienData):
 	var new_alien = data.alien_scene.instantiate()
+	new_alien.initialize_drag(grid_manager)
+	new_alien.is_new_purchase = true
 	
 	# 1. Add to scene tree
 	alien_manager.add_child(new_alien)
 	
 	selected_alien = data
-	new_alien.is_new_purchase = true
+	
 	new_alien.cost = data.price
 	
 	# 2. Position it immediately at the mouse
 	new_alien.global_position = get_global_mouse_position()
-	
-	# 3. CRITICAL FIX: Initialize visuals and grid connection BEFORE dragging
-	# This prevents the crash (null grid) and the visual glitch (wrong offset)
-	new_alien.initialize_drag(grid_manager)
 	
 	# 4. Start the drag logic
 	new_alien.start_drag(get_global_mouse_position())

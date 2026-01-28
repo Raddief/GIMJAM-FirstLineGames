@@ -5,73 +5,42 @@ class_name LOSinFrontOfRule
 @export var omnidirectional: bool = false 
 
 func is_condition_met(alien: Alien, grid: GridManager) -> bool:
-	if alien.grid == null: return false
+	var directions: Array[Vector2i]
+	if grid == null:
+		return false
 
-	# 1. PREPARE MEMORY (Use an Array now!)
-	alien.memory["targets"] = [] # Clear the list
-	var found_any = false
+	for cell in alien.cells:
+		if omnidirectional:
+			# Check all four directions
+			directions = [
+				Vector2i.RIGHT,
+				Vector2i.LEFT,
+				Vector2i.UP,
+				Vector2i.DOWN
+			]
+		else:
+			# Check only the facing direction
+			match alien.facing:
+				Alien.Facing.RIGHT:
+					directions = [Vector2i.RIGHT]
+				Alien.Facing.LEFT:
+					directions = [Vector2i.LEFT]
+				_:
+					directions = [Vector2i.RIGHT] # Default
 
-	# 2. DETERMINE FACING & STARTING OFFSETS
-	# We need to know where our "eyes" are.
-	# If looking RIGHT, eyes are on the Right Edge (x + width).
-	# If looking LEFT, eyes are on the Left Edge (x - 1).
-	
-	var direction = Vector2i.RIGHT
-	var start_x_offset = alien.size.x # Default: Start checking from tile just outside right edge
-	
-	if alien.facing == Alien.Facing.LEFT:
-		direction = Vector2i.LEFT
-		start_x_offset = -1 # Start checking from tile just outside left edge
+		for direction_vec in directions:
+			for dist in range(1, los_range + 1):
+				var target_cell: Vector2i = cell + direction_vec * dist
+				if not grid.is_cell_valid(target_cell) or alien.cells.has(target_cell):
+					break
 
-	# 3. MULTI-RAY LOOP (The "Tall Eyes" Logic)
-	# We loop through the alien's HEIGHT so every vertical segment gets a look.
-	for y_offset in range(alien.size.y):
-		
-		# For every row of height, we verify the LOS range
-		for dist in range(los_range): # 0 to los_range-1
-			# Wait! If start_x_offset is -1 (Left), we subtract dist. If Right, we add.
-			# Let's simplify the math:
-			
-			# Calculate the exact tile to check
-			# Base Y + current height offset
-			var check_y = alien.cell.y + y_offset 
-			
-			# Base X + offset + (direction * distance)
-			# Note: We use 'dist' (0, 1, 2) effectively as the step count
-			var check_x = alien.cell.x
-			if direction == Vector2i.RIGHT:
-				check_x += alien.size.x + dist 
-			else:
-				check_x -= 1 + dist
-
-			var target_cell = Vector2i(check_x, check_y)
-
-			# A. Grid Bounds
-			if not grid.is_cell_valid(target_cell): break
-
-			# B. Check Content
-			var target_alien = grid.get_occupant(target_cell)
-			
-			if target_alien != null and target_alien != alien:
-				# FOUND ONE!
-				
-				# (Optional: Add InvisibleFromBehind Logic Here)
-				if _is_target_hidden(alien.cell, target_alien):
-						# We hit an alien, but we can't "see" it.
-						# The LOS is blocked physically, but the condition fails.
-						# We break the inner loop (can't see through them), 
-						# but we don't return true.
-						break
-				
-				# Avoid adding the same large alien twice if we hit its head AND legs
-				if not target_alien in alien.memory["targets"]:
-					alien.memory["targets"].append(target_alien)
-					found_any = true
-				
-				# Do we stop this ray? Usually yes, X-ray vision is rare.
-				break 
-
-	return found_any
+				var target_alien: Alien = grid.get_occupant(target_cell)
+				if target_alien != null and target_alien != alien:
+					# Found an alien in line of sight
+					if not _is_target_hidden(cell, target_alien):
+						target_alien.kill()
+						return true # Condition met
+	return false
 
 # Helper to check if the target's invisibility rules block our sight
 func _is_target_hidden(looker_pos: Vector2i, target_alien: Alien) -> bool:
@@ -81,8 +50,11 @@ func _is_target_hidden(looker_pos: Vector2i, target_alien: Alien) -> bool:
 
 	var type = target_alien.memory["invisibility_type"]
 	
+	for cell in target_alien.cells:
+		if cell == looker_pos:
+			continue
 	# Vector Math Prep
-	var vector_to_target = Vector2(target_alien.cell - looker_pos)
+	var vector_to_target = Vector2(target_alien.cells[0] - looker_pos)
 	var target_facing_vec = Vector2.RIGHT
 	if target_alien.facing == Alien.Facing.LEFT:
 		target_facing_vec = Vector2.LEFT
