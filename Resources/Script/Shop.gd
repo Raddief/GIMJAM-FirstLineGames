@@ -16,6 +16,7 @@ var TotalAliens := 0
 @export var Item : Dictionary
 @export var grid_manager : GridManager
 @export var alien_manager : AlienManager
+@export var end_turn_button : Button
 
 var selected_alien : AlienData = null
 var avaliable_aliens : Array[AlienData] = []
@@ -36,14 +37,22 @@ func resetPanel():
 	$SidePanel/Menu/MenuList/Forfeit.visible = true
 	$SidePanel/Menu.visible = true
 	$BottomPanel.visible = false
+	if end_turn_button:
+		end_turn_button.visible = false
 	$SidePanel/Scroll.visible = false
 
 func showDesc(types:int, object):
 	$BottomPanel.visible = true
+	if end_turn_button:
+		end_turn_button.visible = true
 	if types == 0 and object is AlienData:
 		var AlienScene = selected_alien.alien_scene.instantiate()
-		$BottomPanel/Description/Grid/Icon.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
-.get_frame_texture("default",0))
+		# Check if the alien has a valid facecard texture assigned
+		if "facecard" in AlienScene and AlienScene.facecard != null:
+			$BottomPanel/Description/Grid/Icon.set_button_icon(AlienScene.facecard)
+		else:
+			# Fallback to the original SpriteFrames logic if no facecard exists
+			$BottomPanel/Description/Grid/Icon.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames().get_frame_texture("default",0))
 		$BottomPanel/Description/Grid/Profile/Header.set_text(object.name)
 		$BottomPanel/Description/Grid/PriceYield/Price/Contain.set_text(str(object.price))
 		$BottomPanel/Description/Grid/Profile/Contain.set_text(object.alien_trait)

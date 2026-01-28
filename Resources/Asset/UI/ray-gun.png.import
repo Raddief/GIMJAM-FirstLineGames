@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cj25tisi1klt8"
-path="res://.godot/imported/ray-gun.png-19edd93d0f87d8ef6b71f7906c139588.ctex"
+path="res://.godot/imported/ray-gun.png-ae8699c16d85673675cd23e4afb3009c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Asset/UI/ray-gun.png"
-dest_files=["res://.godot/imported/ray-gun.png-19edd93d0f87d8ef6b71f7906c139588.ctex"]
+source_file="res://resources/Asset/UI/ray-gun.png"
+dest_files=["res://.godot/imported/ray-gun.png-ae8699c16d85673675cd23e4afb3009c.ctex"]
 
 [params]
 

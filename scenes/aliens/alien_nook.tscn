@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwcmw2dsqno7j"]
+[gd_scene load_steps=10 format=3 uid="uid://dwcmw2dsqno7j"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_nwvlx"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_o72qa"]
 [ext_resource type="AudioStream" uid="uid://cj8vbv25er3f" path="res://resources/Asset/Sfx/alien_nook_spawn.mp3" id="2_w5yha"]
+[ext_resource type="Texture2D" uid="uid://dd6ipr06hwmvy" path="res://assets/cutoff/nook_face.png" id="3_rift6"]
 [ext_resource type="Script" uid="uid://cwpa6xn1qxb2e" path="res://scripts/rules/corner_production.gd" id="3_w5yha"]
 [ext_resource type="Texture2D" uid="uid://yf67mboimq7u" path="res://assets/nook.png" id="4_rift6"]
 
@@ -31,6 +32,7 @@ alien_type = 2
 cost = 130
 production_per_turn = 44
 spawn_audio = ExtResource("2_w5yha")
+facecard = ExtResource("3_rift6")
 rules = Array[ExtResource("2_o72qa")]([SubResource("Resource_2f3ca")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]

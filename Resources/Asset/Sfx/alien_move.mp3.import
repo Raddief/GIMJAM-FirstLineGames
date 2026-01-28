@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d3p3jt3k6bk6b"
-path="res://.godot/imported/alien_move.mp3-fc6b1a55bf8fed1824ad16646afa1083.mp3str"
+path="res://.godot/imported/alien_move.mp3-0aa7a25735a197ee43dd79c3774d00be.mp3str"
 
 [deps]
 
-source_file="res://Resources/Asset/Sfx/alien_move.mp3"
-dest_files=["res://.godot/imported/alien_move.mp3-fc6b1a55bf8fed1824ad16646afa1083.mp3str"]
+source_file="res://resources/Asset/Sfx/alien_move.mp3"
+dest_files=["res://.godot/imported/alien_move.mp3-0aa7a25735a197ee43dd79c3774d00be.mp3str"]
 
 [params]
 
