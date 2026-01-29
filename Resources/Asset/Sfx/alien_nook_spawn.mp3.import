@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cj8vbv25er3f"
-path="res://.godot/imported/alien_nook_spawn.mp3-9098b3d6d18a99b80ce170d0ab4ebf83.mp3str"
+path="res://.godot/imported/alien_nook_spawn.mp3-72ff514c6231a9df39636167509f469b.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/alien_nook_spawn.mp3"
-dest_files=["res://.godot/imported/alien_nook_spawn.mp3-9098b3d6d18a99b80ce170d0ab4ebf83.mp3str"]
+source_file="res://Resources/Asset/Sfx/alien_nook_spawn.mp3"
+dest_files=["res://.godot/imported/alien_nook_spawn.mp3-72ff514c6231a9df39636167509f469b.mp3str"]
 
 [params]
 

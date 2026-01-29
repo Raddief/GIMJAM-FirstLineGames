@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bu8vdptujrdfj"
-path="res://.godot/imported/alien_obelisk_spawn.mp3-177ed30e0452184844095de3822ba0c7.mp3str"
+path="res://.godot/imported/alien_obelisk_spawn.mp3-f11942242f26e206bf789d7f6e59e308.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/alien_obelisk_spawn.mp3"
-dest_files=["res://.godot/imported/alien_obelisk_spawn.mp3-177ed30e0452184844095de3822ba0c7.mp3str"]
+source_file="res://Resources/Asset/Sfx/alien_obelisk_spawn.mp3"
+dest_files=["res://.godot/imported/alien_obelisk_spawn.mp3-f11942242f26e206bf789d7f6e59e308.mp3str"]
 
 [params]
 

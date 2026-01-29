@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvherye1o458w"
-path="res://.godot/imported/alien-stare.png-1b6d48589ff104ea35a0276a2880c0c9.ctex"
+path="res://.godot/imported/alien-stare.png-bbe7ac6d3e07b29b31a5b78f84274225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Asset/UI/alien-stare.png"
-dest_files=["res://.godot/imported/alien-stare.png-1b6d48589ff104ea35a0276a2880c0c9.ctex"]
+source_file="res://Resources/Asset/UI/alien-stare.png"
+dest_files=["res://.godot/imported/alien-stare.png-bbe7ac6d3e07b29b31a5b78f84274225.ctex"]
 
 [params]
 
