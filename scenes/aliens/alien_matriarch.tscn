@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_31glb"]
 [ext_resource type="AudioStream" uid="uid://bi7jp3u0p3efd" path="res://Resources/Asset/Sfx/alien_martriarch_spawn.mp3" id="2_31glb"]
+[ext_resource type="Texture2D" uid="uid://k4l0q6sysh74" path="res://assets/cutoff/matriarch_face.png" id="3_31glb"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="3_rtxd7"]
 [ext_resource type="Script" uid="uid://do6sgaac0h2yr" path="res://scripts/rules/legendary_rule.gd" id="4_lobjr"]
 [ext_resource type="Script" uid="uid://tdhsxutxsew2" path="res://scripts/rules/perimeter_death_rule.gd" id="4_rjigh"]
 [ext_resource type="Texture2D" uid="uid://danxehx6mduyp" path="res://assets/matriarch.png" id="5_rjigh"]
-[ext_resource type="PackedScene" uid="uid://b16fpjea0vg30" path="res://scenes/particles/particle_spark1.tscn" id="6_lobjr"]
 
 [sub_resource type="Resource" id="Resource_lobjr"]
 script = ExtResource("4_rjigh")
@@ -37,6 +37,7 @@ cost = 3100
 production_per_turn = 2200
 size = Vector2i(3, 3)
 spawn_audio = ExtResource("2_31glb")
+facecard = ExtResource("3_31glb")
 rules = Array[ExtResource("3_rtxd7")]([SubResource("Resource_lobjr"), SubResource("Resource_31glb")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -50,5 +51,3 @@ scale = Vector2(4, 4)
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_cn56h")
-
-[node name="Spark Particle" parent="." index="5" instance=ExtResource("6_lobjr")]

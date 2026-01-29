@@ -79,6 +79,10 @@ func _on_turn_passed(turn: int, max_turns: int):
 func _on_day_ended(day: DayData):
 	alien_manager.on_day_ended()
 
+func _interval():
+	if day_manager.current_day.day_name != "Monday":
+		$Interval.start(1)
+
 func _on_day_change(day:DayData):
 	for i in $ForPeople.get_child_count(true) :
 		$ForPeople.get_child($ForPeople.get_child_count(true)-(i+1)).queue_free()
@@ -125,3 +129,7 @@ func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
 		$CanvasLayer/Marker.queue_free()
 		$CanvasLayer/TextMarker.queue_free()
 		tutorials.queue_free()
+
+
+func _on_interval_timeout() -> void:
+	_on_day_change(day_manager.current_day)

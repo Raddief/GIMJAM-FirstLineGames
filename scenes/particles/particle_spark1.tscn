@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://b16fpjea0vg30"]
 
-[ext_resource type="Texture2D" uid="uid://btbfnv7hn8b1c" path="res://assets/particles/sparkle1.png" id="1_748en"]
+[ext_resource type="Texture2D" uid="uid://b7mf87cem7jli" path="res://assets/particles/sparkle1.png" id="1_748en"]
 [ext_resource type="Texture2D" uid="uid://cvhg15m6jdmxd" path="res://assets/particles/particle_light1.png" id="2_evfx3"]
 
 [sub_resource type="Curve" id="Curve_evfx3"]
@@ -90,32 +90,35 @@ color_ramp = SubResource("GradientTexture1D_xjcsj")
 anim_offset_max = 1.0
 
 [node name="Spark Particle" type="GPUParticles2D"]
+process_mode = 3
 emitting = false
-amount = 50
+amount = 20
 texture = ExtResource("1_748en")
-lifetime = 5.109999999999999
+lifetime = 1.2
 one_shot = true
 speed_scale = 2.36
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_evfx3")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_mode = 3
 material = SubResource("CanvasItemMaterial_wgpi2")
 emitting = false
-amount = 100
+amount = 20
 texture = ExtResource("2_evfx3")
-lifetime = 5.109999999999999
+lifetime = 1.2
 one_shot = true
 speed_scale = 2.36
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_fq4o1")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+process_mode = 3
 material = SubResource("CanvasItemMaterial_evfx3")
 emitting = false
-amount = 40
+amount = 20
 texture = ExtResource("2_evfx3")
-lifetime = 5.109999999999999
+lifetime = 1.2
 one_shot = true
 speed_scale = 2.36
 explosiveness = 1.0

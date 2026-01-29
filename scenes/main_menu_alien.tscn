@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://5i4girl56odg"]
+
+[ext_resource type="Texture2D" uid="uid://bonfh2uicmo3f" path="res://assets/blando.png" id="1_1wm21"]
+[ext_resource type="Material" uid="uid://fcn7r1yrjg2o" path="res://scenes/particles/main_menu_alien.tres" id="2_4spkp"]
+[ext_resource type="Texture2D" uid="uid://ympehtlm030g" path="res://assets/bard_toad.png" id="2_t3lkl"]
+[ext_resource type="Texture2D" uid="uid://btr0enmr6ekea" path="res://assets/pepari.png" id="3_4spkp"]
+[ext_resource type="Texture2D" uid="uid://yf67mboimq7u" path="res://assets/nook.png" id="4_g77rc"]
+
+[node name="Main Menu Alien" type="Node2D"]
+
+[node name="Blando" type="GPUParticles2D" parent="."]
+position = Vector2(-81, 523)
+amount = 10
+texture = ExtResource("1_1wm21")
+lifetime = 20.900000000000002
+process_material = ExtResource("2_4spkp")
+
+[node name="BardToad" type="GPUParticles2D" parent="."]
+position = Vector2(-83, 565)
+amount = 12
+texture = ExtResource("2_t3lkl")
+lifetime = 20.900000000000002
+process_material = ExtResource("2_4spkp")
+
+[node name="Pepari" type="GPUParticles2D" parent="."]
+position = Vector2(-67, 550)
+texture = ExtResource("3_4spkp")
+lifetime = 20.900000000000002
+process_material = ExtResource("2_4spkp")
+
+[node name="Nook" type="GPUParticles2D" parent="."]
+position = Vector2(-51, 558)
+texture = ExtResource("4_g77rc")
+lifetime = 20.900000000000002
+process_material = ExtResource("2_4spkp")

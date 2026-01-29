@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnkm0pb21c4li"]
+[gd_scene load_steps=14 format=3 uid="uid://cnkm0pb21c4li"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_gvi5r"]
 [ext_resource type="AudioStream" uid="uid://bmpgg3bkjw3hi" path="res://Resources/Asset/Sfx/alien_gulper_spawn.mp3" id="2_y1j3g"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://di8hvpiaacyxt" path="res://scripts/rules/trigger_condition_rule.gd" id="5_qngnb"]
 [ext_resource type="Script" uid="uid://dlyt8raxsyc8o" path="res://scripts/rules/los_inFrontOf_rule.gd" id="6_mdlgb"]
 [ext_resource type="Texture2D" uid="uid://bbootidhuo6wv" path="res://assets/gulper.png" id="8_0dbw1"]
-[ext_resource type="PackedScene" uid="uid://b16fpjea0vg30" path="res://scenes/particles/particle_spark1.tscn" id="9_y1j3g"]
 
 [sub_resource type="Resource" id="Resource_gvi5r"]
 script = ExtResource("4_tuogo")
@@ -58,5 +57,3 @@ sprite_frames = SubResource("SpriteFrames_503ok")
 position = Vector2(0, 64)
 scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_du74q")
-
-[node name="Spark Particle" parent="." index="5" instance=ExtResource("9_y1j3g")]

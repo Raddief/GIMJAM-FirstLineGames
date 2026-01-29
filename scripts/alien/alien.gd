@@ -28,7 +28,9 @@ class_name Alien
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var grass_particle: GPUParticles2D = $"Grass particle"
 @onready var blood_particle: GPUParticles2D = $"Blood particle"
-@onready var spark_particle: GPUParticles2D = $"Spark particle"
+@onready var spark_particle: GPUParticles2D = $"Spark Particle"
+@onready var spark_particle1: GPUParticles2D = $"Spark Particle/GPUParticles2D2"
+@onready var spark_particle2: GPUParticles2D = $"Spark Particle/GPUParticles2D"
 
 # ===== STATE =====
 var cells: Array[Vector2i] = []   # Currently occupied cells
@@ -280,11 +282,14 @@ func on_turn_passed():
 		return
 	
 	# Economy
+	spark_particle.emitting = false
+	spark_particle1.emitting = false
+	spark_particle2.emitting = false
 	if can_produce:
 		CurrencyManager.add(production_per_turn + bonus_production + external_production_bonus)
-		
-		if spark_particle:
-			spark_particle.emitting = true
+		spark_particle1.emitting = true
+		spark_particle2.emitting = true
+		spark_particle.emitting = true
 
 	external_production_bonus = 0
 	
@@ -339,7 +344,8 @@ func _process(delta):
 	if is_new_purchase:
 		modulate.a = 0.5 
 		var target_cell = grid.world_to_cell(global_position)
-		if !grid.is_cell_valid(target_cell) or grid.is_cell_occupied(target_cell, get_shape_offsets(), self):
+		var cant_afford = CurrencyManager.currency < cost 
+		if !grid.is_cell_valid(target_cell) or grid.is_cell_occupied(target_cell, get_shape_offsets(), self) or cant_afford:
 			modulate = Color(1, 0, 0, 0.5)
 		else:
 			modulate = Color(0, 1, 0, 0.5)

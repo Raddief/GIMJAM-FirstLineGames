@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DayData" load_steps=8 format=3 uid="uid://pidshi2hyblv"]
+[gd_resource type="Resource" script_class="DayData" load_steps=7 format=3 uid="uid://pidshi2hyblv"]
 
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_a4ej0"]
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_pkvef"]
@@ -15,5 +15,5 @@ script = ExtResource("1_a4ej0")
 day_name = "Monday"
 money_target = 600
 day_modifiers = Array[ExtResource("1_pkvef")]([SubResource("Resource_b5d11")])
-new_aliens = Array[ExtResource("2_46l7g")]([ExtResource("3_oklne"), ExtResource("4_vtkpf"), ExtResource("5_4bk67")])
+new_aliens = Array[ExtResource("2_46l7g")]([ExtResource("3_oklne"), ExtResource("4_vtkpf")])
 metadata/_custom_type_script = "uid://tc2rdebi4ptf"

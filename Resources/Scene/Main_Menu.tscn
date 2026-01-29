@@ -1,42 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3tmwgavqm0ro"]
+[gd_scene load_steps=10 format=3 uid="uid://b3tmwgavqm0ro"]
 
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_7445q"]
-[ext_resource type="Script" uid="uid://dw7bke1ai5igl" path="res://resources/Script/Main_Menu.gd" id="1_mavmb"]
-[ext_resource type="Texture2D" uid="uid://btya0e7iyg3r6" path="res://resources/Asset/BG.png" id="2_a8ag0"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="2_mavmb"]
-[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://resources/Scene/PopUps.tscn" id="8_jwtmi"]
+[ext_resource type="Script" uid="uid://dw7bke1ai5igl" path="res://Resources/Script/Main_Menu.gd" id="1_mavmb"]
+[ext_resource type="Texture2D" uid="uid://btya0e7iyg3r6" path="res://Resources/Asset/BG.png" id="2_a8ag0"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="2_mavmb"]
+[ext_resource type="PackedScene" uid="uid://5i4girl56odg" path="res://scenes/main_menu_alien.tscn" id="3_ict8l"]
+[ext_resource type="Texture2D" uid="uid://ct1bw1qggdd5n" path="res://Resources/Asset/logo.png" id="4_ict8l"]
+[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://Resources/Scene/PopUps.tscn" id="8_jwtmi"]
 
 [sub_resource type="Animation" id="Animation_6vstm"]
 resource_name = "Idle"
 length = 4.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CenterContainer/Title:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0.8582582, 0.8921935, 1), Color(0.99999994, 0.46500993, 0.98775846, 1), Color(1, 0.45136237, 0.46500224, 1), Color(0.55962986, 0.56998724, 0, 1), Color(0, 0.8582582, 0.8921935, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_nwifp"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CenterContainer/Title:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ea47"]
 _data = {
@@ -60,33 +37,25 @@ repeat_size = Vector2(1920, 0)
 autoscroll = Vector2(100, 0)
 
 [node name="Background" type="Sprite2D" parent="Parallax2D"]
+process_mode = 3
 texture = ExtResource("2_a8ag0")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.25
-grow_horizontal = 2
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
+[node name="Main Menu Alien" parent="." instance=ExtResource("3_ict8l")]
+process_mode = 3
 
-[node name="Title" type="Label" parent="CenterContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 1, 1)
-theme_override_fonts/font = ExtResource("1_7445q")
-theme_override_font_sizes/font_size = 100
-text = "Please Behave My Aliens"
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(679, 581)
+texture = ExtResource("4_ict8l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.30416667
-anchor_top = 0.33333328
-anchor_right = 0.6875
-anchor_bottom = 1.0000001
+anchor_left = 0.6354167
+anchor_top = 0.33888888
+anchor_right = 1.01875
+anchor_bottom = 0.7629629
 offset_right = -16.0
 offset_bottom = -0.00012207031
 grow_horizontal = 2
@@ -94,36 +63,34 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Play" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(256, 128)
+custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Play"
+flat = true
+alignment = 0
 
 [node name="Setting" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(256, 128)
+custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Settings"
-
-[node name="Credit" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(256, 128)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Credits"
+flat = true
+alignment = 0
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(256, 128)
+custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Quit"
+flat = true
+alignment = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

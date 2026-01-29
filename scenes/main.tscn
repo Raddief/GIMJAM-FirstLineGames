@@ -175,6 +175,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1458, 487)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/UI/Money:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pibwh"]
 resource_name = "Step1"
@@ -806,6 +818,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(54, 54)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/UI/Money:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5poiv"]
 _data = {
@@ -1004,6 +1028,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="Marker" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 1813.0
 offset_top = 443.0
 offset_right = 1941.0
@@ -1026,6 +1051,8 @@ offset_left = 1458.0
 offset_top = 487.0
 offset_right = 1799.0
 offset_bottom = 526.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("26_5q0nq")
 theme_override_font_sizes/font_size = 32
 text = "Click here to open menu"
@@ -1064,5 +1091,9 @@ autostart = true
 [node name="particle fog" parent="." instance=ExtResource("41_cjqg0")]
 position = Vector2(30, 13)
 
+[node name="Interval" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="TutorialPlayer" to="." method="_on_tutorial_player_animation_finished"]
 [connection signal="timeout" from="SpawnPeople" to="." method="_on_spawn_people_timeout"]
+[connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]

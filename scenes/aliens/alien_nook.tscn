@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwcmw2dsqno7j"]
+[gd_scene load_steps=10 format=3 uid="uid://dwcmw2dsqno7j"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_nwvlx"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_o72qa"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dd6ipr06hwmvy" path="res://assets/cutoff/nook_face.png" id="3_rift6"]
 [ext_resource type="Script" uid="uid://cwpa6xn1qxb2e" path="res://scripts/rules/corner_production.gd" id="3_w5yha"]
 [ext_resource type="Texture2D" uid="uid://yf67mboimq7u" path="res://assets/nook.png" id="4_rift6"]
-[ext_resource type="PackedScene" uid="uid://b16fpjea0vg30" path="res://scenes/particles/particle_spark1.tscn" id="7_rift6"]
 
 [sub_resource type="Resource" id="Resource_2f3ca"]
 script = ExtResource("3_w5yha")
@@ -44,5 +43,3 @@ sprite_frames = SubResource("SpriteFrames_srym8")
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 scale = Vector2(0.898, 0.898)
 shape = SubResource("RectangleShape2D_o72qa")
-
-[node name="Spark Particle" parent="." index="5" instance=ExtResource("7_rift6")]
