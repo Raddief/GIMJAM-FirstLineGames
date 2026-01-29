@@ -71,9 +71,6 @@ func _on_day_ended(day: DayData):
 	alien_manager.on_day_ended()
 
 func _on_day_change(day:DayData):
-	$CanvasLayer/UI/Shop/SidePanel/Currency/ProgressBar.set_max(day.money_target)
-	$CanvasLayer/UI/Shop/SidePanel/Currency/ProgressBar.set_value(CurrencyManager.currency)
-	$CanvasLayer/UI/Shop/SidePanel/Currency/Number.set_text(str(CurrencyManager.currency)+"\\"+str(day.money_target))
 	for i in $ForPeople.get_child_count(true) :
 		$ForPeople.get_child($ForPeople.get_child_count(true)-(i+1)).queue_free()
 	var index: int
@@ -103,11 +100,11 @@ func _on_spawn_people_timeout() -> void:
 	people.direction = randi_range(0,1)
 	$ForPeople.add_child(people)
 
+
 func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Step5" :
 		CurrencyManager.emit_signal("TutorialNext")
 	elif anim_name == "Step7" :
-		$CanvasLayer/UI/Shop/SidePanel/Currency/ProgressBar.set_max(day_manager.current_day.money_target)
 		$CanvasLayer/UI/CurrencyLabel.visible = true
 		$CanvasLayer/UI/TurnProgress.visible = true
 		$CanvasLayer/UI/EndTurnButton.visible = true
