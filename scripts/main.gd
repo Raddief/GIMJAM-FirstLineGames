@@ -23,10 +23,9 @@ func _ready():
 	CurrencyManager.connect("TutorialNext", _on_tutorial)
 	if CurrencyManager.Tutorial != 7 :
 		CurrencyManager.Tutorial = 1
-		$CanvasLayer/UI/CurrencyLabel.visible = false
-		$CanvasLayer/UI/TurnProgress.visible = false
+		# $CanvasLayer/UI/Money.visible = false
+		# $"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = false
 		$CanvasLayer/UI/EndTurnButton.visible = false
-		$CanvasLayer/UI/Currency.visible = false
 		$CanvasLayer/RemoveArea.visible = false
 		$CanvasLayer/Marker.visible = true
 		$CanvasLayer/DirectionalLight2D.visible = true
@@ -36,6 +35,10 @@ func _ready():
 		$CanvasLayer/Marker.queue_free()
 		$CanvasLayer/TextMarker.queue_free()
 		tutorials.queue_free()
+		# This doesn't work??
+		# $CanvasLayer/UI/Money.visible = true
+		# $"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = true
+		# print("Make money visible!")
 
 	day_manager.connect("day_started", ui.on_day_started)
 	day_manager.connect("day_started", _on_day_change)
@@ -107,10 +110,7 @@ func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Step5" :
 		CurrencyManager.emit_signal("TutorialNext")
 	elif anim_name == "Step7" :
-		$CanvasLayer/UI/CurrencyLabel.visible = true
-		$CanvasLayer/UI/TurnProgress.visible = true
 		$CanvasLayer/UI/EndTurnButton.visible = true
-		$CanvasLayer/UI/Currency.visible = true
 		$CanvasLayer/RemoveArea.visible = true
 		$CanvasLayer/DirectionalLight2D.queue_free()
 		$CanvasLayer/Marker.queue_free()

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_e5y0r"]
 [ext_resource type="Script" uid="uid://xt26xy35i8nr" path="res://scripts/days/double_production_day.gd" id="2_r33qk"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="3_dcie2"]
-[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://Resources/data/alien_data/Obelisk.tres" id="4_pm6qn"]
+[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://resources/data/alien_data/Obelisk.tres" id="4_pm6qn"]
 
 [sub_resource type="Resource" id="Resource_o8j4u"]
 script = ExtResource("2_r33qk")

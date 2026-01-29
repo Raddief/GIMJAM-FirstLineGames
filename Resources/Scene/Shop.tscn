@@ -1,32 +1,57 @@
-[gd_scene load_steps=36 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=38 format=3 uid="uid://bfvg3cyytfdqq"]
 
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_m2jm4"]
-[ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://Resources/Script/Shop.gd" id="1_vtuwb"]
-[ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://Resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
+[ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
+[ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_cc1rn"]
-[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://Resources/data/alien_data/Blando.tres" id="3_6sfmx"]
-[ext_resource type="PackedScene" uid="uid://b3tmwgavqm0ro" path="res://Resources/Scene/Main_Menu.tscn" id="3_eficx"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="3_s556k"]
-[ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://Resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
-[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://Resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
-[ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://Resources/Asset/UI/secret-book.png" id="4_3kx1x"]
-[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://Resources/data/alien_data/Nook.tres" id="4_6sfmx"]
-[ext_resource type="Texture2D" uid="uid://dwe4olxugkvv0" path="res://Resources/Asset/UI/cog.png" id="5_rhti7"]
-[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://Resources/data/alien_data/Pepari.tres" id="5_tcc56"]
-[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://Resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
-[ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://Resources/Asset/UI/flying-flag.png" id="6_57nro"]
+[ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://resources/data/alien_data/Blando.tres" id="3_6sfmx"]
+[ext_resource type="PackedScene" uid="uid://b3tmwgavqm0ro" path="res://resources/Scene/Main_Menu.tscn" id="3_eficx"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="3_s556k"]
+[ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
+[ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
+[ext_resource type="Texture2D" uid="uid://6shtyax0f86r" path="res://resources/Asset/UI/secret-book.png" id="4_3kx1x"]
+[ext_resource type="Resource" uid="uid://bpwc1ue3sk1qk" path="res://resources/data/alien_data/Nook.tres" id="4_6sfmx"]
+[ext_resource type="Texture2D" uid="uid://dwe4olxugkvv0" path="res://resources/Asset/UI/cog.png" id="5_rhti7"]
+[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://resources/data/alien_data/Pepari.tres" id="5_tcc56"]
+[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://resources/data/alien_data/Faceoff.tres" id="5_x2ouj"]
+[ext_resource type="Texture2D" uid="uid://cet8pi67ipg4k" path="res://resources/Asset/UI/flying-flag.png" id="6_57nro"]
 [ext_resource type="Texture2D" uid="uid://b3dxmr2m8ytx3" path="res://icon.svg" id="7_8ebbm"]
-[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://Resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
-[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://Resources/data/alien_data/Gulper.tres" id="8_umvc6"]
-[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://Resources/data/alien_data/Solaris.tres" id="9_attia"]
-[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://Resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
-[ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://Resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
-[ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://Resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
-[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://Resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
-[ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://Resources/Shaders/vhs.gdshader" id="15_ow7in"]
-[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://Resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
-[ext_resource type="Texture2D" uid="uid://dvherye1o458w" path="res://Resources/Asset/UI/alien-stare.png" id="19_jywoi"]
-[ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://Resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
+[ext_resource type="Resource" uid="uid://c7pgx1ejvlikt" path="res://resources/data/alien_data/Obelisk.tres" id="7_v31mq"]
+[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://resources/data/alien_data/Gulper.tres" id="8_umvc6"]
+[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://resources/data/alien_data/Solaris.tres" id="9_attia"]
+[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
+[ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
+[ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
+[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
+[ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://resources/Shaders/vhs.gdshader" id="15_ow7in"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
+[ext_resource type="Texture2D" uid="uid://dvherye1o458w" path="res://resources/Asset/UI/alien-stare.png" id="19_jywoi"]
+[ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6by2v"]
+bg_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh6lc"]
+bg_color = Color(0.2, 0.2509804, 0.3764706, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0pjgs"]
 shader = ExtResource("15_ow7in")
@@ -228,12 +253,14 @@ layout_mode = 1
 anchor_left = -0.25
 anchor_top = 0.126
 anchor_right = 0.0
-anchor_bottom = 0.264
-offset_top = -0.20000458
-offset_bottom = 0.19999695
+anchor_bottom = 0.83300006
+offset_top = 22.799995
+offset_bottom = -0.10003662
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_6by2v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mh6lc")
 text = "<"
 
 [node name="Menu" type="Panel" parent="SidePanel"]
@@ -342,10 +369,10 @@ grow_vertical = 2
 [node name="Scroll" type="ScrollContainer" parent="SidePanel/Scroll"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0625178
-anchor_top = 0.052857142
-anchor_right = 0.94142073
-anchor_bottom = 0.93142855
+anchor_left = 0.12378744
+anchor_top = 0.09
+anchor_right = 0.86812305
+anchor_bottom = 0.9014286
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true

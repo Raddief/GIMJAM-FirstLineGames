@@ -41,7 +41,7 @@
 [ext_resource type="StyleBox" uid="uid://dssuogccdbwqf" path="res://resources/Asset/UI/main_button.tres" id="36_5poiv"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://drqjal2ylfjs2" path="res://resources/Shaders/vignette.tscn" id="36_kmb1v"]
-[ext_resource type="Texture2D" uid="uid://cpvxthvo1pin1" path="res://assets/environment/lights.png" id="37_vchkt"]
+[ext_resource type="StyleBox" uid="uid://cyhe8m6exhc1p" path="res://resources/Asset/UI/green_glow.tres" id="39_vchkt"]
 [ext_resource type="PackedScene" uid="uid://ddjsou00uckk7" path="res://scenes/particles/particle_fog.tscn" id="41_cjqg0"]
 [ext_resource type="Script" uid="uid://b83c0lexhyul3" path="res://scripts/remove_area.gd" id="41_vchkt"]
 [ext_resource type="Texture2D" uid="uid://cthkdwoa6le1f" path="res://resources/Asset/UI/trash-can.png" id="42_txyw0"]
@@ -78,7 +78,7 @@ script = ExtResource("35_2cjbq")
 metadata/_custom_type_script = "uid://cst1doe48hcbq"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjqg0"]
-bg_color = Color(0.593185, 0.93, 0.43710002, 1)
+bg_color = Color(0.42407998, 0.93, 0.3348, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cjbq"]
 bg_color = Color(0, 0.54166657, 0.65, 1)
@@ -729,7 +729,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(420, 94)]
+"values": [Vector2(484, 110)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -920,26 +920,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -2.0
+offset_left = 51.0
+offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_jyhfs")
 
-[node name="Pen Lights" type="HBoxContainer" parent="CanvasLayer/UI"]
-layout_mode = 1
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_constants/separation = 47
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/UI/Pen Lights"]
-layout_mode = 2
-value = 72.0
-nine_patch_stretch = true
-stretch_margin_right = 1920
-texture_progress = ExtResource("37_vchkt")
-
-[node name="Money" type="ProgressBar" parent="CanvasLayer/UI"]
+[node name="TurnProgress" type="ProgressBar" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21400002
@@ -958,7 +946,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_chjal")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cjqg0")
 show_percentage = false
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI/Money"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI/TurnProgress"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -966,7 +954,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MoneyLabel" type="Label" parent="CanvasLayer/UI/Money/CenterContainer"]
+[node name="DayLabel" type="Label" parent="CanvasLayer/UI/TurnProgress/CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.14901961, 0.19607843, 0.34509805, 1)
 theme_override_fonts/font = ExtResource("26_5q0nq")
@@ -975,6 +963,8 @@ text = "DAY : 0"
 
 [node name="Shop" parent="CanvasLayer/UI" node_paths=PackedStringArray("grid_manager", "alien_manager") instance=ExtResource("27_vxglm")]
 layout_mode = 1
+offset_left = -51.0
+offset_right = -51.0
 mouse_filter = 2
 grid_manager = NodePath("../../../GridManager")
 alien_manager = NodePath("../../../AlienManager")
@@ -982,11 +972,14 @@ alien_manager = NodePath("../../../AlienManager")
 [node name="EndTurnButton" parent="CanvasLayer/UI" instance=ExtResource("25_qkpxi")]
 z_index = 1
 layout_mode = 1
-anchor_left = 0.85002816
-anchor_top = 0.8703704
-anchor_right = 0.98336077
-anchor_bottom = 0.975
-offset_bottom = 0.0
+anchor_left = 0.823
+anchor_top = 0.874
+anchor_right = 0.957
+anchor_bottom = 0.97700006
+offset_left = 0.8399658
+offset_top = -3.920044
+offset_right = -0.44006348
+offset_bottom = -2.1600342
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.29411766, 0.42352942, 0.56078434, 1)
@@ -996,7 +989,100 @@ theme_override_styles/normal = ExtResource("36_5poiv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2cjbq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5poiv")
 text = "End Turn"
-metadata/_edit_use_anchors_ = true
+
+[node name="Pen Lights" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 890.0
+offset_right = 1318.0
+offset_bottom = 932.0
+theme_override_constants/separation = 47
+
+[node name="Turn 1" type="VBoxContainer" parent="CanvasLayer/UI/Pen Lights"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Upper" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 1"]
+custom_minimum_size = Vector2(252.535, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Lower" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 1"]
+custom_minimum_size = Vector2(252.535, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Turn 2" type="VBoxContainer" parent="CanvasLayer/UI/Pen Lights"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Upper" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 2"]
+custom_minimum_size = Vector2(258, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+min_value = 1.0
+max_value = 2.0
+value = 1.0
+show_percentage = false
+
+[node name="Lower" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 2"]
+custom_minimum_size = Vector2(252.535, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+min_value = 1.0
+max_value = 2.0
+value = 1.0
+show_percentage = false
+
+[node name="Turn 3" type="VBoxContainer" parent="CanvasLayer/UI/Pen Lights"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Upper" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 3"]
+custom_minimum_size = Vector2(273, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+min_value = 2.0
+max_value = 3.0
+value = 2.0
+show_percentage = false
+
+[node name="Lower" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 3"]
+custom_minimum_size = Vector2(252.535, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+min_value = 2.0
+max_value = 3.0
+value = 2.0
+show_percentage = false
+
+[node name="Turn 4" type="VBoxContainer" parent="CanvasLayer/UI/Pen Lights"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Upper" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 4"]
+custom_minimum_size = Vector2(235, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+min_value = 3.0
+max_value = 4.0
+value = 3.0
+show_percentage = false
+
+[node name="Lower" type="ProgressBar" parent="CanvasLayer/UI/Pen Lights/Turn 4"]
+custom_minimum_size = Vector2(248, 12.105)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("39_vchkt")
+min_value = 3.0
+max_value = 4.0
+value = 3.0
+show_percentage = false
 
 [node name="Centering" parent="CanvasLayer" instance=ExtResource("28_5q0nq")]
 visible = false
@@ -1004,10 +1090,10 @@ visible = false
 [node name="Marker" type="Button" parent="CanvasLayer"]
 offset_left = 1813.0
 offset_top = 224.0
-offset_right = 2800.0
-offset_bottom = 412.0
+offset_right = 1941.0
+offset_bottom = 352.0
 scale = Vector2(1.2, 1.2)
-pivot_offset = Vector2(588.5, 348)
+pivot_offset = Vector2(64, 64)
 mouse_filter = 2
 theme_override_styles/disabled = SubResource("StyleBoxFlat_kmb1v")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fuf3a")
@@ -1015,20 +1101,17 @@ disabled = true
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasLayer/Marker"]
-position = Vector2(53.44998, 10.750002)
-scale = Vector2(8.241666, 1.625)
 texture = ExtResource("28_fuf3a")
-offset = Vector2(54, 54)
+offset = Vector2(64, 64)
 
 [node name="TextMarker" type="Label" parent="CanvasLayer"]
 offset_left = 1458.0
 offset_top = 268.0
-offset_right = 2081.0
-offset_bottom = 354.0
+offset_right = 1799.0
+offset_bottom = 307.0
 theme_override_fonts/font = ExtResource("26_5q0nq")
 theme_override_font_sizes/font_size = 32
-text = "That's all, Your goal is to fullfill quota beside
-                           Good Luck"
+text = "Click here to open menu"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="CanvasLayer"]
 color = Color(0.86898494, 0.8689849, 0.8689849, 1)

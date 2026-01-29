@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_08bwc"]
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_eaw61"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_7h85j"]
-[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://Resources/data/alien_data/Solaris.tres" id="3_rmaom"]
-[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://Resources/data/alien_data/Void Knight.tres" id="4_7h314"]
+[ext_resource type="Resource" uid="uid://damrmo300xnwl" path="res://resources/data/alien_data/Gulper.tres" id="3_rmaom"]
+[ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="4_7h314"]
 
 [sub_resource type="Resource" id="Resource_77nkn"]
 script = ExtResource("1_eaw61")

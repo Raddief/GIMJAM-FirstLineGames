@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://b75v64gc3dqgp"]
 
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_j8v2y"]
-[ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_3.tscn" id="1_syj0r"]
+[ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_faceoff.tscn" id="1_syj0r"]
 
 [resource]
 script = ExtResource("1_j8v2y")
 name = "Faceoff"
-alien_trait = "Can only yield Credits when put on the Top Row."
+alien_trait = "The Faceoff wants attention., only yields Credits when put on the Top Row."
 price = 230
 rate = 138
 size = "2x1"

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b5wrbe7ubmkqg"
-path="res://.godot/imported/alien_voidknight_spawn.mp3-bff8ce2677117f23fd7ff6566342cbee.mp3str"
+path="res://.godot/imported/alien_voidknight_spawn.mp3-bac063df972be04e6a92b59c01d9fad3.mp3str"
 
 [deps]
 
-source_file="res://Resources/Asset/Sfx/alien_voidknight_spawn.mp3"
-dest_files=["res://.godot/imported/alien_voidknight_spawn.mp3-bff8ce2677117f23fd7ff6566342cbee.mp3str"]
+source_file="res://resources/Asset/Sfx/alien_voidknight_spawn.mp3"
+dest_files=["res://.godot/imported/alien_voidknight_spawn.mp3-bac063df972be04e6a92b59c01d9fad3.mp3str"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3tmwgavqm0ro"]
 
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_7445q"]
-[ext_resource type="Script" uid="uid://dw7bke1ai5igl" path="res://Resources/Script/Main_Menu.gd" id="1_mavmb"]
-[ext_resource type="Texture2D" uid="uid://btya0e7iyg3r6" path="res://Resources/Asset/BG.png" id="2_a8ag0"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="2_mavmb"]
-[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://Resources/Scene/PopUps.tscn" id="8_jwtmi"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_7445q"]
+[ext_resource type="Script" uid="uid://dw7bke1ai5igl" path="res://resources/Script/Main_Menu.gd" id="1_mavmb"]
+[ext_resource type="Texture2D" uid="uid://btya0e7iyg3r6" path="res://resources/Asset/BG.png" id="2_a8ag0"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="2_mavmb"]
+[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://resources/Scene/PopUps.tscn" id="8_jwtmi"]
 
 [sub_resource type="Animation" id="Animation_6vstm"]
 resource_name = "Idle"

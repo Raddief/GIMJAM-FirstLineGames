@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("2_g4fgh")
 name = "Void Knight"
-alien_trait = "No two Void Knights can exist in the same row, else one of them explodes."
+alien_trait = "The Void Knights duels. No two Void Knights can exist in the same row, else one of them explodes."
 price = 390
-rate = 290
+rate = 274
 size = "2 x 1 (L)"
 alien_scene = ExtResource("1_1ir1j")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

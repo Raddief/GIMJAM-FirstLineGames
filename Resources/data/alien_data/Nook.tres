@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_dllj8")
 name = "Nook"
-alien_trait = "When put in any of the 4 corners of the Pen, increases yield value by +12."
+alien_trait = "The Nook seeks corners, when put in any of the 4 corners of the Pen, increases yield value by +12."
 price = 130
 rate = 44
 size = "1x1"

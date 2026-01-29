@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ps2ctbb33vay"
-path="res://.godot/imported/toggle circle.png-ce4a8e5dc64b90882a79d0580438850d.ctex"
+uid="uid://cpvxthvo1pin1"
+path="res://.godot/imported/lights.png-eace1b39dd4e5275588b1d05aa30c51b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Asset/UI/toggle circle.png"
-dest_files=["res://.godot/imported/toggle circle.png-ce4a8e5dc64b90882a79d0580438850d.ctex"]
+source_file="res://assets/environment/lights.png"
+dest_files=["res://.godot/imported/lights.png-eace1b39dd4e5275588b1d05aa30c51b.ctex"]
 
 [params]
 

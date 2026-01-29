@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://do3y6xveixpmi"]
+[gd_scene load_steps=13 format=3 uid="uid://do3y6xveixpmi"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_5efdb"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_cn56h"]
-[ext_resource type="Texture2D" uid="uid://b5ogxj1jgyocu" path="res://assets/alien test.png" id="2_v8vs4"]
 [ext_resource type="AudioStream" uid="uid://blpb5ia7eqp4w" path="res://resources/Asset/Sfx/alien_gloom_spawn.mp3" id="2_xktv6"]
 [ext_resource type="Script" uid="uid://di8hvpiaacyxt" path="res://scripts/rules/trigger_condition_rule.gd" id="3_mx140"]
 [ext_resource type="Script" uid="uid://dlyt8raxsyc8o" path="res://scripts/rules/los_inFrontOf_rule.gd" id="4_bjeyy"]
 [ext_resource type="Script" uid="uid://ccsskfol03446" path="res://scripts/rules/buff_bonus_rule.gd" id="4_xktv6"]
+[ext_resource type="Texture2D" uid="uid://hdabbk57qaqf" path="res://assets/solaris.png" id="7_xktv6"]
 
 [sub_resource type="Resource" id="Resource_uoksk"]
 script = ExtResource("4_xktv6")
@@ -24,15 +24,11 @@ trigger_rule = SubResource("Resource_xktv6")
 chained_rules = Array[ExtResource("2_cn56h")]([SubResource("Resource_uoksk")])
 metadata/_custom_type_script = "uid://dhdgmlky0b8lw"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cn56h"]
-atlas = ExtResource("2_v8vs4")
-region = Rect2(64, 32, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_mx140"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cn56h")
+"texture": ExtResource("7_xktv6")
 }],
 "loop": true,
 "name": &"default",
@@ -46,17 +42,17 @@ size = Vector2(31, 62)
 alien_name = "Solaris"
 alien_type = 4
 cost = 300
-production_per_turn = 197
+production_per_turn = 192
 size = Vector2i(1, 2)
 spawn_audio = ExtResource("2_xktv6")
 rules = Array[ExtResource("2_cn56h")]([SubResource("Resource_us2dw")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, 66)
 sprite_frames = SubResource("SpriteFrames_mx140")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" index="0"]
-position = Vector2(0, 30)
-sprite_frames = SubResource("SpriteFrames_mx140")
+[node name="Area2D" parent="." index="1"]
+scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, 15)
