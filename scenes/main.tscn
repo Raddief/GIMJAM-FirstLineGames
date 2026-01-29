@@ -6,41 +6,108 @@
 [ext_resource type="Script" uid="uid://b20wqv6q1mx3q" path="res://scripts/managers/day_manager.gd" id="2_jkv2x"]
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="3_0ld40"]
 [ext_resource type="Script" uid="uid://tsrrcocbwtvo" path="res://scripts/managers/alien_manager.gd" id="3_tbgi4"]
-[ext_resource type="Resource" uid="uid://pidshi2hyblv" path="res://resources/data/days/day1.tres" id="4_gqmmt"]
+[ext_resource type="Resource" uid="uid://pidshi2hyblv" path="res://Resources/data/days/day1.tres" id="4_gqmmt"]
 [ext_resource type="Script" uid="uid://dur0oij32o63j" path="res://scripts/ui/ui.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bkey2m3inbb2h" path="res://scenes/aliens/alien_blando.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://dwcmw2dsqno7j" path="res://scenes/aliens/alien_nook.tscn" id="5_85g3d"]
-[ext_resource type="Resource" uid="uid://dckp2mlk5pk6v" path="res://resources/data/days/day2.tres" id="5_yc10j"]
+[ext_resource type="Resource" uid="uid://dckp2mlk5pk6v" path="res://Resources/data/days/day2.tres" id="5_yc10j"]
 [ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_faceoff.tscn" id="6_85g3d"]
-[ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://resources/data/days/day3.tres" id="6_jscy8"]
+[ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://Resources/data/days/day3.tres" id="6_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_bardToad.tscn" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_obelisk.tscn" id="8_jkv2x"]
-[ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://resources/data/days/day4.tres" id="8_y6deb"]
+[ext_resource type="Resource" uid="uid://cikq12sbiodhg" path="res://Resources/data/days/day4.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bv1ridls1aemg" path="res://scenes/aliens/alien_pepari.tscn" id="9_jbj1t"]
-[ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://resources/data/days/day5.tres" id="9_og1vs"]
-[ext_resource type="Resource" uid="uid://dkbdv47lqevx4" path="res://resources/data/days/day6.tres" id="10_2wyq8"]
+[ext_resource type="Resource" uid="uid://cgav4xflcs820" path="res://Resources/data/days/day5.tres" id="9_og1vs"]
+[ext_resource type="Resource" uid="uid://dkbdv47lqevx4" path="res://Resources/data/days/day6.tres" id="10_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://do3y6xveixpmi" path="res://scenes/aliens/alien_7.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_gulper.tscn" id="11_dp3eg"]
-[ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://resources/data/days/day7.tres" id="11_vxglm"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="25_qkpxi"]
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="26_5q0nq"]
-[ext_resource type="PackedScene" uid="uid://bfvg3cyytfdqq" path="res://resources/Scene/Shop.tscn" id="27_vxglm"]
+[ext_resource type="Resource" uid="uid://c8maotprdkpdg" path="res://Resources/data/days/day7.tres" id="11_vxglm"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="25_qkpxi"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="26_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://bfvg3cyytfdqq" path="res://Resources/Scene/Shop.tscn" id="27_vxglm"]
 [ext_resource type="PackedScene" uid="uid://dhdpubevhqa71" path="res://scenes/particles/particle_beam.tscn" id="28_5poiv"]
-[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://resources/Scene/PopUps.tscn" id="28_5q0nq"]
-[ext_resource type="Texture2D" uid="uid://ps2ctbb33vay" path="res://resources/Asset/UI/toggle circle.png" id="28_fuf3a"]
+[ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://Resources/Scene/PopUps.tscn" id="28_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://ps2ctbb33vay" path="res://Resources/Asset/UI/toggle circle.png" id="28_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://fxhl1ft4c7ux" path="res://scenes/particles/particle_light3.tscn" id="31_2cjbq"]
 [ext_resource type="PackedScene" uid="uid://o643rj04bxhy" path="res://scenes/particles/particle_light2.tscn" id="32_chjal"]
 [ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="32_dgi5k"]
 [ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="32_j8jky"]
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
-[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://resources/Scene/sfx.tscn" id="34_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="34_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
-[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="35_2cjbq"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://Resources/Asset/UI/StyleBoxFlatPlus.gd" id="35_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
-[ext_resource type="StyleBox" uid="uid://dssuogccdbwqf" path="res://resources/Asset/UI/main_button.tres" id="36_5poiv"]
+[ext_resource type="StyleBox" uid="uid://dssuogccdbwqf" path="res://Resources/Asset/UI/main_button.tres" id="36_5poiv"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
-[ext_resource type="PackedScene" uid="uid://drqjal2ylfjs2" path="res://resources/Shaders/vignette.tscn" id="36_kmb1v"]
+[ext_resource type="PackedScene" uid="uid://drqjal2ylfjs2" path="res://Resources/Shaders/vignette.tscn" id="36_kmb1v"]
 [ext_resource type="PackedScene" uid="uid://ddjsou00uckk7" path="res://scenes/particles/particle_fog.tscn" id="41_cjqg0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fuf3a"]
+texture = ExtResource("34_kmb1v")
+texture_region_size = Vector2i(115, 115)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o6xl0"]
+tile_size = Vector2i(115, 115)
+sources/0 = SubResource("TileSetAtlasSource_fuf3a")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
+bg_color = Color(0.7607843, 0.9607843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chjal"]
+bg_color = Color(0.7607843, 0.9607843, 1, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.101960786, 0.23921569, 0.49411765, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+expand_margin_left = 9.0
+expand_margin_top = 9.0
+expand_margin_right = 9.0
+expand_margin_bottom = 9.0
+script = ExtResource("35_2cjbq")
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjqg0"]
+bg_color = Color(0.42407998, 0.93, 0.3348, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cjbq"]
+bg_color = Color(0, 0.54166657, 0.65, 1)
+border_width_bottom = 8
+border_color = Color(0.29411766, 0.42352942, 0.56078434, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+script = ExtResource("35_2cjbq")
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5poiv"]
+bg_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
+border_width_bottom = 12
+border_color = Color(0.29411766, 0.42352942, 0.56078434, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+script = ExtResource("35_2cjbq")
+metadata/_custom_type_script = "uid://cst1doe48hcbq"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmb1v"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fuf3a"]
 
 [sub_resource type="Animation" id="Animation_5he1u"]
 resource_name = "Idle"
@@ -72,6 +139,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1.2, 1.2)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TextMarker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1458, 266)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Marker:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1813, 228)]
+}
 
 [sub_resource type="Animation" id="Animation_pibwh"]
 resource_name = "Step1"
@@ -97,7 +188,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1813, 152)]
+"values": [Vector2(1813, 233)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -145,7 +236,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1458, 194)]
+"values": [Vector2(1458, 275)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -208,7 +299,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1716, 240)]
+"values": [Vector2(1716, 208)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -244,7 +335,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1351, 282)]
+"values": [Vector2(1313, 254)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -283,7 +374,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1714, 279)]
+"values": [Vector2(1735, 244)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -319,7 +410,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1345, 319)]
+"values": [Vector2(1342, 397)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -477,8 +568,8 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["To buy alien, 
-drag them to \"Pen\""]
+"values": ["To buy alien, drag them to \"Pen\"
+Right click to change alien direction"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -490,7 +581,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1305, 348)]
+"values": [Vector2(1199, 348)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -602,8 +693,8 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["That's all, Your goal is to fullfill quota beside
-credits '\\'.... Good Luck"]
+"values": ["That's all, Your goal is to fullfill quota 
+that can be seen in Menu..........Good Luck"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -627,7 +718,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(484, 110)]
+"values": [Vector2(481, 110)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -715,73 +806,6 @@ _data = {
 &"Step7": SubResource("Animation_vchkt")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fuf3a"]
-texture = ExtResource("34_kmb1v")
-texture_region_size = Vector2i(115, 115)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_o6xl0"]
-tile_size = Vector2i(115, 115)
-sources/0 = SubResource("TileSetAtlasSource_fuf3a")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
-bg_color = Color(0.7607843, 0.9607843, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chjal"]
-bg_color = Color(0.7607843, 0.9607843, 1, 1)
-border_width_left = 9
-border_width_top = 9
-border_width_right = 9
-border_width_bottom = 9
-border_color = Color(0.101960786, 0.23921569, 0.49411765, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-expand_margin_left = 9.0
-expand_margin_top = 9.0
-expand_margin_right = 9.0
-expand_margin_bottom = 9.0
-script = ExtResource("35_2cjbq")
-metadata/_custom_type_script = "uid://cst1doe48hcbq"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjqg0"]
-bg_color = Color(0.42407998, 0.93, 0.3348, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cjbq"]
-bg_color = Color(0, 0.54166657, 0.65, 1)
-border_width_bottom = 8
-border_color = Color(0.29411766, 0.42352942, 0.56078434, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-script = ExtResource("35_2cjbq")
-metadata/_custom_type_script = "uid://cst1doe48hcbq"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5poiv"]
-bg_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
-border_width_bottom = 12
-border_color = Color(0.29411766, 0.42352942, 0.56078434, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-script = ExtResource("35_2cjbq")
-metadata/_custom_type_script = "uid://cst1doe48hcbq"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmb1v"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fuf3a"]
-
 [node name="Main" type="Node2D" node_paths=PackedStringArray("ui", "shop", "day_manager", "alien_manager", "popups")]
 position = Vector2(0, -1)
 script = ExtResource("1_jyhfs")
@@ -809,11 +833,6 @@ script = ExtResource("3_tbgi4")
 alien_scenes = Array[PackedScene]([ExtResource("4_tipki"), ExtResource("5_85g3d"), ExtResource("6_85g3d"), ExtResource("7_a8y0u"), ExtResource("8_jkv2x"), ExtResource("9_jbj1t"), ExtResource("10_muem4"), ExtResource("11_dp3eg")])
 grid_manager = NodePath("../GridManager")
 day_manager = NodePath("../DayManager")
-
-[node name="TutorialPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5poiv")
-}
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("32_dgi5k")
@@ -985,9 +1004,9 @@ visible = false
 [node name="Marker" type="Button" parent="CanvasLayer"]
 visible = false
 offset_left = 1813.0
-offset_top = 152.0
+offset_top = 228.0
 offset_right = 1941.0
-offset_bottom = 280.0
+offset_bottom = 356.0
 scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(64, 64)
 mouse_filter = 2
@@ -1003,9 +1022,9 @@ offset = Vector2(64, 64)
 [node name="TextMarker" type="Label" parent="CanvasLayer"]
 visible = false
 offset_left = 1458.0
-offset_top = 194.0
+offset_top = 266.0
 offset_right = 1799.0
-offset_bottom = 233.0
+offset_bottom = 305.0
 theme_override_fonts/font = ExtResource("26_5q0nq")
 theme_override_font_sizes/font_size = 32
 text = "Click here to open menu"
@@ -1014,6 +1033,11 @@ text = "Click here to open menu"
 visible = false
 color = Color(0.86898494, 0.8689849, 0.8689849, 1)
 blend_mode = 1
+
+[node name="TutorialPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5poiv")
+}
 
 [node name="Sfx" parent="." instance=ExtResource("34_dgi5k")]
 

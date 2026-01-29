@@ -26,6 +26,14 @@ signal buyAlien(alien_data: AlienData)
 signal Forfeit(condition:bool)
 signal Setting(bool)
 
+func _ready() -> void:
+	$SidePanel/Currency/ProgressBar.set_value(CurrencyManager.currency)
+	CurrencyManager.connect("currency_changed", _update_currency)
+
+func _update_currency(value:int):
+	$SidePanel/Currency/ProgressBar.set_value(CurrencyManager.currency)
+	$SidePanel/Currency/Number.set_text(str(CurrencyManager.currency)+"\\"+str($SidePanel/Currency/ProgressBar.get_max()))
+
 func resetPanel():
 	$SidePanel/Menu/MenuList/Shop.set_text("Shop")
 	$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/shopping-cart.png"))

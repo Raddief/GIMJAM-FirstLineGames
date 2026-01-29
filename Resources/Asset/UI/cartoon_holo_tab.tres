@@ -1,7 +1,7 @@
 [gd_resource type="StyleBox" script_class="StyleBoxStacked" load_steps=7 format=3 uid="uid://dbcyq6fbrvkj4"]
 
-[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="1_xagfu"]
-[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="2_5mff6"]
+[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://Resources/Asset/UI/stylebox_stacked.gd" id="1_xagfu"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://Resources/Asset/UI/StyleBoxFlatPlus.gd" id="2_5mff6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpgfo"]
 bg_color = Color(0.7490196, 0.95686275, 1, 0.6117647)
