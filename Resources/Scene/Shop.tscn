@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=42 format=3 uid="uid://bfvg3cyytfdqq"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
 [ext_resource type="Texture2D" uid="uid://ihpdpknedct0" path="res://resources/Asset/UI/shopping-cart.png" id="2_8ebbm"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_cc1rn"]
 [ext_resource type="Resource" uid="uid://df7oswmrte5rn" path="res://resources/data/alien_data/Blando.tres" id="3_6sfmx"]
+[ext_resource type="PackedScene" uid="uid://b3tmwgavqm0ro" path="res://resources/Scene/Main_Menu.tscn" id="3_eficx"]
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="3_s556k"]
 [ext_resource type="Texture2D" uid="uid://cj25tisi1klt8" path="res://resources/Asset/UI/ray-gun.png" id="3_vtuwb"]
 [ext_resource type="Resource" uid="uid://csn57nj40yl0s" path="res://resources/data/alien_data/Bard Toad.tres" id="3_w7eiy"]
@@ -21,9 +22,10 @@
 [ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
 [ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
 [ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
-[ext_resource type="Script" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
+[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
 [ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://resources/Shaders/vhs.gdshader" id="15_ow7in"]
-[ext_resource type="Script" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
+[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
+[ext_resource type="Texture2D" uid="uid://dvherye1o458w" path="res://resources/Asset/UI/alien-stare.png" id="19_jywoi"]
 [ext_resource type="Texture2D" uid="uid://bgd8y61u4c04p" path="res://resources/Asset/UI/progress-bar-circle.png" id="21_mh6lc"]
 [ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
 [ext_resource type="Texture2D" uid="uid://cmhhr7dxjnxwp" path="res://resources/Asset/UI/progress-bar-frame.png" id="22_eficx"]
@@ -217,6 +219,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vtuwb")
+slots = ExtResource("3_s556k")
+Mainmenu = ExtResource("3_eficx")
+shop_texture = ExtResource("2_8ebbm")
+journal_texture = ExtResource("4_3kx1x")
+alien_texture = ExtResource("19_jywoi")
 Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_6sfmx"), ExtResource("4_6sfmx"), ExtResource("5_tcc56"), ExtResource("3_w7eiy"), ExtResource("5_x2ouj"), ExtResource("8_umvc6"), ExtResource("9_attia"), ExtResource("10_umvc6"), ExtResource("7_v31mq"), ExtResource("12_8cqjm")])
 metadata/_edit_lock_ = true
 

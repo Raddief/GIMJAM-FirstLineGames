@@ -5,7 +5,7 @@ extends Node2D
 @export var day_manager: DayManager
 @export var alien_manager: AlienManager
 @export var popups: CenterContainer
-@onready var people_scene: PackedScene = preload("res://Resources/Scene/people.tscn")
+@export var people_scene: PackedScene
 @onready var tutorials = $TutorialPlayer
 
 func _ready():
