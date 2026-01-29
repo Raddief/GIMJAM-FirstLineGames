@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=70 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
 [ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://Resources/Asset/UI/StyleBoxFlatPlus.gd" id="35_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
+[ext_resource type="Texture2D" uid="uid://b1q26me5gqe5j" path="res://assets/environment/grove.png" id="35_nvyfr"]
 [ext_resource type="StyleBox" uid="uid://dssuogccdbwqf" path="res://Resources/Asset/UI/main_button.tres" id="36_5poiv"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://drqjal2ylfjs2" path="res://Resources/Shaders/vignette.tscn" id="36_kmb1v"]
@@ -941,6 +942,12 @@ position = Vector2(1218, 903)
 
 [node name="Particle light blue" parent="Node2D" instance=ExtResource("32_chjal")]
 z_index = 2
+
+[node name="Grove" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-15, 0)
+texture = ExtResource("35_nvyfr")
+centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
