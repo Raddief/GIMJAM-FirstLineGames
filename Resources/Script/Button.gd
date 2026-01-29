@@ -1,7 +1,7 @@
 extends Button
 
-@export var ui_hover_sound: AudioStream
-@export var ui_click_sound: AudioStream
+@export var ui_hover_sound : AudioStream
+@export var ui_click_sound : AudioStream
 
 #Variable Slot
 var type:int = 0 #0 = Alien 1 = Items

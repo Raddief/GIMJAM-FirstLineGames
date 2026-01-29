@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4qriwwfphl1s" path="res://assets/cutoff/bardtoad_face.png" id="3_0c0hx"]
 [ext_resource type="Script" uid="uid://blef1pmhv53kd" path="res://scripts/rules/adjacent_bonus_emitter_rule.gd" id="3_e60en"]
 [ext_resource type="Texture2D" uid="uid://ympehtlm030g" path="res://assets/bard_toad.png" id="4_e60en"]
-[ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_bard.tscn" id="7_0c0hx"]
+[ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="7_0c0hx"]
 
 [sub_resource type="Resource" id="Resource_cxdyn"]
 script = ExtResource("3_e60en")

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_d3mm4")
 name = "Matriarch"
-alien_trait = "The Matriarch casts their gaze outward. All visible aliens on the tile perimeter of the Matriach will die when the turn ends."
+alien_trait = "The Matriarch casts THEIR gaze outward. All visible aliens on the tile perimeter of the Matriach will die when the turn ends. Only one can exist in the Pen."
 price = 3100
 rate = 2200
 size = "3 x 3"

@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_05irw")
 name = "Obelisk"
-alien_trait = "A rare alien, only one can exist in the Pen. Cannot be moved."
+alien_trait = "The Obelisk stands tall. THEY  cannot be moved. Only one can exist in the Pen."
 price = 2000
-rate = 600
+rate = 1225
 size = "1x4"
 alien_scene = ExtResource("1_85ggw")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

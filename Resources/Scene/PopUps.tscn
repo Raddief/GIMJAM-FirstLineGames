@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://chguyrh8h8mqh"]
+[gd_scene load_steps=7 format=3 uid="uid://chguyrh8h8mqh"]
 
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="1_8c4hv"]
-[ext_resource type="Script" uid="uid://056golegvos5" path="res://Resources/Script/Popup.gd" id="1_m2qde"]
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="2_4pixp"]
-[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="4_7q0k1"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="1_8c4hv"]
+[ext_resource type="Script" uid="uid://056golegvos5" path="res://resources/Script/Popup.gd" id="1_m2qde"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="2_4pixp"]
+[ext_resource type="AudioStream" uid="uid://dqtyqate28n4g" path="res://resources/Asset/Sfx/ui_hover2.mp3" id="2_qkjs1"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://resources/Scene/sfx.tscn" id="4_7q0k1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pixp"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
@@ -25,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2qde")
+ui_hover_sound = ExtResource("2_qkjs1")
 metadata/_edit_lock_ = true
 
 [node name="GameOver" type="Panel" parent="."]

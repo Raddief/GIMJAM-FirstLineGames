@@ -1,13 +1,12 @@
 extends Control
 class_name Shop
 
-#Scene Variable
-@export var slots: PackedScene
-@export var Mainmenu: PackedScene
-@export var shop_texture: CompressedTexture2D
-@export var journal_texture: CompressedTexture2D
-@export var alien_texture: CompressedTexture2D
 
+@export var slots : PackedScene
+@export var Mainmenu : PackedScene
+@export var shop_texture : CompressedTexture2D
+@export var journal_texture : CompressedTexture2D
+@export var alien_texture : CompressedTexture2D
 #Node Variable
 @onready var anim = $Animation
 
@@ -86,6 +85,14 @@ func _on_shop_pressed() -> void:
 		if CurrencyManager.Tutorial == 2 : 
 			CurrencyManager.Tutorial += 1
 			CurrencyManager.emit_signal("TutorialNext")
+		$SidePanel/Menu/MenuList/Shop.set_text("Aliens")
+		$SidePanel/Menu/MenuList/Shop.set_button_icon(alien_texture)
+		$SidePanel/Menu/MenuList/UseItem.set_text("Items")
+		$SidePanel/Menu/MenuList/Journal.set_text("Back")
+		$SidePanel/Menu/MenuList/Journal.set_button_icon(null)
+		$SidePanel/Menu/MenuList/Journal.visible = true
+		$SidePanel/Menu/MenuList/Setting.visible = false
+		$SidePanel/Menu/MenuList/Forfeit.visible = false
 		$SidePanel/Menu.visible = false
 		$SidePanel/Scroll.visible = true
 	elif text == "Aliens" :

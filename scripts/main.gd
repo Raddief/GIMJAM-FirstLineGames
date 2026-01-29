@@ -6,6 +6,9 @@ extends Node2D
 @export var alien_manager: AlienManager
 @export var popups: CenterContainer
 @export var people_scene: PackedScene
+@export_category("SOUND")
+@export var end_turn_sound : AudioStream
+@export var end_day_sound : AudioStream
 @onready var tutorials = $TutorialPlayer
 
 func _ready():
@@ -23,10 +26,9 @@ func _ready():
 	CurrencyManager.connect("TutorialNext", _on_tutorial)
 	if CurrencyManager.Tutorial != 7 :
 		CurrencyManager.Tutorial = 1
-		$CanvasLayer/UI/CurrencyLabel.visible = false
-		$CanvasLayer/UI/TurnProgress.visible = false
+		# $CanvasLayer/UI/Money.visible = false
+		# $"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = false
 		$CanvasLayer/UI/EndTurnButton.visible = false
-		$CanvasLayer/UI/Currency.visible = false
 		$CanvasLayer/RemoveArea.visible = false
 		$CanvasLayer/Marker.visible = true
 		$CanvasLayer/DirectionalLight2D.visible = true
@@ -36,6 +38,10 @@ func _ready():
 		$CanvasLayer/Marker.queue_free()
 		$CanvasLayer/TextMarker.queue_free()
 		tutorials.queue_free()
+		# This doesn't work??
+		# $CanvasLayer/UI/Money.visible = true
+		# $"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = true
+		# print("Make money visible!")
 
 	day_manager.connect("day_started", ui.on_day_started)
 	day_manager.connect("day_started", _on_day_change)
@@ -66,7 +72,7 @@ func add_alien():
 
 func _on_turn_passed(turn: int, max_turns: int):
 	alien_manager.on_turn_passed()
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_turn1.mp3"))
+	$Sfx.set_stream(end_turn_sound)
 	$Sfx.emit_signal("streamChanged")
 
 func _on_day_ended(day: DayData):
@@ -81,7 +87,7 @@ func _on_day_change(day:DayData):
 			index = i-1
 	if day.day_name != "Monday":
 		$GlassDome.visible = true
-		$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_day1.mp3"))
+		$Sfx.set_stream(end_day_sound)
 		$Sfx.emit_signal("streamChanged")
 		popups.EndDay(day_manager.days[index].day_name, CurrencyManager.currency+day_manager.days[index].money_target, day_manager.days[index].money_target, $GlassDome)
 
@@ -107,10 +113,7 @@ func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Step5" :
 		CurrencyManager.emit_signal("TutorialNext")
 	elif anim_name == "Step7" :
-		$CanvasLayer/UI/CurrencyLabel.visible = true
-		$CanvasLayer/UI/TurnProgress.visible = true
 		$CanvasLayer/UI/EndTurnButton.visible = true
-		$CanvasLayer/UI/Currency.visible = true
 		$CanvasLayer/RemoveArea.visible = true
 		$CanvasLayer/DirectionalLight2D.queue_free()
 		$CanvasLayer/Marker.queue_free()
