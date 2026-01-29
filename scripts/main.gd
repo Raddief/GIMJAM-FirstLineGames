@@ -5,7 +5,10 @@ extends Node2D
 @export var day_manager: DayManager
 @export var alien_manager: AlienManager
 @export var popups: CenterContainer
-@onready var people_scene: PackedScene = preload("res://Resources/Scene/people.tscn")
+@export var people_scene: PackedScene
+@export_category("SOUND")
+@export var end_turn_sound : AudioStream
+@export var end_day_sound : AudioStream
 @onready var tutorials = $TutorialPlayer
 
 func _ready():
@@ -62,7 +65,7 @@ func add_alien():
 
 func _on_turn_passed(turn: int, max_turns: int):
 	alien_manager.on_turn_passed()
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_turn1.mp3"))
+	$Sfx.set_stream(end_turn_sound)
 	$Sfx.emit_signal("streamChanged")
 
 func _on_day_ended(day: DayData):
@@ -77,7 +80,7 @@ func _on_day_change(day:DayData):
 			index = i-1
 	if day.day_name != "Monday":
 		$GlassDome.visible = true
-		$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_day1.mp3"))
+		$Sfx.set_stream(end_day_sound)
 		$Sfx.emit_signal("streamChanged")
 		popups.EndDay(day_manager.days[index].day_name, CurrencyManager.currency+day_manager.days[index].money_target, day_manager.days[index].money_target, $GlassDome)
 

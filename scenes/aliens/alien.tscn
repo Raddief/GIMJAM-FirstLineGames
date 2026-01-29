@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddleptbigphkm"]
+[gd_scene load_steps=8 format=3 uid="uid://ddleptbigphkm"]
 
 [ext_resource type="Script" uid="uid://djr6f5rktwdm5" path="res://scripts/alien/alien.gd" id="1_u8rjw"]
+[ext_resource type="AudioStream" uid="uid://d3p3jt3k6bk6b" path="res://resources/Asset/Sfx/alien_move.mp3" id="2_g6pn0"]
 [ext_resource type="PackedScene" uid="uid://cj1y6nogo6n8c" path="res://scenes/particles/particle_blood.tscn" id="2_x1jr7"]
+[ext_resource type="AudioStream" uid="uid://dahoi8jnm0mbq" path="res://resources/Asset/Sfx/ui_delete1.mp3" id="3_kbrcu"]
 [ext_resource type="PackedScene" uid="uid://cwc7f7wirr1oh" path="res://scenes/particles/particle_grass.tscn" id="3_qbxjc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5c48"]
@@ -13,6 +15,8 @@ size = Vector2(31, 32)
 z_index = 1
 script = ExtResource("1_u8rjw")
 size = Vector2i(1, 1)
+alien_move_sound = ExtResource("2_g6pn0")
+alien_delete_sound = ExtResource("3_kbrcu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n5c48")

@@ -1,5 +1,7 @@
 extends CenterContainer
 
+@export var ui_hover_sound : AudioStream
+
 var GlassDome:Sprite2D
 
 func GameOver(golds:int, aliens:int):
@@ -11,10 +13,10 @@ func GameOver(golds:int, aliens:int):
 
 func _on_try_again_pressed() -> void:
 	get_tree().set_pause(false)
-	get_tree().change_scene_to_packed(load("res://scenes/main.tscn"))
+	SceneManager.change_scene_to_game()
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_packed(load("res://Resources/Scene/Main_Menu.tscn"))
+	SceneManager.change_scene_to_main_menu()
 
 func Forfeit():
 	$Forfeit.visible = true
@@ -23,7 +25,7 @@ func Forfeit():
 
 func _on_sure_pressed() -> void:
 	get_tree().set_pause(false)
-	get_tree().change_scene_to_packed(load("res://Resources/Scene/Main_Menu.tscn"))
+	SceneManager.change_scene_to_main_menu()
 
 func _on_refuse_pressed() -> void:
 	$Forfeit.visible = false
@@ -59,10 +61,10 @@ func _on_continues_pressed() -> void:
 
 func _on_gui_value_changed(value: float) -> void:
 	AudioManager.emit_signal("volumeGUIchanged", $Setting/VBoxContainer/Column/Slider/GUI.get_value())
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover2.mp3"))
+	$Sfx.set_stream(ui_hover_sound)
 	$Sfx.play()
 
 func _on_bgm_value_changed(value: float) -> void:
 	AudioManager.emit_signal("volumeBGMchanged", $Setting/VBoxContainer/Column/Slider/BGM.get_value())
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover2.mp3"))
+	$Sfx.set_stream(ui_hover_sound)
 	$Sfx.play()

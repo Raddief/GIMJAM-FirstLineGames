@@ -10,6 +10,9 @@ class_name Alien
 @export var spawn_audio: AudioStream
 @export var face_agnostic: bool = false
 @export var facecard: Texture2D
+@export_category("SOUND")
+@export var alien_move_sound : AudioStream
+@export var alien_delete_sound : AudioStream
 
 # CUSTOM SHAPE (Relative to 0,0). 
 # Example L-Shape inside a 2x2 box: [(0,0), (0,1), (1,1)]
@@ -226,7 +229,7 @@ func end_drag():
 		# MOVEMENT LOGIC: Only check if the spot is valid (Moving is free!)
 		if is_valid_spot:
 			move_to_cell(target_cell)
-			sfx_player.set_stream(load("res://Resources/Asset/Sfx/alien_move.mp3"))
+			sfx_player.set_stream(alien_move_sound)
 			sfx_player.play()
 		else:
 			move_to_cell(original_cell)
@@ -306,7 +309,7 @@ func kill():
 
 	for rule in rules:
 		rule.on_removed(self)
-	$SFX.set_stream(load("res://Resources/Asset/Sfx/ui_delete1.mp3"))
+	$SFX.set_stream(alien_delete_sound)
 	$SFX.play()
 	blood_particle.emitting = true
 	animated_sprite_2d.hide()

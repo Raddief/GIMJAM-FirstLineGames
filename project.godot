@@ -11,15 +11,16 @@ config_version=5
 [application]
 
 config/name="GIMJAM FirstLineGames"
-run/main_scene="uid://8xll76r5860v"
+run/main_scene="uid://b3tmwgavqm0ro"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 CurrencyManager="*res://scripts/managers/currency_manager.gd"
-AudioManager="*res://Resources/Script/AudioManager.gd"
-Music="*res://Resources/Scene/music.tscn"
+AudioManager="*res://resources/Script/AudioManager.gd"
+Music="*res://resources/Scene/music.tscn"
+SceneManager="*res://scenes/scene_manager.tscn"
 
 [display]
 

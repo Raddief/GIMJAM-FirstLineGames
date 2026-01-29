@@ -1,5 +1,8 @@
 extends Button
 
+@export var ui_hover_sound : AudioStream
+@export var ui_click_sound : AudioStream
+
 #Variable Slot
 var type:int = 0 #0 = Alien 1 = Items
 var object : AlienData = null
@@ -15,11 +18,11 @@ func _volume_changed(value:float):
 	$Sfx.set_volume_db(value)
 
 func _on_mouse_entered() -> void:
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_hover2.mp3"))
+	$Sfx.set_stream(ui_hover_sound)
 	$Sfx.play()
 
 func _on_pressed() -> void:
-	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_click1.mp3"))
+	$Sfx.set_stream(ui_click_sound)
 	$Sfx.play()
 	if CurrencyManager.Tutorial == 4 :
 		CurrencyManager.emit_signal("TutorialNext")
