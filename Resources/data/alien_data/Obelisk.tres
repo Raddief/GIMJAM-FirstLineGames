@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://c7pgx1ejvlikt"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://c7pgx1ejvlikt"]
 
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_05irw"]
 [ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_obelisk.tscn" id="1_85ggw"]
+[ext_resource type="Texture2D" uid="uid://5kcgn51ymaxg" path="res://assets/sizes/1x4.png" id="3_b0yah"]
 
 [resource]
 script = ExtResource("1_05irw")
 name = "Obelisk"
+origin = "The Obelisk's less \"alien\" and more \"cosmic landmark.\" THEY are an ancient data storage device from a civilization that disappeared before the stars were even born. Because THEY are literally anchored to the fabric of space-time, THEY cannot be moved, rotated, or nudged. You don't place the Obelisk; you build your entire life around it."
 alien_trait = "The Obelisk stands tall. THEY  cannot be moved. Only one can exist in the Pen."
 price = 2000
 rate = 1225
 size = "1x4"
+size2 = ExtResource("3_b0yah")
 alien_scene = ExtResource("1_85ggw")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

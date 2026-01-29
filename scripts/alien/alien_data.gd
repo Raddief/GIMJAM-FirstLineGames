@@ -8,5 +8,6 @@ class_name AlienData
 @export var price: int
 @export var rate: int
 @export var size: String
+@export var size2: Texture2D
 
 @export var alien_scene: PackedScene

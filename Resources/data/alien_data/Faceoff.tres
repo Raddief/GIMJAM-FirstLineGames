@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://b75v64gc3dqgp"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://b75v64gc3dqgp"]
 
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_j8v2y"]
 [ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_faceoff.tscn" id="1_syj0r"]
+[ext_resource type="Texture2D" uid="uid://7vng8lsrpu7p" path="res://assets/sizes/solaris.png" id="3_dutdu"]
 
 [resource]
 script = ExtResource("1_j8v2y")
 name = "Faceoff"
+origin = " The Faceoff doesn't care about the zoo, the cages, or the other aliens. It is firmly convinced that it is the protagonist of a hit reality TV show and that you are its most devoted fan. It refuses to turn left or right because it's afraid of missing its close-up or letting its ratings drop."
 alien_trait = "The Faceoff wants attention., only yields Credits when put on the Top Row."
 price = 230
 rate = 138
 size = "2x1"
+size2 = ExtResource("3_dutdu")
 alien_scene = ExtResource("1_syj0r")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

@@ -43,4 +43,5 @@ sprite_frames = SubResource("SpriteFrames_cxdyn")
 shape = SubResource("RectangleShape2D_kxigb")
 
 [node name="Bard particle" parent="." index="5" instance=ExtResource("7_0c0hx")]
+amount = 30
 texture = ExtResource("8_bfiyr")

@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://damrmo300xnwl"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://damrmo300xnwl"]
 
 [ext_resource type="PackedScene" uid="uid://cnkm0pb21c4li" path="res://scenes/aliens/alien_gulper.tscn" id="1_8gwuk"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_hwv5x"]
+[ext_resource type="Texture2D" uid="uid://cogwkl7jsjdmm" path="res://assets/sizes/1x2.png" id="3_hwv5x"]
 
 [resource]
 script = ExtResource("2_hwv5x")
 name = "Gulper"
+origin = "The Gulper was originally hired as the zoo’s head of waste management, but it quickly lost that job for being \"too efficient.\" It doesn't distinguish between trash, snacks, or expensive rare specimens. If it fits in the mouth, it belongs in the stomach. It’s not mean; it just has a very ambitious metabolism."
 alien_trait = "The Gulper eats all, any aliens standing 1 tile in front of Gulper will be eaten."
 price = 330
 rate = 223
 size = "1x2"
+size2 = ExtResource("3_hwv5x")
 alien_scene = ExtResource("1_8gwuk")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

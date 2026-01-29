@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://bpwc1ue3sk1qk"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://bpwc1ue3sk1qk"]
 
 [ext_resource type="PackedScene" uid="uid://dwcmw2dsqno7j" path="res://scenes/aliens/alien_nook.tscn" id="1_27pci"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_dllj8"]
+[ext_resource type="Texture2D" uid="uid://bo68ht6r5u0f5" path="res://assets/sizes/1x1.png" id="3_g01bm"]
 
 [resource]
 script = ExtResource("1_dllj8")
 name = "Nook"
+origin = "Born in the right-angled nebulas of the Geometry Sector, the Nook is a creature of pure alignment. It doesn't breathe oxygen or drink water; it feeds on the structural stability of ninety-degree joints. To this alien, a corner isn't just a place to sit; it's a charging station. Placing it in the middle of a floor is like trying to use a battery that isn't plugged in."
 alien_trait = "The Nook seeks corners, when put in any of the 4 corners of the Pen, increases yield value by +12."
 price = 130
 rate = 44
 size = "1x1"
+size2 = ExtResource("3_g01bm")
 alien_scene = ExtResource("1_27pci")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

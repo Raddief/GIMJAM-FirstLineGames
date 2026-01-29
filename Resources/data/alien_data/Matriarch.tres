@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://dw3nm4bqj8ndl"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://dw3nm4bqj8ndl"]
 
 [ext_resource type="PackedScene" uid="uid://c2ysejs1ny0qp" path="res://scenes/aliens/alien_matriarch.tscn" id="1_6nkoq"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_d3mm4"]
+[ext_resource type="Texture2D" uid="uid://dgb6omladmebq" path="res://assets/sizes/3x3.png" id="3_80kgj"]
 
 [resource]
 script = ExtResource("2_d3mm4")
 name = "Matriarch"
+origin = "Attention! THEY wants to be the only thing in existence. THEY possesses a specialized biological sensor that triggers an immediate removal protocol for any creature caught in her line of sight. THEY views the surrounding eight tiles as her personal garden, and anyone standing there is considered a \"weed."
 alien_trait = "The Matriarch casts THEIR gaze outward. All visible aliens on the tile perimeter of the Matriach will die when the turn ends. Only one can exist in the Pen."
 price = 3100
 rate = 2200
 size = "3 x 3"
+size2 = ExtResource("3_80kgj")
 alien_scene = ExtResource("1_6nkoq")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://csn57nj40yl0s"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://csn57nj40yl0s"]
 
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_2dxtf"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_bardToad.tscn" id="1_dcn76"]
+[ext_resource type="Texture2D" uid="uid://bo68ht6r5u0f5" path="res://assets/sizes/1x1.png" id="3_rakt0"]
 
 [resource]
 script = ExtResource("1_2dxtf")
 name = "Bard Toad"
+origin = "The Bard Toad is the galaxy's most famous nomad. It travels from planet to planet via passing comets and solar winds, touring every known star system to share its melodies. You can find traces of its \"Galactic Tour\" everywhere. It only stays in your zoo for the snacks and the chance for a new audience."
 alien_trait = "All aliens directly 1 tile above, below, or beside Bard Toad gain +8 Credit yield. Only effects coming from the same instance of Bard Toad stacks."
 price = 250
 rate = 100
 size = "1x1"
+size2 = ExtResource("3_rakt0")
 alien_scene = ExtResource("1_dcn76")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"

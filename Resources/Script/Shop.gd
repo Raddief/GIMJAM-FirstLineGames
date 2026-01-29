@@ -54,6 +54,8 @@ func showDesc(types:int, object):
 		$BottomPanel/Description/Grid/PriceYield/Price/Contain.set_text(str(object.price))
 		$BottomPanel/Description/Grid/Profile/Contain.set_text(object.alien_trait)
 		$BottomPanel/Description/Grid/PriceYield/Yield/Contain.set_text(str(object.rate))
+		$BottomPanel/Description/Grid/Lore/Contain.set_text(str(object.origin))
+		$BottomPanel/Description/Grid/Sizes/Contain.set_texture(object.size2)
 
 func addSlot(day_data: DayData = null) -> void:
 	var aliens: Array = Alien

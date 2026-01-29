@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=40 format=3 uid="uid://bfvg3cyytfdqq"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://Resources/Script/Shop.gd" id="1_vtuwb"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://wapeg6we6jlv" path="res://assets/arrow.png" id="18_3nqxa"]
 [ext_resource type="Texture2D" uid="uid://dvherye1o458w" path="res://Resources/Asset/UI/alien-stare.png" id="19_jywoi"]
 [ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://Resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
+[ext_resource type="Texture2D" uid="uid://sgfloxgl4ajf" path="res://assets/sizes/L.png" id="29_clnnw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6by2v"]
 bg_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
@@ -420,9 +421,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 17.0
+offset_left = 11.148481
 offset_top = 12.0
-offset_right = -12.0
+offset_right = -7.7824707
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -441,7 +442,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Profile" type="VBoxContainer" parent="BottomPanel/Description/Grid"]
-custom_minimum_size = Vector2(600, 90)
+custom_minimum_size = Vector2(500, 90)
 layout_mode = 2
 size_flags_vertical = 4
 
@@ -473,12 +474,37 @@ scroll_active = false
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="BottomPanel/Description/Grid"]
-custom_minimum_size = Vector2(40, 0)
+[node name="Sizes" type="HBoxContainer" parent="BottomPanel/Description/Grid"]
+custom_minimum_size = Vector2(144, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Header" type="Label" parent="BottomPanel/Description/Grid/Sizes"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_m2jm4")
+theme_override_font_sizes/font_size = 25
+text = "Size : "
+vertical_alignment = 1
+
+[node name="Contain" type="TextureRect" parent="BottomPanel/Description/Grid/Sizes"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("29_clnnw")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="BottomPanel/Description/Grid"]
+layout_mode = 2
+theme_override_constants/margin_right = 48
 
 [node name="PriceYield" type="VBoxContainer" parent="BottomPanel/Description/Grid"]
 layout_mode = 2
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="Price" type="HBoxContainer" parent="BottomPanel/Description/Grid/PriceYield"]
@@ -522,6 +548,25 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="BottomPanel/Description/Grid"]
+layout_mode = 2
+theme_override_constants/margin_right = 48
+
+[node name="Lore" type="VBoxContainer" parent="BottomPanel/Description/Grid"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Header" type="Label" parent="BottomPanel/Description/Grid/Lore"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m2jm4")
+theme_override_font_sizes/font_size = 24
+text = "Lore:"
+
+[node name="Contain" type="RichTextLabel" parent="BottomPanel/Description/Grid/Lore"]
+custom_minimum_size = Vector2(300, 72)
+layout_mode = 2
+text = "The Hazmat Crab is the only creature in the galaxy that thinks safety first isn't just a suggestion it’s a lifestyle. It spends its entire day checking expiration dates on toxic sludge and ensuring the zoo stays up to code. It doesn't actually like the mess, it just tolerates it better than anyone else"
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {

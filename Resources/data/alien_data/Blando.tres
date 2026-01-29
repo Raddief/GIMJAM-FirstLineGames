@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="AlienData" load_steps=3 format=3 uid="uid://df7oswmrte5rn"]
+[gd_resource type="Resource" script_class="AlienData" load_steps=4 format=3 uid="uid://df7oswmrte5rn"]
 
 [ext_resource type="PackedScene" uid="uid://bkey2m3inbb2h" path="res://scenes/aliens/alien_blando.tscn" id="1_uu8xd"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="1_x6l3q"]
+[ext_resource type="Texture2D" uid="uid://bo68ht6r5u0f5" path="res://assets/sizes/1x1.png" id="3_o1sng"]
 
 [resource]
 script = ExtResource("1_x6l3q")
 name = "Blando"
-origin = "How can an alien be so... basic? people says It's the most basic species in the galaxy. Not aggressive not passive. It doesnt morph, breath fire, teleport, or melt reality. It just stands there, taking up space and breathing your expensive oxygen."
+origin = "How can an alien be so... basic? People say, \"It's the most basic species in the galaxy. Not aggressive, not passive. It doesn't morph, breathe fire, teleport, or melt reality. It just stands there, taking up space and breathing your expensive oxygen.\""
 alien_trait = "No trait, just vibes."
 fun_fact = "Blando eggs are often mistaken for smooth rocks."
 price = 100
 rate = 44
 size = "1x1"
+size2 = ExtResource("3_o1sng")
 alien_scene = ExtResource("1_uu8xd")
 metadata/_custom_type_script = "uid://bh7kmmuvf7682"
