@@ -1,12 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3tmwgavqm0ro"]
+[gd_scene load_steps=9 format=3 uid="uid://b3tmwgavqm0ro"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_7445q"]
 [ext_resource type="Script" uid="uid://dw7bke1ai5igl" path="res://Resources/Script/Main_Menu.gd" id="1_mavmb"]
-[ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="2_h211v"]
+[ext_resource type="Texture2D" uid="uid://btya0e7iyg3r6" path="res://Resources/Asset/BG.png" id="2_a8ag0"]
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="2_mavmb"]
-[ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="3_o0idf"]
-[ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="4_nayc5"]
-[ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="5_iwj6o"]
 [ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://Resources/Scene/PopUps.tscn" id="8_jwtmi"]
 
 [sub_resource type="Animation" id="Animation_6vstm"]
@@ -57,29 +54,15 @@ grow_vertical = 2
 script = ExtResource("1_mavmb")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_h211v")
+[node name="Parallax2D" type="Parallax2D" parent="."]
+process_mode = 3
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("2_a8ag0")
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="Pen" type="Sprite2D" parent="."]
-texture = ExtResource("3_o0idf")
-centered = false
-metadata/_edit_lock_ = true
-
-[node name="Lamp" type="Sprite2D" parent="."]
-position = Vector2(1418, -317)
-texture = ExtResource("4_nayc5")
-centered = false
-
-[node name="Light particle" parent="Lamp" instance=ExtResource("5_iwj6o")]
-
-[node name="Lamp2" type="Sprite2D" parent="."]
-position = Vector2(1419, -13)
-texture = ExtResource("4_nayc5")
-centered = false
-
-[node name="Light particle" parent="Lamp2" instance=ExtResource("5_iwj6o")]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -111,7 +94,7 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Play" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(256, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -119,7 +102,7 @@ theme_override_font_sizes/font_size = 64
 text = "Play"
 
 [node name="Setting" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(256, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -127,7 +110,7 @@ theme_override_font_sizes/font_size = 64
 text = "Settings"
 
 [node name="Credit" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(256, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -135,7 +118,7 @@ theme_override_font_sizes/font_size = 64
 text = "Credits"
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource("2_mavmb")]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(256, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2

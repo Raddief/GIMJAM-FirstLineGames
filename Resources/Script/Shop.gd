@@ -10,10 +10,6 @@ class_name Shop
 
 #Node Variable
 @onready var anim = $Animation
-@onready var texture_progress_bar: TextureProgressBar = $SidePanel/Menu/MenuList/HBoxContainer/MarginContainer/NinePatchRect/TextureProgressBar
-@onready var label: Label = $SidePanel/Menu/MenuList/HBoxContainer/MarginContainer/NinePatchRect/Label
-@onready var texture_progress_bar2: TextureProgressBar = $SidePanel/Scroll/NinePatchRect/TextureProgressBar
-@onready var label2: Label = $SidePanel/Scroll/NinePatchRect/Label
 
 #Variable Status
 var day = 6
@@ -23,7 +19,6 @@ var TotalAliens := 0
 @export var Item : Dictionary
 @export var grid_manager : GridManager
 @export var alien_manager : AlienManager
-@export var end_turn_button : Button
 
 var selected_alien : AlienData = null
 var avaliable_aliens : Array[AlienData] = []
@@ -44,14 +39,10 @@ func resetPanel():
 	$SidePanel/Menu/MenuList/Forfeit.visible = true
 	$SidePanel/Menu.visible = true
 	$BottomPanel.visible = false
-	if end_turn_button:
-		end_turn_button.visible = false
 	$SidePanel/Scroll.visible = false
 
 func showDesc(types:int, object):
 	$BottomPanel.visible = true
-	if end_turn_button:
-		end_turn_button.visible = true
 	if types == 0 and object is AlienData:
 		var AlienScene = selected_alien.alien_scene.instantiate()
 		# Check if the alien has a valid facecard texture assigned
@@ -69,8 +60,9 @@ func addSlot(day_data: DayData = null) -> void:
 	var aliens: Array = Alien
 	for avaliable_alien in day_data.new_aliens:
 		avaliable_aliens.append(avaliable_alien)
-		var slot = slots.instantiate()
+		var slot:Button = slots.instantiate()
 		var AlienScene = avaliable_alien.alien_scene.instantiate()
+		slot.set_custom_minimum_size(Vector2(64,128))
 		slot.slot = true
 		slot.root = self
 		slot.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
@@ -92,15 +84,10 @@ func _on_shop_pressed() -> void:
 	var text = $SidePanel/Menu/MenuList/Shop.get_text()
 	if text == "Shop" :
 		if CurrencyManager.Tutorial == 2 : 
+			CurrencyManager.Tutorial += 1
 			CurrencyManager.emit_signal("TutorialNext")
-		$SidePanel/Menu/MenuList/Shop.set_text("Aliens")
-		$SidePanel/Menu/MenuList/Shop.set_button_icon(alien_texture)
-		$SidePanel/Menu/MenuList/UseItem.set_text("Items")
-		$SidePanel/Menu/MenuList/Journal.set_text("Back")
-		$SidePanel/Menu/MenuList/Journal.set_button_icon(null)
-		$SidePanel/Menu/MenuList/Journal.visible = true
-		$SidePanel/Menu/MenuList/Setting.visible = false
-		$SidePanel/Menu/MenuList/Forfeit.visible = false
+		$SidePanel/Menu.visible = false
+		$SidePanel/Scroll.visible = true
 	elif text == "Aliens" :
 		if CurrencyManager.Tutorial == 3 : 
 			CurrencyManager.emit_signal("TutorialNext")
@@ -160,49 +147,9 @@ var money_amount := 0
 func on_money_changed(amount):
 	money_amount = amount
 
-	if texture_progress_bar:
-		texture_progress_bar.value = money_amount
-	else:
-		print("TextureProgressBar not found!")
-	
-	if label:
-		label.text = str(money_amount) + " / " + str(day_target)
-	else:
-		print("Label not found!")
-		
-	if texture_progress_bar2:
-		texture_progress_bar2.value = money_amount
-	else:
-		print("TextureProgressBar2 not found!")
-	
-	if label2:
-		label2.text = str(money_amount) + " / " + str(day_target)
-	else:
-		print("Label2 not found!")
-
 func on_money_target_changed(day_data: DayData):
 	if day_data:
 		day_target = day_data.money_target
 	else:
 		day_target = -1
 		print("DayData is null!")
-
-	if texture_progress_bar:
-		texture_progress_bar.max_value = day_target
-	else:
-		print("TextureProgressBar not found!")
-
-	if label:
-		label.text = str(money_amount) + " / " + str(day_target)
-	else:
-		print("Label not found!")
-	
-	if texture_progress_bar2:
-		texture_progress_bar2.max_value = day_target
-	else:
-		print("TextureProgressBar2 not found!")
-	
-	if label2:
-		label2.text = str(money_amount) + " / " + str(day_target)
-	else:
-		print("Label2 not found!")

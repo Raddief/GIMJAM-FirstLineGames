@@ -26,6 +26,8 @@ func _ready():
 		$CanvasLayer/UI/CurrencyLabel.visible = false
 		$CanvasLayer/UI/TurnProgress.visible = false
 		$CanvasLayer/UI/EndTurnButton.visible = false
+		$CanvasLayer/UI/Currency.visible = false
+		$CanvasLayer/RemoveArea.visible = false
 		$CanvasLayer/Marker.visible = true
 		$CanvasLayer/DirectionalLight2D.visible = true
 		$CanvasLayer/TextMarker.visible = true
@@ -108,6 +110,8 @@ func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
 		$CanvasLayer/UI/CurrencyLabel.visible = true
 		$CanvasLayer/UI/TurnProgress.visible = true
 		$CanvasLayer/UI/EndTurnButton.visible = true
+		$CanvasLayer/UI/Currency.visible = true
+		$CanvasLayer/RemoveArea.visible = true
 		$CanvasLayer/DirectionalLight2D.queue_free()
 		$CanvasLayer/Marker.queue_free()
 		$CanvasLayer/TextMarker.queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cet8pi67ipg4k"
-path="res://.godot/imported/flying-flag.png-9fd80eac460bfaa1d34af12102f68900.ctex"
+uid="uid://cxkn6u5sif7xj"
+path="res://.godot/imported/UI_Modal.png-bbe332146710bf352e37352f0455d58d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Asset/UI/flying-flag.png"
-dest_files=["res://.godot/imported/flying-flag.png-9fd80eac460bfaa1d34af12102f68900.ctex"]
+source_file="res://Resources/Asset/UI/UI_Modal.png"
+dest_files=["res://.godot/imported/UI_Modal.png-bbe332146710bf352e37352f0455d58d.ctex"]
 
 [params]
 
