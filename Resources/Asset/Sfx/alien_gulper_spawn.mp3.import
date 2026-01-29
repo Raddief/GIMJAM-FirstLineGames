@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bmpgg3bkjw3hi"
-path="res://.godot/imported/alien_gulper_spawn.mp3-426aac9ea746ef71bb8d92135ebbb188.mp3str"
+path="res://.godot/imported/alien_gulper_spawn.mp3-bc7c2b2100450b30e020a863cfc01f29.mp3str"
 
 [deps]
 
-source_file="res://Resources/Asset/Sfx/alien_gulper_spawn.mp3"
-dest_files=["res://.godot/imported/alien_gulper_spawn.mp3-426aac9ea746ef71bb8d92135ebbb188.mp3str"]
+source_file="res://resources/Asset/Sfx/alien_gulper_spawn.mp3"
+dest_files=["res://.godot/imported/alien_gulper_spawn.mp3-bc7c2b2100450b30e020a863cfc01f29.mp3str"]
 
 [params]
 
