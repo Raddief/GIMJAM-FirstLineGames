@@ -1,12 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://chy7b175ld55u"]
 
-[ext_resource type="Texture2D" uid="uid://cvhg15m6jdmxd" path="res://assets/particles/particle_light1.png" id="1_exunw"]
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yitgc"]
 particles_animation = true
 particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d30pj"]
+load_path = "res://.godot/imported/particle_light1.png-253eb4be3c09946c62c276684f33f896.ctex"
 
 [sub_resource type="Gradient" id="Gradient_rp0iw"]
 offsets = PackedFloat32Array(0, 0.35731414, 0.8417266, 1)
@@ -36,7 +37,7 @@ anim_offset_max = 1.0
 [node name="Light particle" type="GPUParticles2D"]
 material = SubResource("CanvasItemMaterial_yitgc")
 amount = 100
-texture = ExtResource("1_exunw")
-lifetime = 1.3800000000000001
+texture = SubResource("CompressedTexture2D_d30pj")
+lifetime = 1.38
 speed_scale = 0.28
 process_material = SubResource("ParticleProcessMaterial_lf67a")

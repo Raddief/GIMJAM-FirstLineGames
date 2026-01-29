@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=63 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bkey2m3inbb2h" path="res://scenes/aliens/alien_blando.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://dwcmw2dsqno7j" path="res://scenes/aliens/alien_nook.tscn" id="5_85g3d"]
 [ext_resource type="Resource" uid="uid://dckp2mlk5pk6v" path="res://resources/data/days/day2.tres" id="5_yc10j"]
-[ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_faceoff.tscn" id="6_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c2dly0llg2d48" path="res://scenes/aliens/alien_3.tscn" id="6_85g3d"]
 [ext_resource type="Resource" uid="uid://bne2lhjrlqi1h" path="res://resources/data/days/day3.tres" id="6_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cs2dwkijtcdbv" path="res://scenes/aliens/alien_bardToad.tscn" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://oqg1p1p8hme7" path="res://scenes/aliens/alien_obelisk.tscn" id="8_jkv2x"]
@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="33_j8jky"]
 [ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://resources/Scene/sfx.tscn" id="34_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dp6udufj2bh6n" path="res://assets/grid_square.png" id="34_kmb1v"]
-[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="35_2cjbq"]
+[ext_resource type="Script" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="35_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://doidibli41xo4" path="res://assets/environment/glass_dome.png" id="35_kmb1v"]
 [ext_resource type="StyleBox" uid="uid://dssuogccdbwqf" path="res://resources/Asset/UI/main_button.tres" id="36_5poiv"]
 [ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="36_fuf3a"]
@@ -724,6 +724,12 @@ texture_region_size = Vector2i(115, 115)
 tile_size = Vector2i(115, 115)
 sources/0 = SubResource("TileSetAtlasSource_fuf3a")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5poiv"]
+load_path = "res://.godot/imported/particle_light1.png-253eb4be3c09946c62c276684f33f896.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2cjbq"]
+load_path = "res://.godot/imported/particle_light1.png-253eb4be3c09946c62c276684f33f896.ctex"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
 bg_color = Color(0.7607843, 0.9607843, 1, 1)
 
@@ -783,7 +789,6 @@ corner_radius_bottom_left = 100
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fuf3a"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("ui", "shop", "day_manager", "alien_manager", "popups")]
-position = Vector2(0, -1)
 script = ExtResource("1_jyhfs")
 ui = NodePath("CanvasLayer/UI")
 shop = NodePath("CanvasLayer/UI/Shop")
@@ -845,6 +850,7 @@ texture = ExtResource("36_fuf3a")
 metadata/_edit_lock_ = true
 
 [node name="Light particle" parent="Lamp" instance=ExtResource("32_j8jky")]
+texture = SubResource("CompressedTexture2D_5poiv")
 
 [node name="Lamp2" type="Sprite2D" parent="."]
 z_index = 1
@@ -853,6 +859,7 @@ texture = ExtResource("36_fuf3a")
 metadata/_edit_lock_ = true
 
 [node name="Light particle" parent="Lamp2" instance=ExtResource("32_j8jky")]
+texture = SubResource("CompressedTexture2D_2cjbq")
 
 [node name="Vignette" parent="." instance=ExtResource("36_kmb1v")]
 

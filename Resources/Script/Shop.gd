@@ -7,6 +7,10 @@ var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder i
 
 #Node Variable
 @onready var anim = $Animation
+@onready var texture_progress_bar: TextureProgressBar = $SidePanel/Menu/MenuList/HBoxContainer/MarginContainer/NinePatchRect/TextureProgressBar
+@onready var label: Label = $SidePanel/Menu/MenuList/HBoxContainer/MarginContainer/NinePatchRect/Label
+@onready var texture_progress_bar2: TextureProgressBar = $SidePanel/Scroll/NinePatchRect/TextureProgressBar
+@onready var label2: Label = $SidePanel/Scroll/NinePatchRect/Label
 
 #Variable Status
 var day = 6
@@ -147,3 +151,55 @@ func _on_popup_confirmed() -> void:
 func _on_popup_canceled() -> void:
 	get_tree().set_pause(false)
 	$Popup.visible = false
+
+var day_target := 600
+var money_amount := 0
+func on_money_changed(amount):
+	money_amount = amount
+
+	if texture_progress_bar:
+		texture_progress_bar.value = money_amount
+	else:
+		print("TextureProgressBar not found!")
+	
+	if label:
+		label.text = str(money_amount) + " / " + str(day_target)
+	else:
+		print("Label not found!")
+		
+	if texture_progress_bar2:
+		texture_progress_bar2.value = money_amount
+	else:
+		print("TextureProgressBar2 not found!")
+	
+	if label2:
+		label2.text = str(money_amount) + " / " + str(day_target)
+	else:
+		print("Label2 not found!")
+
+func on_money_target_changed(day_data: DayData):
+	if day_data:
+		day_target = day_data.money_target
+	else:
+		day_target = -1
+		print("DayData is null!")
+
+	if texture_progress_bar:
+		texture_progress_bar.max_value = day_target
+	else:
+		print("TextureProgressBar not found!")
+
+	if label:
+		label.text = str(money_amount) + " / " + str(day_target)
+	else:
+		print("Label not found!")
+	
+	if texture_progress_bar2:
+		texture_progress_bar2.max_value = day_target
+	else:
+		print("TextureProgressBar2 not found!")
+	
+	if label2:
+		label2.text = str(money_amount) + " / " + str(day_target)
+	else:
+		print("Label2 not found!")

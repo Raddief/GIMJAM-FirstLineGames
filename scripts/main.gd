@@ -17,6 +17,8 @@ func _ready():
 
 	CurrencyManager.currency_changed.connect(day_manager.on_money_changed)
 	CurrencyManager.currency_changed.connect(ui.on_money_changed)
+	CurrencyManager.currency_changed.connect(shop.on_money_changed)
+	day_manager.day_started.connect(shop.on_money_target_changed)
 	CurrencyManager.connect("AlienPurchased", add_alien)
 	CurrencyManager.connect("TutorialNext", _on_tutorial)
 	if CurrencyManager.Tutorial != 7 :
@@ -47,7 +49,7 @@ func _ready():
 
 	
 	day_manager.start_day(0)
-	CurrencyManager.add(4000) # starting money
+	CurrencyManager.add(500) # starting money
 
 func buy_alien(alien_data: AlienData) -> void:
 	if CurrencyManager.spend(alien_data.price):

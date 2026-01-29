@@ -21,9 +21,9 @@
 [ext_resource type="Resource" uid="uid://ke4unhvcgqdw" path="res://resources/data/alien_data/Void Knight.tres" id="10_umvc6"]
 [ext_resource type="Resource" uid="uid://dw3nm4bqj8ndl" path="res://resources/data/alien_data/Matriarch.tres" id="12_8cqjm"]
 [ext_resource type="StyleBox" uid="uid://dbcyq6fbrvkj4" path="res://resources/Asset/UI/cartoon_holo_tab.tres" id="14_0mwk0"]
-[ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
+[ext_resource type="Script" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
 [ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://resources/Shaders/vhs.gdshader" id="15_ow7in"]
-[ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
+[ext_resource type="Script" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
 [ext_resource type="Texture2D" uid="uid://bgd8y61u4c04p" path="res://resources/Asset/UI/progress-bar-circle.png" id="21_mh6lc"]
 [ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
 [ext_resource type="Texture2D" uid="uid://cmhhr7dxjnxwp" path="res://resources/Asset/UI/progress-bar-frame.png" id="22_eficx"]
@@ -466,6 +466,7 @@ text = "500/600"
 horizontal_alignment = 1
 
 [node name="BottomPanel" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchor_top = 0.87000006
 anchor_right = 1.0

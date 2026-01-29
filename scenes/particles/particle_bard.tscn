@@ -1,12 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://chy7b175ld55u"]
 
-[ext_resource type="Texture2D" uid="uid://bngt5p4dxil2f" path="res://assets/particles/particle_bard1.png" id="1_rp0iw"]
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yitgc"]
 particles_animation = true
 particles_anim_h_frames = 8
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0pkfr"]
+load_path = "res://.godot/imported/particle_bard1.png-90f2aeb2c254652c5272ebb6fb7ae94b.ctex"
 
 [sub_resource type="Gradient" id="Gradient_rp0iw"]
 offsets = PackedFloat32Array(0, 0.6052632, 1)
@@ -34,7 +35,7 @@ anim_offset_max = 1.0
 [node name="Bard particle" type="GPUParticles2D"]
 material = SubResource("CanvasItemMaterial_yitgc")
 amount = 4
-texture = ExtResource("1_rp0iw")
+texture = SubResource("CompressedTexture2D_0pkfr")
 lifetime = 0.53
 speed_scale = 0.28
 process_material = SubResource("ParticleProcessMaterial_lf67a")
