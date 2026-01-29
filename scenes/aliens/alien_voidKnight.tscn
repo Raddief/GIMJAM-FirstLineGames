@@ -33,7 +33,7 @@ size = Vector2(128, 128)
 [node name="Alien9" instance=ExtResource("1_0vj67")]
 alien_name = "Void Knight"
 cost = 390
-production_per_turn = 290
+production_per_turn = 274
 size = Vector2i(1, 2)
 spawn_audio = ExtResource("2_rmtec")
 face_agnostic = true

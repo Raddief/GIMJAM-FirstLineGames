@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bfvg3cyytfdqq"]
+[gd_scene load_steps=38 format=3 uid="uid://bfvg3cyytfdqq"]
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_m2jm4"]
 [ext_resource type="Script" uid="uid://dyheru0nlktcb" path="res://resources/Script/Shop.gd" id="1_vtuwb"]
@@ -26,11 +26,33 @@
 [ext_resource type="Script" uid="uid://bgl147d3q5c62" path="res://resources/Asset/UI/stylebox_stacked.gd" id="14_cfn21"]
 [ext_resource type="Shader" uid="uid://d1kfm4aolwvsj" path="res://resources/Shaders/vhs.gdshader" id="15_ow7in"]
 [ext_resource type="Script" uid="uid://cst1doe48hcbq" path="res://resources/Asset/UI/StyleBoxFlatPlus.gd" id="15_yimeg"]
-[ext_resource type="Texture2D" uid="uid://bgd8y61u4c04p" path="res://resources/Asset/UI/progress-bar-circle.png" id="21_mh6lc"]
+[ext_resource type="Texture2D" uid="uid://dvherye1o458w" path="res://resources/Asset/UI/alien-stare.png" id="19_jywoi"]
 [ext_resource type="StyleBox" uid="uid://cbnf70vsqqyjq" path="res://resources/Asset/UI/basic_ui.tres" id="22_6by2v"]
-[ext_resource type="Texture2D" uid="uid://cmhhr7dxjnxwp" path="res://resources/Asset/UI/progress-bar-frame.png" id="22_eficx"]
-[ext_resource type="Script" uid="uid://b83c0lexhyul3" path="res://scripts/remove_area.gd" id="26_7sdd5"]
-[ext_resource type="Texture2D" uid="uid://cthkdwoa6le1f" path="res://resources/Asset/UI/trash-can.png" id="27_6by2v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6by2v"]
+bg_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh6lc"]
+bg_color = Color(0.2, 0.2509804, 0.3764706, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0pjgs"]
 shader = ExtResource("15_ow7in")
@@ -40,17 +62,6 @@ shader_parameter/distortion = 0.0
 shader_parameter/chroma_offset = 0.002000000095
 shader_parameter/vignette_strength = 0.3
 shader_parameter/time_scale = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh6lc"]
-bg_color = Color(0.14117648, 0.19215687, 0.32941177, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-expand_margin_left = 3.0
-expand_margin_right = 3.0
-script = ExtResource("15_yimeg")
-metadata/_custom_type_script = "uid://cst1doe48hcbq"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sdd5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -83,9 +94,6 @@ metadata/_custom_type_script = "uid://bgl147d3q5c62"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kx1x"]
 bg_color = Color(1, 1, 1, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eficx"]
-size = Vector2(128, 128)
 
 [sub_resource type="Animation" id="Animation_s0bbe"]
 resource_name = "CloseShop"
@@ -223,7 +231,7 @@ slots = ExtResource("3_s556k")
 Mainmenu = ExtResource("3_eficx")
 shop_texture = ExtResource("2_8ebbm")
 journal_texture = ExtResource("4_3kx1x")
-alien_texture = ExtResource("6_jywoi")
+alien_texture = ExtResource("19_jywoi")
 Alien = Array[ExtResource("2_cc1rn")]([ExtResource("3_6sfmx"), ExtResource("4_6sfmx"), ExtResource("5_tcc56"), ExtResource("3_w7eiy"), ExtResource("5_x2ouj"), ExtResource("8_umvc6"), ExtResource("9_attia"), ExtResource("10_umvc6"), ExtResource("7_v31mq"), ExtResource("12_8cqjm")])
 metadata/_edit_lock_ = true
 
@@ -234,7 +242,7 @@ anchor_left = 1.02
 anchor_top = 0.149
 anchor_right = 1.02
 anchor_bottom = 0.79700005
-offset_left = -5.600342
+offset_left = -44.000244
 offset_top = 0.08000183
 offset_right = 211.99976
 offset_bottom = 0.2399292
@@ -246,12 +254,14 @@ layout_mode = 1
 anchor_left = -0.25
 anchor_top = 0.126
 anchor_right = 0.0
-anchor_bottom = 0.264
-offset_top = -0.20000458
-offset_bottom = 0.19999695
+anchor_bottom = 0.83300006
+offset_top = 22.799995
+offset_bottom = -0.10003662
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_6by2v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mh6lc")
 text = "<"
 
 [node name="Menu" type="Panel" parent="SidePanel"]
@@ -279,20 +289,18 @@ grow_vertical = 2
 [node name="MenuList" type="VBoxContainer" parent="SidePanel/Menu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.117000006
-anchor_top = 0.040000003
-anchor_right = 0.89800006
-anchor_bottom = 0.947
-offset_left = 0.04799843
-offset_top = -0.16000557
-offset_right = 0.11198425
-offset_bottom = -0.060058594
+anchor_left = 0.117194176
+anchor_top = 0.039771423
+anchor_right = 0.89845306
+anchor_bottom = 0.94714284
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Shop" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
-custom_minimum_size = Vector2(64, 84)
+custom_minimum_size = Vector2(144, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Shop"
 icon = ExtResource("2_8ebbm")
@@ -300,8 +308,9 @@ vertical_icon_alignment = 0
 
 [node name="UseItem" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 visible = false
-custom_minimum_size = Vector2(64, 84)
+custom_minimum_size = Vector2(144, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Use Item"
 icon = ExtResource("3_vtuwb")
@@ -309,84 +318,31 @@ vertical_icon_alignment = 0
 
 [node name="Journal" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
 visible = false
-custom_minimum_size = Vector2(64, 84)
+custom_minimum_size = Vector2(144, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Journal"
 icon = ExtResource("4_3kx1x")
 vertical_icon_alignment = 0
 
 [node name="Setting" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
-custom_minimum_size = Vector2(64, 84)
+custom_minimum_size = Vector2(144, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Setting"
 icon = ExtResource("5_rhti7")
 vertical_icon_alignment = 0
 
 [node name="Forfeit" parent="SidePanel/Menu/MenuList" instance=ExtResource("3_s556k")]
-custom_minimum_size = Vector2(64, 84)
+custom_minimum_size = Vector2(144, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Forfeit"
 icon = ExtResource("6_57nro")
 vertical_icon_alignment = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SidePanel/Menu/MenuList"]
-layout_mode = 2
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="SidePanel/Menu/MenuList/HBoxContainer"]
-custom_minimum_size = Vector2(0, 132)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_bottom = 30
-
-[node name="NinePatchRect" type="NinePatchRect" parent="SidePanel/Menu/MenuList/HBoxContainer/MarginContainer"]
-layout_mode = 2
-draw_center = false
-region_rect = Rect2(0, 0, 180, 132)
-patch_margin_left = 180
-axis_stretch_vertical = 2
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="SidePanel/Menu/MenuList/HBoxContainer/MarginContainer/NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 43.629883
-offset_top = -25.839966
-offset_right = -40.370117
-offset_bottom = -1.8399658
-rotation = -2.3561945
-pivot_offset = Vector2(48, 48)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-value = 33.0
-fill_mode = 4
-radial_fill_degrees = 270.0
-texture_under = ExtResource("21_mh6lc")
-texture_over = ExtResource("22_eficx")
-texture_progress = ExtResource("21_mh6lc")
-tint_progress = Color(0.42352942, 0.92941177, 0.33333334, 1)
-
-[node name="Label" type="Label" parent="SidePanel/Menu/MenuList/HBoxContainer/MarginContainer/NinePatchRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 51.629883
-offset_top = 40.160034
-offset_right = -44.370117
-offset_bottom = -0.8399658
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_mh6lc")
-text = "500/600"
-horizontal_alignment = 1
 
 [node name="Scroll" type="Panel" parent="SidePanel"]
 visible = false
@@ -400,100 +356,54 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("14_0mwk0")
 
+[node name="ColorRect" type="ColorRect" parent="SidePanel/Scroll"]
+material = SubResource("ShaderMaterial_0pjgs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 47.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Scroll" type="ScrollContainer" parent="SidePanel/Scroll"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.062000003
-anchor_top = 0.027
-anchor_right = 0.94100004
-anchor_bottom = 0.9760001
-offset_left = 0.1279993
-offset_top = 18.1
-offset_right = 0.10398865
-offset_bottom = -172.20007
+anchor_left = 0.12378744
+anchor_top = 0.09
+anchor_right = 0.86812305
+anchor_bottom = 0.9014286
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Stock" type="VBoxContainer" parent="SidePanel/Scroll/Scroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="SidePanel/Scroll"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.142
-anchor_top = 0.80100006
-anchor_right = 0.87000006
-anchor_bottom = 0.901
-offset_left = -0.10244751
-offset_top = 0.2999878
-offset_right = -0.06428528
-offset_bottom = 0.2999878
-draw_center = false
-region_rect = Rect2(0, 0, 180, 132)
-patch_margin_left = 180
-axis_stretch_vertical = 2
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="SidePanel/Scroll/NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 43.629883
-offset_top = -25.839966
-offset_right = -40.370117
-offset_bottom = -1.8399658
-rotation = -2.3561945
-pivot_offset = Vector2(48, 48)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-value = 33.0
-fill_mode = 4
-radial_fill_degrees = 270.0
-texture_under = ExtResource("21_mh6lc")
-texture_over = ExtResource("22_eficx")
-texture_progress = ExtResource("21_mh6lc")
-tint_progress = Color(0.42352942, 0.92941177, 0.33333334, 1)
-
-[node name="Label" type="Label" parent="SidePanel/Scroll/NinePatchRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 51.629883
-offset_top = 40.160034
-offset_right = -44.370117
-offset_bottom = -0.8399658
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_mh6lc")
-text = "500/600"
-horizontal_alignment = 1
-
 [node name="BottomPanel" type="Control" parent="."]
+visible = false
 layout_mode = 1
-anchor_top = 0.87000006
-anchor_right = 1.0
+anchor_top = 0.8703704
+anchor_right = 0.7317708
 anchor_bottom = 1.0
-offset_top = 0.39990234
-offset_right = -472.0
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Description" type="Panel" parent="BottomPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.327
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -21.0
-offset_right = -6.4959717
-offset_bottom = -5.0
+anchor_left = 0.0034530386
+anchor_top = -0.15
+anchor_right = 1.028315
+anchor_bottom = 0.96428573
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBox_tpgfo")
+metadata/_edit_use_anchors_ = true
 
 [node name="Grid" type="HBoxContainer" parent="BottomPanel/Description"]
 layout_mode = 1
@@ -602,20 +512,6 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
-
-[node name="RemoveArea" type="Area2D" parent="BottomPanel/Description" groups=["trash"]]
-position = Vector2(1555, 65)
-collision_layer = 8
-script = ExtResource("26_7sdd5")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="BottomPanel/Description/RemoveArea"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("27_6by2v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPanel/Description/RemoveArea"]
-visible = false
-shape = SubResource("RectangleShape2D_eficx")
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {

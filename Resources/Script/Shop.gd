@@ -18,7 +18,6 @@ var TotalAliens := 0
 @export var Item : Dictionary
 @export var grid_manager : GridManager
 @export var alien_manager : AlienManager
-@export var end_turn_button : Button
 
 var selected_alien : AlienData = null
 var avaliable_aliens : Array[AlienData] = []
@@ -39,14 +38,10 @@ func resetPanel():
 	$SidePanel/Menu/MenuList/Forfeit.visible = true
 	$SidePanel/Menu.visible = true
 	$BottomPanel.visible = false
-	if end_turn_button:
-		end_turn_button.visible = false
 	$SidePanel/Scroll.visible = false
 
 func showDesc(types:int, object):
 	$BottomPanel.visible = true
-	if end_turn_button:
-		end_turn_button.visible = true
 	if types == 0 and object is AlienData:
 		var AlienScene = selected_alien.alien_scene.instantiate()
 		# Check if the alien has a valid facecard texture assigned
@@ -64,8 +59,9 @@ func addSlot(day_data: DayData = null) -> void:
 	var aliens: Array = Alien
 	for avaliable_alien in day_data.new_aliens:
 		avaliable_aliens.append(avaliable_alien)
-		var slot = slots.instantiate()
+		var slot:Button = slots.instantiate()
 		var AlienScene = avaliable_alien.alien_scene.instantiate()
+		slot.set_custom_minimum_size(Vector2(64,128))
 		slot.slot = true
 		slot.root = self
 		slot.set_button_icon(AlienScene.get_child(0,true).get_sprite_frames()
@@ -87,6 +83,7 @@ func _on_shop_pressed() -> void:
 	var text = $SidePanel/Menu/MenuList/Shop.get_text()
 	if text == "Shop" :
 		if CurrencyManager.Tutorial == 2 : 
+			CurrencyManager.Tutorial += 1
 			CurrencyManager.emit_signal("TutorialNext")
 		$SidePanel/Menu/MenuList/Shop.set_text("Aliens")
 		$SidePanel/Menu/MenuList/Shop.set_button_icon(alien_texture)
@@ -96,6 +93,8 @@ func _on_shop_pressed() -> void:
 		$SidePanel/Menu/MenuList/Journal.visible = true
 		$SidePanel/Menu/MenuList/Setting.visible = false
 		$SidePanel/Menu/MenuList/Forfeit.visible = false
+		$SidePanel/Menu.visible = false
+		$SidePanel/Scroll.visible = true
 	elif text == "Aliens" :
 		if CurrencyManager.Tutorial == 3 : 
 			CurrencyManager.emit_signal("TutorialNext")
@@ -149,3 +148,15 @@ func _on_popup_confirmed() -> void:
 func _on_popup_canceled() -> void:
 	get_tree().set_pause(false)
 	$Popup.visible = false
+
+var day_target := 600
+var money_amount := 0
+func on_money_changed(amount):
+	money_amount = amount
+
+func on_money_target_changed(day_data: DayData):
+	if day_data:
+		day_target = day_data.money_target
+	else:
+		day_target = -1
+		print("DayData is null!")
