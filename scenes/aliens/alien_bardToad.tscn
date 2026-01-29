@@ -37,7 +37,6 @@ facecard = ExtResource("3_0c0hx")
 rules = Array[ExtResource("2_e60en")]([SubResource("Resource_cxdyn")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-scale = Vector2(0.602, 0.602)
 sprite_frames = SubResource("SpriteFrames_cxdyn")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
