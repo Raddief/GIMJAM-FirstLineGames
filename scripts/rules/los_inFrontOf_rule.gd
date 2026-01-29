@@ -38,7 +38,6 @@ func is_condition_met(alien: Alien, grid: GridManager) -> bool:
 				if target_alien != null and target_alien != alien:
 					# Found an alien in line of sight
 					if not _is_target_hidden(cell, target_alien):
-						target_alien.kill()
 						return true # Condition met
 	return false
 

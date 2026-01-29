@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs2dwkijtcdbv"]
+[gd_scene load_steps=12 format=3 uid="uid://cs2dwkijtcdbv"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_23kv5"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_e60en"]
-[ext_resource type="AudioStream" uid="uid://bl8pg7hw10dop" path="res://resources/Asset/Sfx/alien_bardtoad_spawn2.mp3" id="2_kxigb"]
+[ext_resource type="AudioStream" uid="uid://bl8pg7hw10dop" path="res://Resources/Asset/Sfx/alien_bardtoad_spawn2.mp3" id="2_kxigb"]
 [ext_resource type="Texture2D" uid="uid://b4qriwwfphl1s" path="res://assets/cutoff/bardtoad_face.png" id="3_0c0hx"]
 [ext_resource type="Script" uid="uid://blef1pmhv53kd" path="res://scripts/rules/adjacent_bonus_emitter_rule.gd" id="3_e60en"]
 [ext_resource type="Texture2D" uid="uid://ympehtlm030g" path="res://assets/bard_toad.png" id="4_e60en"]
 [ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="7_0c0hx"]
+[ext_resource type="PackedScene" uid="uid://b16fpjea0vg30" path="res://scenes/particles/particle_spark1.tscn" id="8_bfiyr"]
 
 [sub_resource type="Resource" id="Resource_cxdyn"]
 script = ExtResource("3_e60en")
@@ -43,3 +44,5 @@ sprite_frames = SubResource("SpriteFrames_cxdyn")
 shape = SubResource("RectangleShape2D_kxigb")
 
 [node name="Bard particle" parent="." index="5" instance=ExtResource("7_0c0hx")]
+
+[node name="Spark Particle" parent="." index="6" instance=ExtResource("8_bfiyr")]

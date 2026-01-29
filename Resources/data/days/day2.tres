@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://tc2rdebi4ptf" path="res://scripts/days/day_data.gd" id="1_c3l8r"]
 [ext_resource type="Script" uid="uid://dkufqtjv5avif" path="res://scripts/days/base_day_modifier.gd" id="1_kxo1b"]
 [ext_resource type="Script" uid="uid://bh7kmmuvf7682" path="res://scripts/alien/alien_data.gd" id="2_fmsyi"]
-[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://resources/data/alien_data/Faceoff.tres" id="4_44y16"]
-[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://resources/data/alien_data/Pepari.tres" id="4_s46x6"]
-[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://resources/data/alien_data/Solaris.tres" id="5_cb08h"]
+[ext_resource type="Resource" uid="uid://b75v64gc3dqgp" path="res://Resources/data/alien_data/Faceoff.tres" id="4_44y16"]
+[ext_resource type="Resource" uid="uid://y7f44vxhje8" path="res://Resources/data/alien_data/Pepari.tres" id="4_s46x6"]
+[ext_resource type="Resource" uid="uid://kpqbj6pj8vmj" path="res://Resources/data/alien_data/Solaris.tres" id="5_cb08h"]
 
 [sub_resource type="Resource" id="Resource_jus2c"]
 script = ExtResource("1_kxo1b")
