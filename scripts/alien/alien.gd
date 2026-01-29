@@ -28,6 +28,7 @@ class_name Alien
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var grass_particle: GPUParticles2D = $"Grass particle"
 @onready var blood_particle: GPUParticles2D = $"Blood particle"
+@onready var spark_particle: GPUParticles2D = $"Spark particle"
 
 # ===== STATE =====
 var cells: Array[Vector2i] = []   # Currently occupied cells
@@ -39,6 +40,7 @@ var breath_state := 0        # 0 = shrinking, 1 = growing
 var breath_vel := 0.0        # Current velocity of the scale change
 var breath_accel := 0.0      # Speed at which velocity changes
 var breath_max_vel := 0.0    # The limit for velocity
+var breath_original_scale := 0.0
 
 # Facing (for direction-based rules)
 enum Facing { LEFT, RIGHT }
@@ -122,6 +124,8 @@ func setup(start_cell: Vector2i, grid_manager: GridManager):
 	
 	# Randomize start so they aren't all in sync
 	breath_vel = randf_range(-breath_max_vel, breath_max_vel)
+	
+	breath_original_scale = sprite.scale.y
 
 # ===== INPUT =====
 func _input(event):
@@ -278,6 +282,9 @@ func on_turn_passed():
 	# Economy
 	if can_produce:
 		CurrencyManager.add(production_per_turn + bonus_production + external_production_bonus)
+		
+		if spark_particle:
+			spark_particle.emitting = true
 
 	external_production_bonus = 0
 	
@@ -346,6 +353,9 @@ func _process(delta):
 			
 	# Multiply by delta (usually ~0.016) to normalize speed
 	var speed_multiplier = delta * 60.0 
+	
+	var drift_correction = (breath_original_scale - sprite.scale.y) * (breath_accel * 10.0)
+	breath_vel += drift_correction * speed_multiplier
 	
 	if breath_state == 0:
 		breath_vel -= breath_accel * speed_multiplier

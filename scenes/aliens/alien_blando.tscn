@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkey2m3inbb2h"]
+[gd_scene load_steps=12 format=3 uid="uid://bkey2m3inbb2h"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_tgk1h"]
-[ext_resource type="AudioStream" uid="uid://bulrplkx26v4y" path="res://resources/Asset/Sfx/alien_blando_spawn.mp3" id="2_hdsbi"]
+[ext_resource type="AudioStream" uid="uid://bulrplkx26v4y" path="res://Resources/Asset/Sfx/alien_blando_spawn.mp3" id="2_hdsbi"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="2_jup13"]
 [ext_resource type="Script" uid="uid://cda63q8gt0t3v" path="res://scripts/rules/no_rule.gd" id="3_hdsbi"]
 [ext_resource type="Texture2D" uid="uid://cd6vfdxpaqm0j" path="res://assets/cutoff/blando_face.png" id="3_jlrg6"]
 [ext_resource type="Texture2D" uid="uid://bonfh2uicmo3f" path="res://assets/blando.png" id="4_jlrg6"]
 [ext_resource type="Script" uid="uid://by7rpj0257m8c" path="res://scenes/aliens/flip_button.gd" id="6_hdsbi"]
+[ext_resource type="PackedScene" uid="uid://b16fpjea0vg30" path="res://scenes/particles/particle_spark1.tscn" id="8_gv46d"]
 
 [sub_resource type="Resource" id="Resource_i2qp7"]
 script = ExtResource("3_hdsbi")
@@ -55,5 +56,7 @@ size_flags_horizontal = 4
 text = "Flip Direction"
 script = ExtResource("6_hdsbi")
 metadata/_edit_use_anchors_ = true
+
+[node name="Spark Particle" parent="." index="6" instance=ExtResource("8_gv46d")]
 
 [connection signal="pressed" from="FlipButton" to="." method="_on_flip_button_pressed"]

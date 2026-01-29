@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://blpb5ia7eqp4w"
-path="res://.godot/imported/alien_gloom_spawn.mp3-7f30521b63738924b60b658f5688bdd2.mp3str"
+path="res://.godot/imported/alien_gloom_spawn.mp3-a5ea5d6dbbdbb3073f8e711b480fb920.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/alien_gloom_spawn.mp3"
-dest_files=["res://.godot/imported/alien_gloom_spawn.mp3-7f30521b63738924b60b658f5688bdd2.mp3str"]
+source_file="res://Resources/Asset/Sfx/alien_gloom_spawn.mp3"
+dest_files=["res://.godot/imported/alien_gloom_spawn.mp3-a5ea5d6dbbdbb3073f8e711b480fb920.mp3str"]
 
 [params]
 

@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://oqg1p1p8hme7"]
+[gd_scene load_steps=14 format=3 uid="uid://oqg1p1p8hme7"]
 
 [ext_resource type="PackedScene" uid="uid://ddleptbigphkm" path="res://scenes/aliens/alien.tscn" id="1_wtyor"]
-[ext_resource type="AudioStream" uid="uid://bu8vdptujrdfj" path="res://resources/Asset/Sfx/alien_obelisk_spawn.mp3" id="2_b00cm"]
+[ext_resource type="AudioStream" uid="uid://bu8vdptujrdfj" path="res://Resources/Asset/Sfx/alien_obelisk_spawn.mp3" id="2_b00cm"]
 [ext_resource type="Script" uid="uid://d4gplo6v8dvb7" path="res://scripts/rules/base_alien_rule.gd" id="3_dnu1t"]
 [ext_resource type="Texture2D" uid="uid://b5v68ugyw83y" path="res://assets/cutoff/obelisk_face.png" id="3_wt8rj"]
 [ext_resource type="Script" uid="uid://dipeur6e8kb76" path="res://scripts/rules/immovable.gd" id="4_wt8rj"]
 [ext_resource type="Texture2D" uid="uid://ciquc0j5073nt" path="res://assets/obelisk.png" id="5_8g5ij"]
 [ext_resource type="Script" uid="uid://do6sgaac0h2yr" path="res://scripts/rules/legendary_rule.gd" id="5_b00cm"]
 [ext_resource type="Script" uid="uid://by7rpj0257m8c" path="res://scenes/aliens/flip_button.gd" id="7_dnu1t"]
+[ext_resource type="PackedScene" uid="uid://b16fpjea0vg30" path="res://scenes/particles/particle_spark1.tscn" id="9_8g5ij"]
 
 [sub_resource type="Resource" id="Resource_1mc0m"]
 resource_local_to_scene = true
@@ -64,5 +65,7 @@ size_flags_horizontal = 4
 text = "Flip Direction"
 script = ExtResource("7_dnu1t")
 metadata/_edit_use_anchors_ = true
+
+[node name="Spark Particle" parent="." index="6" instance=ExtResource("9_8g5ij")]
 
 [connection signal="pressed" from="FlipButton" to="." method="_on_flip_button_pressed"]
