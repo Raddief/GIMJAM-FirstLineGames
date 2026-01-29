@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://8xll76r5860v"]
+[gd_scene load_steps=69 format=4 uid="uid://8xll76r5860v"]
 
 [ext_resource type="Script" uid="uid://c7xpj1uisavxq" path="res://scripts/managers/grid_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dsjp70x164g4d" path="res://scripts/main.gd" id="1_jyhfs"]

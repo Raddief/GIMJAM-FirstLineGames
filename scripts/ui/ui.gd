@@ -2,8 +2,6 @@ extends Control
 class_name UI
 
 @onready var end_turn_button: Button = $EndTurnButton
-@onready var currency_label: Label = $Progress/MarginCurrent/CurrencyLabel
-@onready var quota : Label = $Progress/MarginQuota/Quota
 @onready var progress_bar : ProgressBar = $Money
 @onready var money_label: Label = $Money/CenterContainer/MoneyLabel
 @onready var turn_bar : TextureProgressBar = $"Pen Lights/TextureProgressBar"

@@ -18,9 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 CurrencyManager="*res://scripts/managers/currency_manager.gd"
-AudioManager="*res://resources/Script/AudioManager.gd"
-Music="*res://resources/Scene/music.tscn"
 SceneManager="*res://scenes/scene_manager.tscn"
+AudioManager="*res://scripts/managers/AudioManager.gd"
+Music="*res://scenes/music.tscn"
 
 [display]
 

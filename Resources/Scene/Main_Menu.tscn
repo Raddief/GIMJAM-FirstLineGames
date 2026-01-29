@@ -2,11 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_7445q"]
 [ext_resource type="Script" uid="uid://dw7bke1ai5igl" path="res://resources/Script/Main_Menu.gd" id="1_mavmb"]
-[ext_resource type="Texture2D" uid="uid://dv8ejp11qda7n" path="res://assets/environment/background.png" id="2_h211v"]
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="2_mavmb"]
-[ext_resource type="Texture2D" uid="uid://cwuhr0vyhugv5" path="res://assets/environment/pen_open.png" id="3_o0idf"]
-[ext_resource type="Texture2D" uid="uid://bphpdnp0xbh6x" path="res://assets/environment/lamp.png" id="4_nayc5"]
-[ext_resource type="PackedScene" uid="uid://chy7b175ld55u" path="res://scenes/particles/particle_light1.tscn" id="5_iwj6o"]
 [ext_resource type="Texture2D" uid="uid://btya0e7iyg3r6" path="res://resources/Asset/BG.png" id="2_a8ag0"]
 [ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="2_mavmb"]
 [ext_resource type="PackedScene" uid="uid://chguyrh8h8mqh" path="res://resources/Scene/PopUps.tscn" id="8_jwtmi"]
