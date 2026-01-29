@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://05xxhmggpbl7"]
+[gd_scene load_steps=9 format=3 uid="uid://05xxhmggpbl7"]
 
-[ext_resource type="Script" uid="uid://b5l5ynsh8mihb" path="res://Resources/Script/Button.gd" id="1_pr0i5"]
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="1_suixg"]
+[ext_resource type="Script" uid="uid://b5l5ynsh8mihb" path="res://resources/Script/Button.gd" id="1_pr0i5"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="1_suixg"]
+[ext_resource type="AudioStream" uid="uid://dqtyqate28n4g" path="res://resources/Asset/Sfx/ui_hover2.mp3" id="3_te7cm"]
+[ext_resource type="AudioStream" uid="uid://b2ix3av2jlj7c" path="res://resources/Asset/Sfx/ui_click1.mp3" id="4_wqhuj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfxc5"]
 bg_color = Color(0.12156863, 0.16078432, 0.21568628, 1)
@@ -59,6 +61,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_suixg")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_pr0i5")
+ui_hover_sound = ExtResource("3_te7cm")
+ui_click_sound = ExtResource("4_wqhuj")
 
 [node name="Sfx" type="AudioStreamPlayer" parent="."]
 

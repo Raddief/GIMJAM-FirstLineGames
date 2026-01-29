@@ -2,8 +2,11 @@ extends Control
 class_name Shop
 
 #Scene Variable
-var slots = preload("res://Resources/Scene/Button.tscn")
-var Mainmenu = preload("res://Resources/Scene/Button.tscn") #Masih Placeholder ini Bang
+@export var slots: PackedScene
+@export var Mainmenu: PackedScene
+@export var shop_texture: CompressedTexture2D
+@export var journal_texture: CompressedTexture2D
+@export var alien_texture: CompressedTexture2D
 
 #Node Variable
 @onready var anim = $Animation
@@ -32,10 +35,10 @@ signal Setting(bool)
 
 func resetPanel():
 	$SidePanel/Menu/MenuList/Shop.set_text("Shop")
-	$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/shopping-cart.png"))
+	$SidePanel/Menu/MenuList/Shop.set_button_icon(shop_texture)
 	$SidePanel/Menu/MenuList/UseItem.set_text("Use Item")
 	$SidePanel/Menu/MenuList/Journal.set_text("Journal")
-	$SidePanel/Menu/MenuList/Journal.set_button_icon(load("res://Resources/Asset/UI/secret-book.png"))
+	$SidePanel/Menu/MenuList/Journal.set_button_icon(journal_texture)
 	$SidePanel/Menu/MenuList/Journal.visible = false
 	$SidePanel/Menu/MenuList/Setting.visible = true
 	$SidePanel/Menu/MenuList/Forfeit.visible = true
@@ -91,7 +94,7 @@ func _on_shop_pressed() -> void:
 		if CurrencyManager.Tutorial == 2 : 
 			CurrencyManager.emit_signal("TutorialNext")
 		$SidePanel/Menu/MenuList/Shop.set_text("Aliens")
-		$SidePanel/Menu/MenuList/Shop.set_button_icon(load("res://Resources/Asset/UI/alien-stare.png"))
+		$SidePanel/Menu/MenuList/Shop.set_button_icon(alien_texture)
 		$SidePanel/Menu/MenuList/UseItem.set_text("Items")
 		$SidePanel/Menu/MenuList/Journal.set_text("Back")
 		$SidePanel/Menu/MenuList/Journal.set_button_icon(null)
