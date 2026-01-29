@@ -14,13 +14,14 @@ var active_modifiers: Array[Resource] = []
 signal day_started(day: DayData)
 signal day_ended(day: DayData)
 signal day_fail(condition: bool)
+signal win()
 signal turn_changed(turn_left: int, max_turns: int)
 signal turn_consumed(current: int, total: int) # Logic only
 
 # ===== DAY FLOW =====
 func start_day(index: int):
 	if index >= days.size():
-		print("ALL DAYS CLEARED!")
+		emit_signal("win")
 		return
 
 	current_day_index = index

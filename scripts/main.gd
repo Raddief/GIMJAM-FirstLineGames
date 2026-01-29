@@ -26,8 +26,8 @@ func _ready():
 	CurrencyManager.connect("TutorialNext", _on_tutorial)
 	if CurrencyManager.Tutorial != 7 :
 		CurrencyManager.Tutorial = 1
-		# $CanvasLayer/UI/Money.visible = false
-		# $"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = false
+		$CanvasLayer/UI/Money.visible = false
+		$"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = false
 		$CanvasLayer/UI/EndTurnButton.visible = false
 		$CanvasLayer/RemoveArea.visible = false
 		$CanvasLayer/Marker.visible = true
@@ -51,6 +51,7 @@ func _ready():
 	day_manager.connect("day_fail", _on_day_fail)
 	day_manager.connect("turn_changed", ui.on_turn_changed)
 	day_manager.connect("turn_consumed", _on_turn_passed)
+	day_manager.connect("win", Winning)
 	ui.on_end_turn.connect(day_manager.consume_turn)
 	shop.connect("Forfeit", _on_forfeit)
 	shop.connect("Setting", _on_setting)
@@ -95,6 +96,9 @@ func _on_day_fail():
 	$GlassDome.visible = true
 	popups.GameOver(CurrencyManager.TotalGold, shop.TotalAliens)
 
+func Winning():
+	popups.Winning(shop.TotalAliens)
+
 func _on_forfeit():
 	popups.Forfeit()
 
@@ -115,6 +119,8 @@ func _on_tutorial_player_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "Step7" :
 		$CanvasLayer/UI/EndTurnButton.visible = true
 		$CanvasLayer/RemoveArea.visible = true
+		$CanvasLayer/UI/Money.visible = true
+		$"CanvasLayer/UI/Pen Lights/TextureProgressBar".visible = true
 		$CanvasLayer/DirectionalLight2D.queue_free()
 		$CanvasLayer/Marker.queue_free()
 		$CanvasLayer/TextMarker.queue_free()

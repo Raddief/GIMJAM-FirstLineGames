@@ -175,6 +175,8 @@ func _on_flip_button_pressed():
 		rule.on_moved(self)
 
 func flip_axis():
+	if CurrencyManager.Tutorial == 6 :
+				CurrencyManager.emit_signal("TutorialNext")
 	if facing == Facing.LEFT:
 		facing = Facing.RIGHT
 		sprite.flip_h = true
@@ -219,8 +221,6 @@ func end_drag():
 		if is_valid_spot and can_afford:
 			CurrencyManager.spend(cost)
 			CurrencyManager.emit_signal("AlienPurchased")
-			if CurrencyManager.Tutorial == 6 :
-				CurrencyManager.emit_signal("TutorialNext")
 			is_new_purchase = false
 			setup(target_cell, grid)
 		else:

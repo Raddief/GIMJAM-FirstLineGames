@@ -16,6 +16,7 @@ func _on_try_again_pressed() -> void:
 	SceneManager.change_scene_to_game()
 
 func _on_back_pressed() -> void:
+	get_tree().set_pause(false)
 	SceneManager.change_scene_to_main_menu()
 
 func Forfeit():
@@ -68,3 +69,16 @@ func _on_bgm_value_changed(value: float) -> void:
 	AudioManager.emit_signal("volumeBGMchanged", $Setting/VBoxContainer/Column/Slider/BGM.get_value())
 	$Sfx.set_stream(ui_hover_sound)
 	$Sfx.play()
+
+func Winning(aliens:int):
+	$Sfx.set_stream(load("res://Resources/Asset/Sfx/ui_end_day1.mp3"))
+	$Sfx.play()
+	$Win.visible = true
+	self.visible = true
+	get_tree().set_pause(true)
+	$Win/VBoxContainer/Column/Number/TotalGold.set_text(str(CurrencyManager.TotalGold))
+	$Win/VBoxContainer/Column/Number/TotalAliens.set_text(str(aliens))
+
+func _on_menu_pressed() -> void:
+	get_tree().set_pause(false)
+	SceneManager.change_scene_to_main_menu()

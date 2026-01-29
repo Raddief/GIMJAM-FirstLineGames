@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://chguyrh8h8mqh"]
 
-[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://resources/Scene/Button.tscn" id="1_8c4hv"]
-[ext_resource type="Script" uid="uid://056golegvos5" path="res://resources/Script/Popup.gd" id="1_m2qde"]
-[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://resources/Asset/Skynight.otf" id="2_4pixp"]
-[ext_resource type="AudioStream" uid="uid://dqtyqate28n4g" path="res://resources/Asset/Sfx/ui_hover2.mp3" id="2_qkjs1"]
-[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://resources/Scene/sfx.tscn" id="4_7q0k1"]
+[ext_resource type="PackedScene" uid="uid://05xxhmggpbl7" path="res://Resources/Scene/Button.tscn" id="1_8c4hv"]
+[ext_resource type="Script" uid="uid://056golegvos5" path="res://Resources/Script/Popup.gd" id="1_m2qde"]
+[ext_resource type="FontFile" uid="uid://btwa7qiceg3hx" path="res://Resources/Asset/Skynight.otf" id="2_4pixp"]
+[ext_resource type="AudioStream" uid="uid://dqtyqate28n4g" path="res://Resources/Asset/Sfx/ui_hover2.mp3" id="2_qkjs1"]
+[ext_resource type="PackedScene" uid="uid://b0o4g05udif5f" path="res://Resources/Scene/sfx.tscn" id="4_7q0k1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pixp"]
 bg_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
@@ -344,6 +344,119 @@ size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 32
 text = "Next Day"
 
+[node name="Win" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4pixp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Win"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.078125
+anchor_right = 0.9375
+anchor_bottom = 0.953125
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Win/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 64
+text = "End of the Day"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Congrats" type="Label" parent="Win/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "CONGRATULATIONS
+You just completed all day!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Column" type="HBoxContainer" parent="Win/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Element" type="VBoxContainer" parent="Win/VBoxContainer/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header1" type="Label" parent="Win/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Total Credits Gain"
+
+[node name="Header2" type="Label" parent="Win/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "Total Aliens Purchase"
+
+[node name="Line" type="Label" parent="Win/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "________________"
+
+[node name="Header4" type="Label" parent="Win/VBoxContainer/Column/Element"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "See you next time"
+
+[node name="Number" type="VBoxContainer" parent="Win/VBoxContainer/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TotalGold" type="Label" parent="Win/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "69"
+
+[node name="TotalAliens" type="Label" parent="Win/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "67"
+
+[node name="Line" type="Label" parent="Win/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "_____ -"
+
+[node name="Credit" type="Label" parent="Win/VBoxContainer/Column/Number"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4pixp")
+theme_override_font_sizes/font_size = 32
+text = "- FLG"
+
+[node name="Menu" parent="Win/VBoxContainer" instance=ExtResource("1_8c4hv")]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
+text = "Back To Menu"
+
 [node name="Sfx" parent="." instance=ExtResource("4_7q0k1")]
 
 [connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
@@ -354,3 +467,4 @@ text = "Next Day"
 [connection signal="pressed" from="Forfeit/VBoxContainer/Button/Sure" to="." method="_on_sure_pressed"]
 [connection signal="pressed" from="Forfeit/VBoxContainer/Button/Refuse" to="." method="_on_refuse_pressed"]
 [connection signal="pressed" from="EndDay/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Win/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

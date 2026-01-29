@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dwo1ulysh3e5n"
-path="res://.godot/imported/alien_faceoff_spawn.mp3-cb59ff5ea18ef0b2ef824b549fc15ac3.mp3str"
+path="res://.godot/imported/alien_faceoff_spawn.mp3-5c509d450be60b56514cffa38224950b.mp3str"
 
 [deps]
 
-source_file="res://resources/Asset/Sfx/alien_faceoff_spawn.mp3"
-dest_files=["res://.godot/imported/alien_faceoff_spawn.mp3-cb59ff5ea18ef0b2ef824b549fc15ac3.mp3str"]
+source_file="res://Resources/Asset/Sfx/alien_faceoff_spawn.mp3"
+dest_files=["res://.godot/imported/alien_faceoff_spawn.mp3-5c509d450be60b56514cffa38224950b.mp3str"]
 
 [params]
 
